@@ -9105,9 +9105,6 @@ int CvCity::getRevoltTestProbability() const
 	int result = (GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100;
 	switch (getOwnerINLINE())
 	{
-		case TURKEY:
-			result /= 2;
-			break;
 		case NATIVE:
 			result *= 3;
 			result /= 2;
@@ -11657,92 +11654,12 @@ void CvCity::doCulture()
 
 	//Rhye - start switch
 	//changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
-	if 	(getCommerceRate(COMMERCE_CULTURE) <=4)
+	// Major civilizations accumulate their unmodified culture output.
+	if (getOwnerINLINE() < NUM_MAJOR_PLAYERS || getCommerceRate(COMMERCE_CULTURE) <= 4)
 		changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
 	else {
 		switch (getOwnerINLINE())
 	{
-			case EGYPT:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true); //72 before removal of Creative trait
-				break;
-			case INDIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *80 /100, false, true);
-				break;
-			case CHINA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *80 /100, false, true);
-				break;
-			case BABYLONIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
-				break;
-			case GREECE:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true);
-				break;
-			case PERSIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true); //100 before removal of Creative trait
-				break;
-			case CARTHAGE:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true); //100 before removal of Creative trait
-				break;
-			case ROME:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true); //was 110 but it chokes euro civs
-				break;
-			case JAPAN:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
-				break;
-			case ETHIOPIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
-				break;
-			case MAYA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true);
-				break;
-			case VIKING:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);
-				break;
-			case ARABIA:	
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *110 /100, false, true); //100 in vanilla
-				break;
-			case KHMER:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *120 /100, false, true);
-				break;
-			case FRANCE:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *160 /100, false, true); //150 in vanilla and warlords
-				break;
-			case SPAIN:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *125 /100, false, true);
-				break;
-			case ENGLAND:	
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);
-				break;
-			case GERMANY:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *128 /100, false, true);
-				break;
-			case RUSSIA:				
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);
-				break;
-			case NETHERLANDS:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *132 /100, false, true); //135, but it's too strong as Amsterdam is a powerhouse
-				break;
-			case MALI:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);
-				break;
-			case TURKEY:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *150 /100, false, true); //already strong with UP
-				break;
-			case PORTUGAL:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *147 /100, false, true);
-				break;
-			case INCA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *140 /100, false, true);
-				break;
-			case MONGOLIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *135 /100, false, true);
-				break;
-			case AZTEC:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *140 /100, false, true);
-				break;
-			case AMERICA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *165 /100, false, true);
-				break;
 			case INDEPENDENT:
 			case INDEPENDENT2:
 				if (GET_PLAYER((PlayerTypes)CELTIA).getCivilizationType() == (CivilizationTypes)4) { //late start condition (RFCMP)

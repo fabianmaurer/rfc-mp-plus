@@ -446,10 +446,6 @@ class Stability:
                         iPopulation = pPlayer.getRealPopulation() #used later                        
                         iEraModifier = pPlayer.getCurrentEra() #used later
 
-                        if (iPlayer == con.iMali): #counterbalance its UP
-                                #iEconomy *= 4
-                                #iEconomy /= 7
-                                iEconomy /= 2
 
                         if (iPlayer == con.iEgypt or iPlayer == con.iMali or iPlayer == con.iEthiopia): #counterbalance the flood plains
                                 iAgriculture *= 7 #3
@@ -626,10 +622,6 @@ class Stability:
                                 iPopulation *= 4
                                 iPopulation /= 3
 
-                        if (iPlayer == con.iMali): #counterbalance its UP
-                                #iEconomy *= 4
-                                #iEconomy /= 7
-                                iEconomy /= 2
 
                         if (iPlayer == con.iEgypt or iPlayer == con.iMali or (iPlayer == con.iEthiopia and not gc.getPlayer(con.iEgypt).isAlive())): #counterbalance the flood plains
                                 iAgriculture *= 75 #3
