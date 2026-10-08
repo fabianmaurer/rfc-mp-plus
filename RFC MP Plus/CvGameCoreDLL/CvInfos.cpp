@@ -5283,6 +5283,7 @@ m_iGoldPerUnit(0),
 m_iGoldPerMilitaryUnit(0),									
 m_iHappyPerMilitaryUnit(0),
 m_iLargestCityHappiness(0),
+m_iCivicHappiness(0),
 m_iWarWearinessModifier(0),
 m_iFreeSpecialist(0),
 m_iTradeRoutes(0),
@@ -5474,6 +5475,11 @@ int CvCivicInfo::getHappyPerMilitaryUnit() const
 int CvCivicInfo::getLargestCityHappiness() const
 {
 	return m_iLargestCityHappiness;
+}
+
+int CvCivicInfo::getCivicHappiness() const
+{
+	return m_iCivicHappiness;
 }
 
 int CvCivicInfo::getWarWearinessModifier() const
@@ -5761,6 +5767,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iGoldPerMilitaryUnit);									
 	stream->Read(&m_iHappyPerMilitaryUnit);
 	stream->Read(&m_iLargestCityHappiness);
+	stream->Read(&m_iCivicHappiness);
 	stream->Read(&m_iWarWearinessModifier);
 	stream->Read(&m_iFreeSpecialist);
 	stream->Read(&m_iTradeRoutes);												
@@ -5887,6 +5894,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iGoldPerMilitaryUnit);									
 	stream->Write(m_iHappyPerMilitaryUnit);
 	stream->Write(m_iLargestCityHappiness);
+	stream->Write(m_iCivicHappiness);
 	stream->Write(m_iWarWearinessModifier);
 	stream->Write(m_iFreeSpecialist);
 	stream->Write(m_iTradeRoutes);												
@@ -5985,6 +5993,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNoUnhealthyPopulation, "bNoUnhealthyPopulation");
 	pXML->GetChildXmlValByName(&m_bBuildingOnlyHealthy, "bBuildingOnlyHealthy");
 	pXML->GetChildXmlValByName(&m_iLargestCityHappiness, "iLargestCityHappiness");
+	pXML->GetChildXmlValByName(&m_iCivicHappiness, "iCivicHappiness");
 	pXML->GetChildXmlValByName(&m_iWarWearinessModifier, "iWarWearinessModifier");
 	pXML->GetChildXmlValByName(&m_iFreeSpecialist, "iFreeSpecialist");
 	pXML->GetChildXmlValByName(&m_iTradeRoutes, "iTradeRoutes");
@@ -9991,62 +10000,11 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 			result /= 100;
 		}
 	}	
+	// Major civilizations use the shared handicap/scenario value.
+	if (pl < NUM_MAJOR_PLAYERS)
+		return result;
 	switch (pl)
 	{
-	case EGYPT:
-		return result*125/100;
-	case INDIA:
-		return result*115/100;
-	case CHINA:
-		return result*11/10;   //10 before the addition of chinese UP
-	case BABYLONIA:
-		return result*12/10;
-	case GREECE:
-		return result*11/10;   //11 before removal of Aggressive trait
-	case PERSIA:
-		return result*100/100;
-	case CARTHAGE:
-		return result*125/100;
-	case ROME:
-		return result*11/10;
-	case JAPAN:
-		return result*113/100;   //11 before removal of Aggressive trait
-	case ETHIOPIA:
-		return result*100/100;
-	case MAYA:
-		return result*110/100;
-	case VIKING:
-		return result*9/10;
-	case ARABIA:
-		return result*105/100;	
-	case KHMER:
-		return result*90/100;
-	case SPAIN:
-		return result*11/10;
-	case FRANCE:
-		return result*97/100;
-	case ENGLAND:
-		return result*10/10;
-	case GERMANY:
-		return result*75/100;
-	case RUSSIA:
-		return result*75/100;
-	case NETHERLANDS:
-		return result*90/100;
-	case MALI:
-		return result*95/100;
-	case TURKEY:
-		return result*8/10;
-	case PORTUGAL:
-		return result*93/100;
-	case INCA:
-		return result*100/100;   //10 before removal of Aggressive trait
-	case MONGOLIA:
-		return result*75/100;   //11 before removal of Aggressive trait
-	case AZTEC:
-		return result*95/100;   //10 before removal of Aggressive trait
-	case AMERICA:
-		return result*75/100;
 	case INDEPENDENT:
 		return result*13/10;
 	case INDEPENDENT2:
@@ -10148,71 +10106,13 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 			result /= 100;
 		}
 
-	switch (pl)
-	{
-	case EGYPT:
-		return result*10/10;
-	case INDIA:
-		return result*10/10;
-	case CHINA:
-		return result*10/10;
-	case BABYLONIA:
-		return result*11/10;
-	case GREECE:
-		return result*90/100;
-	case PERSIA:
-		// start UP - old
-		return result*10/10;   
-		//return result*0;  
-		// end UP
-	case CARTHAGE:
-		return result*75/100;
-	case ROME:
-		return result*75/100;
-	case JAPAN:
-		return result*95/100;
-	case ETHIOPIA:
-		return result*10/10;
-	case MAYA:
-		return result*10/10;
-	case VIKING:
-		return result*7/10;
-	case ARABIA:
-		return result*7/10;
-	case KHMER:
-		return result*8/10;
-	case SPAIN:
+	// Major civilizations use the shared handicap/scenario value.
+	if (pl < NUM_MAJOR_PLAYERS)
+		return result;
+	if (!(GET_PLAYER((PlayerTypes)CELTIA).getCivilizationType() == (CivilizationTypes)4)) //late start condition (RFCMP)
 		return result*5/10;
-	case FRANCE:
-		return result*5/10;
-	case ENGLAND:
-		return result*5/10;
-	case GERMANY:
-		return result*6/10;
-	case RUSSIA:
-		return result*5/10;
-	case NETHERLANDS:
-		return result*5/10;
-	case MALI:
-		return result*80/100;  //70 before new UP
-	case TURKEY:
-		return result*6/10;
-	case PORTUGAL:
-		return result*5/10;
-	case INCA:
-		return result*6/10;
-	case MONGOLIA:
-		return result*58/100;
-	case AZTEC:
-		return result*7/10;
-	case AMERICA:
-		return result*6/10;
-	default:
-		if (!(GET_PLAYER((PlayerTypes)CELTIA).getCivilizationType() == (CivilizationTypes)4)) //late start condition (RFCMP)
-			return result*5/10;
-		else
-			return result*2/10;
-	}
+	else
+		return result*2/10;
 }
 //Rhye - end
 
@@ -10231,68 +10131,13 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 			result *= 80;
 			result /= 100;
 		}
-	switch (pl)
-	{
-	case EGYPT:
-		return result*135/100;
-	case INDIA:
-		return result*130/100;
-	case CHINA:
-		return result*127/100;
-	case BABYLONIA:
-		return result*135/100;
-	case GREECE:
-		return result*127/100;
-	case PERSIA:
-		return result*10/10;
-	case CARTHAGE:
-		return result*9/10;
-	case ROME:
-		return result*9/10;
-	case JAPAN:
-		return result*110/100;
-	case ETHIOPIA:
-		return result*115/100;
-	case MAYA:
-		return result*115/100;
-	case VIKING:
-		return result*75/100;
-	case ARABIA:
-		return result*10/10;
-	case KHMER:
-		return result*10/10;
-	case SPAIN:
-		return result*7/10;
-	case ENGLAND:
-		return result*7/10;
-	case FRANCE:
-		return result*7/10;
-	case GERMANY:
-		return result*7/10;
-	case RUSSIA:
-		return result*7/10;
-	case NETHERLANDS:
-		return result*7/10;
-	case MALI:
-		return result*9/10;  //8 before new UP
-	case TURKEY:
-		return result*7/10;
-	case PORTUGAL:
-		return result*72/100;
-	case INCA:
-		return result*8/10;
-	case MONGOLIA:
-		return result*7/10;
-	case AZTEC:
-		return result*85/100;
-	case AMERICA:
-		return result*7/10;
-	default:
-		if (!(GET_PLAYER((PlayerTypes)CELTIA).getCivilizationType() == (CivilizationTypes)4)) //late start condition (RFCMP)
-			return result*6/10;
-		else
-			return result*3/10;
-	}
+	// Major civilizations use the shared handicap/scenario value.
+	if (pl < NUM_MAJOR_PLAYERS)
+		return result;
+	if (!(GET_PLAYER((PlayerTypes)CELTIA).getCivilizationType() == (CivilizationTypes)4)) //late start condition (RFCMP)
+		return result*6/10;
+	else
+		return result*3/10;
 }
 //Rhye - end
 
@@ -10331,68 +10176,13 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 			result /= 100;
 		}
 
-	switch (pl)
-	{
-	case EGYPT:
-		return result*11/10;
-	case INDIA:
-		return result*102/100;   //10 before removal of Organized trait
-	case CHINA:
-		return result*105/100;
-	case BABYLONIA:
-		return result*10/10;
-	case GREECE:
-		return result*8/10;
-	case PERSIA:
-		return result*7/10;
-	case CARTHAGE:
-		return result*7/10;
-	case ROME:
-		return result*75/100;   //8 before removal of Organized trait
-	case JAPAN:
-		return result*8/10;   //11 before removal of Organized trait
-	case ETHIOPIA:
-		return result*8/10;
-	case MAYA:
-		return result*8/10;
-	case VIKING:
-		return result*8/10;
-	case ARABIA:
+	// Major civilizations use the shared handicap/scenario value.
+	if (pl < NUM_MAJOR_PLAYERS)
+		return result;
+	if (!(GET_PLAYER((PlayerTypes)CELTIA).getCivilizationType() == (CivilizationTypes)4)) //late start condition (RFCMP)
 		return result*9/10;
-	case KHMER:
-		return result*10/10;
-	case SPAIN:
-		return result*6/10;
-	case FRANCE:
-		return result*8/10;
-	case ENGLAND:
-		return result*6/10;
-	case GERMANY:
+	else
 		return result*7/10;
-	case RUSSIA:
-		return result*70/100; 
-	case NETHERLANDS:
-		return result*7/10;
-	case MALI:
-		return result*8/10; //6 before new UP
-	case TURKEY:
-		return result*7/10;
-	case PORTUGAL:
-		return result*72/100;
-	case INCA:
-		return result*5/10;
-	case MONGOLIA:
-		return result*64/100;
-	case AZTEC:
-		return result*6/10;
-	case AMERICA:
-		return result*5/10;   //6 before removal of Organized trait
-	default:
-		if (!(GET_PLAYER((PlayerTypes)CELTIA).getCivilizationType() == (CivilizationTypes)4)) //late start condition (RFCMP)
-			return result*9/10;
-		else
-			return result*7/10;
-	}
 }
 //Rhye - end
 
@@ -10411,93 +10201,8 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 {
 	int result = m_iHealthBonus;
 
-	switch (pl)
-	{
-	case EGYPT:
-		result = m_iHealthBonus*2;
-		break;
-	case INDIA:
-		result = m_iHealthBonus-1;
-		break;
-	case CHINA:
-		result = m_iHealthBonus;
-		break;
-	case BABYLONIA:
-		result = m_iHealthBonus*2;
-		break;
-	case GREECE:
-		result = m_iHealthBonus*4;
-		break;
-	case PERSIA:
-		result = m_iHealthBonus*5;   //4 before removal of Expansive trait
-		break;
-	case CARTHAGE:
-		result = m_iHealthBonus*7;
-		break;
-	case ROME:
-		result = m_iHealthBonus*7;   //4 before removal of Expansive trait
-		break;
-	case JAPAN:
-		result = m_iHealthBonus*3;
-		break;
-	case ETHIOPIA:
-		result = m_iHealthBonus*6;
-		break;
-	case MAYA:
-		result = m_iHealthBonus*6;
-		break;
-	case VIKING:
-		result = m_iHealthBonus*6;
-		break;
-	case ARABIA:
-		result = m_iHealthBonus*3;
-		break;
-	case KHMER:
-		result = m_iHealthBonus*6;
-		break;
-	case FRANCE:
-		result = m_iHealthBonus*4;
-		break;
-	case SPAIN:
-		result = m_iHealthBonus*6;   //4 before removal of Expansive trait
-		break;
-	case ENGLAND:
-		result = m_iHealthBonus*6;   //4 before removal of Expansive trait
-		break;
-	case GERMANY:
-		result = m_iHealthBonus*7;   //4 before removal of Expansive trait
-		break;
-	case NETHERLANDS:
-		result = m_iHealthBonus*6;
-		break;
-	case RUSSIA:
-		result = m_iHealthBonus*6;   //4 before removal of Expansive trait
-		break;
-	case MALI:
-		result = m_iHealthBonus*4;
-		break;
-	case TURKEY:
-		result = m_iHealthBonus*6;
-		break;
-	case PORTUGAL:
-		result = m_iHealthBonus*6;
-		break;
-	case INCA:
-		result = m_iHealthBonus*4;
-		break;
-	case MONGOLIA:
-		result = m_iHealthBonus*6;  //7 //4 before removal of Expansive trait
-		break;
-	case AZTEC:
-		result = m_iHealthBonus*4;
-		break;
-	case AMERICA:
-		result = m_iHealthBonus*4;
-		break;
-	default:
-		result = m_iHealthBonus;
-		break;
-	}
+	// Individual civilization health tuning removed.
+	
 	if (GET_PLAYER((PlayerTypes)CELTIA).getCivilizationType() == (CivilizationTypes)4) { //late start condition (RFCMP)
 		if (pl < VIKING && result < 5) {
 			result += 1;

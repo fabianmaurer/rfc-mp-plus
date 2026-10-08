@@ -279,7 +279,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_THEOCRATIC_LEGITIMACY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -815,7 +815,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FREE_RELIGION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_STATE_ATHEISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -1363,7 +1363,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -1903,7 +1903,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_NATIONHOOD</FavoriteCivic>
+			<FavoriteCivic>CIVIC_NATIONALISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -2444,7 +2444,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_UNIVERSAL_SUFFRAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DEMOCRACY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -2989,7 +2989,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_STATE_RELIGION</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -3538,7 +3538,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_HEREDITARY_RULE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -4074,7 +4074,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_THEOCRATIC_LEGITIMACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -4614,7 +4614,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_NATIONHOOD</FavoriteCivic>
+			<FavoriteCivic>CIVIC_NATIONALISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -5164,7 +5164,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_THEOCRATIC_LEGITIMACY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -5716,7 +5716,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FREE_RELIGION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_STATE_ATHEISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -6264,7 +6264,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_NATIONHOOD</FavoriteCivic>
+			<FavoriteCivic>CIVIC_NATIONALISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -6809,7 +6809,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FREE_RELIGION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_STATE_ATHEISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -7358,7 +7358,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_UNIVERSAL_SUFFRAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DEMOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -7901,7 +7901,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_UNIVERSAL_SUFFRAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DEMOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_HINDUISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -8412,7 +8412,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_POLICE_STATE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DICTATORSHIP</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -8953,7 +8953,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_HEREDITARY_RULE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -9493,7 +9493,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_BUREAUCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_PLUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -10038,7 +10038,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FREE_MARKET</FavoriteCivic>
+			<FavoriteCivic>CIVIC_KNIGHTHOOD</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -10589,7 +10589,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_STATE_RELIGION</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -11131,7 +11131,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_HEREDITARY_RULE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -11679,7 +11679,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_GOD_STATE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -12231,7 +12231,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_HEREDITARY_RULE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -12781,7 +12781,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -13321,7 +13321,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_GOD_STATE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -13861,7 +13861,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_BUREAUCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_PLUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -14406,7 +14406,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_EMANCIPATION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CORPORATE_ECONOMY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -14955,7 +14955,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_HEREDITARY_RULE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -15491,7 +15491,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FREE_MARKET</FavoriteCivic>
+			<FavoriteCivic>CIVIC_KNIGHTHOOD</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -16040,7 +16040,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_STATE_PROPERTY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_PROFESSIONAL_ARMY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -16585,7 +16585,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_THEOCRATIC_LEGITIMACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -17136,7 +17136,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_POLICE_STATE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DICTATORSHIP</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -17679,7 +17679,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -18228,7 +18228,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_HEREDITARY_RULE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -18777,7 +18777,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -19326,7 +19326,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_BUREAUCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_PLUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -19882,7 +19882,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_BUREAUCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_PLUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_TAOISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -20419,7 +20419,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_STATE_RELIGION</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -20966,7 +20966,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_HEREDITARY_RULE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -21505,7 +21505,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_MERCANTILISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MILITIA</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -22045,7 +22045,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_GOD_STATE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -22592,7 +22592,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_POLICE_STATE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DICTATORSHIP</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -23131,7 +23131,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_ENVIRONMENTALISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CONSCRIPTION</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -23671,7 +23671,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_STATE_PROPERTY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_PROFESSIONAL_ARMY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -24227,7 +24227,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_HEREDITARY_RULE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -24794,7 +24794,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>-10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_STATE_RELIGION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -25350,7 +25350,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_MERCANTILISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MILITIA</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -25908,7 +25908,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -26465,7 +26465,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_CASTE_SYSTEM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_PLANNED_ECONOMY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -27028,7 +27028,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FREE_SPEECH</FavoriteCivic>
+			<FavoriteCivic>CIVIC_RULE_OF_LAW</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -27600,7 +27600,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FREE_RELIGION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_STATE_ATHEISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -28165,7 +28165,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_GOD_STATE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -28721,7 +28721,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_UNIVERSAL_SUFFRAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DEMOCRACY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>

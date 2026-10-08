@@ -1670,7 +1670,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	{
 		if (pabHasReligion[iI])
 		{
-			pNewCity->setHasReligion(((ReligionTypes)iI), true, false, true);
+			pNewCity->setHasReligion(((ReligionTypes)iI), true, false, true, true);
 		}
 
 		if (pabHolyCity[iI])
@@ -2693,6 +2693,8 @@ void CvPlayer::doTurn()
 	CvEventReporter::getInstance().beginPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
 
 	doUpdateCacheOnTurn();
+	// Refresh civic-based names for existing saves and changes made by events.
+	processCivNames();
 
 	GC.getGameINLINE().verifyDeals();
 
@@ -6957,6 +6959,11 @@ int CvPlayer::getImprovementUpgradeRate() const
 {
 	int iRate;
 
+	if (isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_SELF_SUFFICIENCY")))
+	{
+		return 0;
+	}
+
 	iRate = 1; // XXX
 
 	iRate *= std::max(0, (getImprovementUpgradeRateModifier() + 100));
@@ -8448,96 +8455,7 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 
 	//Rhye - start switch
 	int result = iThreshold;
-	switch (getID())
-	{
-		case EGYPT:
-			result = (iThreshold*140/100);
-			break;
-		case INDIA:
-			result = (iThreshold*140/100);
-			break;
-		case CHINA:
-			result = (iThreshold*140/100);
-			break;
-		case BABYLONIA:
-			result = (iThreshold*140/100);
-			break;
-		case GREECE:
-			result = (iThreshold*110/100);
-			break;
-		case PERSIA:
-			result = (iThreshold*110/100);
-			break;
-		case CARTHAGE:
-			result = (iThreshold*110/100);
-			break;
-		case ROME:
-			result = (iThreshold*110/100);
-			break;
-		case JAPAN:
-			result = (iThreshold*110/100);
-			break;
-		case ETHIOPIA:
-			if (getCurrentEra() <= 2) //help their UHV
-				result = (iThreshold*80/100);
-			else
-				result = (iThreshold*110/100);
-			break;
-		case MAYA:
-			result = (iThreshold*100/100);
-			break;
-		case VIKING:
-			result = (iThreshold*90/100);
-			break;
-		case ARABIA:	
-			result = (iThreshold*80/100);
-			break;
-		case KHMER:
-			result = (iThreshold*90/100);
-			break;
-		case FRANCE:
-			result = (iThreshold*70/100);
-			break;
-		case SPAIN:
-			result = (iThreshold*77/100);
-			break;
-		case ENGLAND:	
-			result = (iThreshold*74/100);
-			break;
-		case GERMANY:
-			result = (iThreshold*77/100);
-			break;
-		case RUSSIA:				
-			result = (iThreshold*77/100); 
-			break;
-		case NETHERLANDS:
-			result = (iThreshold*73/100);
-			break;
-		case MALI:
-			result = (iThreshold*80/100);
-			break;
-		case TURKEY:
-			result = (iThreshold*77/100);
-			break;
-		case PORTUGAL:
-			result = (iThreshold*73/100);
-			break;
-		case INCA:
-			result = (iThreshold*70/100);
-			break;
-		case MONGOLIA:
-			result = (iThreshold*70/100);
-			break;
-		case AZTEC:
-			result = (iThreshold*70/100);
-			break;
-		case AMERICA:
-			result = (iThreshold*64/100);
-			break;
-		default:
-			result = (iThreshold*100/100);
-			break;
-	}		
+	// Individual civilization threshold tuning removed.		
 	if (GET_PLAYER((PlayerTypes)CELTIA).getCivilizationType() == (CivilizationTypes)4) //late start condition (RFCMP)
 		if (getID() < VIKING) {
 			result *= 87;
@@ -12715,6 +12633,26 @@ void CvPlayer::setCivics(CivicOptionTypes eIndex, CivicTypes eNewValue)
 	{
 		m_paeCivics[eIndex] = eNewValue;
 
+		// Reprocess cached religious-building effects when entering/leaving atheism.
+		// The buildings and their ownership counts remain intact.
+		const CivicTypes eAtheism = (CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_ATHEISM");
+		if ((eOldCivic == eAtheism) != (eNewValue == eAtheism))
+		{
+			int iLoop;
+			for (CvCity* pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+			{
+				for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); ++iBuilding)
+				{
+					BuildingTypes eBuilding = (BuildingTypes)iBuilding;
+					if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION || GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION)
+					{
+						int iCount = pCity->getNumBuilding(eBuilding);
+						if (iCount != 0) pCity->processBuilding(eBuilding, (eNewValue == eAtheism ? -iCount : iCount), false, true);
+					}
+				}
+			}
+		}
+
 		if (eOldCivic != NO_CIVIC)
 		{
 			processCivics(eOldCivic, -1);
@@ -12724,6 +12662,27 @@ void CvPlayer::setCivics(CivicOptionTypes eIndex, CivicTypes eNewValue)
 			processCivics(getCivics(eIndex), 1);
 		}
 
+		// Clear assigned specialists on adopting self-sufficiency; free specialists
+		// are separate counts and remain available. Idle citizens remain a fallback.
+		if (eNewValue == (CivicTypes)GC.getInfoTypeForString("CIVIC_SELF_SUFFICIENCY"))
+		{
+			int iLoop;
+			for (CvCity* pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+			{
+				for (int iSpecialist = 0; iSpecialist < GC.getNumSpecialistInfos(); ++iSpecialist)
+				{
+					if (iSpecialist != GC.getDefineINT("DEFAULT_SPECIALIST"))
+					{
+						pCity->setForceSpecialistCount((SpecialistTypes)iSpecialist, 0);
+						pCity->setSpecialistCount((SpecialistTypes)iSpecialist, 0);
+					}
+				}
+			}
+		}
+
+		// Custom culture/happiness effects must refresh immediately after adoption.
+		updateCommerce();
+		invalidateYieldRankCache();
 		GC.getGameINLINE().updateSecretaryGeneral();
 
 		GC.getGameINLINE().AI_makeAssignWorkDirty();
@@ -16688,6 +16647,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeNoUnhealthyPopulationCount((GC.getCivicInfo(eCivic).isNoUnhealthyPopulation()) ? iChange : 0);
 	changeBuildingOnlyHealthyCount((GC.getCivicInfo(eCivic).isBuildingOnlyHealthy()) ? iChange : 0);
 	changeLargestCityHappiness(GC.getCivicInfo(eCivic).getLargestCityHappiness() * iChange);
+	changeExtraHappiness(GC.getCivicInfo(eCivic).getCivicHappiness() * iChange);
 	changeWarWearinessModifier(GC.getCivicInfo(eCivic).getWarWearinessModifier() * iChange);
 	changeFreeSpecialist(GC.getCivicInfo(eCivic).getFreeSpecialist() * iChange);
 	changeTradeRoutes(GC.getCivicInfo(eCivic).getTradeRoutes() * iChange);
@@ -21909,121 +21869,9 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 	}
 
 	//Rhye - start switch
-		switch (getID())
-	{
-		case EGYPT:
-			iThreshold *= 148;
-			iThreshold /= 100;
-			break;
-		case INDIA:
-			iThreshold *= 134;
-			iThreshold /= 100;
-			break;
-		case CHINA:
-			iThreshold *= 132;
-			iThreshold /= 100;
-			break;
-		case BABYLONIA:
-			iThreshold *= 138;
-			iThreshold /= 100;
-			break;
-		case GREECE:
-			iThreshold *= 130;
-			iThreshold /= 100;
-			break;
-		case PERSIA:
-			iThreshold *= 130;
-			iThreshold /= 100;		
-			break;
-		case CARTHAGE:
-			iThreshold *= 120;
-			iThreshold /= 100;		
-			break;
-		case ROME:
-			iThreshold *= 120;
-			iThreshold /= 100;
-			break;
-		case JAPAN:
-			iThreshold *= 112;
-			iThreshold /= 100;
-			break;
-		case ETHIOPIA:
-			iThreshold *= 100;
-			iThreshold /= 100;
-			break;
-		case MAYA:
-			iThreshold *= 110;
-			iThreshold /= 100;
-			break;
-		case VIKING:
-			iThreshold *= 80;
-			iThreshold /= 100;		
-			break;
-		case KHMER:
-			iThreshold *= 80;
-			iThreshold /= 100;
-			break;
-		case ARABIA:	
-			iThreshold *= 76;
-			iThreshold /= 100;
-			break;
-		case FRANCE:
-			iThreshold *= 69;
-			iThreshold /= 100;
-			break;
-		case SPAIN:
-			iThreshold *= 68;
-			iThreshold /= 100;
-			break;
-		case ENGLAND:	
-			iThreshold *= 67;
-			iThreshold /= 100;
-			break;
-		case GERMANY:
-			iThreshold *= 67;
-			iThreshold /= 100;
-			break;
-		case RUSSIA:				
-			iThreshold *= 70;
-			iThreshold /= 100;
-			break;
-		case NETHERLANDS:
-			iThreshold *= 73; //Amsterdam is a powerhouse anyway
-			iThreshold /= 100;
-			break;
-		case MALI:
-			iThreshold *= 78;
-			iThreshold /= 100;
-			break;
-		case TURKEY:
-			iThreshold *= 69;
-			iThreshold /= 100;		
-			break;
-		case PORTUGAL:
-			iThreshold *= 76; //Lisbon and Brazil too
-			iThreshold /= 100;
-			break;
-		case INCA:
-			iThreshold *= 69;
-			iThreshold /= 100;
-			break;
-		case MONGOLIA:
-			iThreshold *= 74;
-			iThreshold /= 100;
-			break;
-		case AZTEC:
-			iThreshold *= 68;
-			iThreshold /= 100;
-			break;
-		case AMERICA:
-			iThreshold *= 64;
-			iThreshold /= 100;
-			break;
-		default:
-			iThreshold *= 130;
-			iThreshold /= 100;		
-			break;
-	}
+		// Individual civilization threshold tuning removed.
+	if (getID() >= NUM_MAJOR_PLAYERS)
+		iThreshold = iThreshold * 130 / 100;
 	if (GET_PLAYER((PlayerTypes)CELTIA).getCivilizationType() == (CivilizationTypes)4) //late start condition (RFCMP)
 		if (getID() < VIKING) {
 			iThreshold *= 80;
@@ -23148,64 +22996,95 @@ void CvPlayer::processCivNames()
 			}
 			return;
 		}
-		else { //not a vassal
-			if (civDynamicNamesFlag[getID()] == 1 && getStateReligion() == 2) { //Islam
-				if (getCivics((CivicOptionTypes)0) == 0 || getCivics((CivicOptionTypes)0) == 1 || getCivics((CivicOptionTypes)0) == 3) { //desp/mon/pol
-					setCivDescription(civDynamicNames[getID()][8]);
-					return;	
-					}
-				else if (getCivics((CivicOptionTypes)0) == 2 || getCivics((CivicOptionTypes)0) == 4) { //rep/univ
-					setCivDescription(civDynamicNames[getID()][9]);
-					return;	
-					}
-				}
+		else { // Independent countries: classify the five new civic columns.
+			const bool bTribal = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_TRIBAL_SYSTEM"));
+			const bool bMonarchy = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_MONARCHY"));
+			const bool bRepublic = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_REPUBLIC"));
+			const bool bDemocracy = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_DEMOCRACY"));
+			const bool bDictatorship = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_DICTATORSHIP"));
+			const bool bNationalism = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_NATIONALISM"));
+			const bool bPlutocracy = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_PLUTOCRACY"));
+			const bool bRuleOfLaw = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_RULE_OF_LAW"));
+			const bool bPlanned = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_PLANNED_ECONOMY"));
+			const bool bAtheism = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_ATHEISM"));
+			const bool bGodState = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE"));
+			const bool bTheocracy = getStateReligion() != NO_RELIGION &&
+				(bGodState || isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_THEOCRATIC_LEGITIMACY")));
+			const bool bIslam = getStateReligion() != NO_RELIGION &&
+				getStateReligion() == (ReligionTypes)GC.getInfoTypeForString("RELIGION_ISLAM");
+			const bool bMilitary = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_PROFESSIONAL_ARMY")) ||
+				isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_CONSCRIPTION"));
 
-			if (getCivics((CivicOptionTypes)3) == 18 ) { //state property
-				setCivDescription(civDynamicNames[getID()][6]);
-				return;
-				}
-			else if (getCivics((CivicOptionTypes)0) == 3 || getCivics((CivicOptionTypes)1) == 8) { //police state or nationhood
-				setCivDescription(civDynamicNames[getID()][7]);
-				return;		
-				}
-
-			if (civDynamicNamesFlag[getID()] == 0 && getStateReligion() == 2) { //Islam
-				if (getCivics((CivicOptionTypes)0) == 0 || getCivics((CivicOptionTypes)0) == 1 || getCivics((CivicOptionTypes)0) == 3) { //desp/mon/pol
-					setCivDescription(civDynamicNames[getID()][8]);
-					return;	
-					}
-				else if (getCivics((CivicOptionTypes)0) == 2 || getCivics((CivicOptionTypes)0) == 4) { //rep/univ
-					setCivDescription(civDynamicNames[getID()][9]);
-					return;	
-					}
+			// Use stable text keys on every peer; selection never uses language or RNG.
+			const wchar* szForm = L"REPUBLIC";
+			if (bTribal && !bTheocracy)
+				szForm = L"TRIBAL";
+			else if (bTheocracy)
+			{
+				if (bMonarchy)
+					szForm = bIslam ? L"CALIPHATE" : L"HOLY_KINGDOM";
+				else if (bRepublic || bDemocracy)
+					szForm = bIslam ? L"ISLAMIC_REPUBLIC" : L"THEOCRATIC_REPUBLIC";
+				else
+					szForm = L"THEOCRACY";
+			}
+			else if (bMonarchy)
+			{
+				if (bIslam && isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_RELIGION")))
+					szForm = L"SULTANATE";
+				else if (bRuleOfLaw)
+					szForm = L"CONSTITUTIONAL";
+				else
+					szForm = getNumCities() > 6 ? L"EMPIRE" : L"KINGDOM";
+			}
+			else if (bPlanned)
+			{
+				if (bDemocracy)
+					szForm = L"SOCIALIST_DEMOCRACY";
+				else if (bRepublic)
+					szForm = L"SOCIALIST_REPUBLIC";
+				else
+					szForm = L"PEOPLES_STATE";
+			}
+			else if (bDictatorship)
+			{
+				if (bNationalism)
+					szForm = L"NATIONAL_STATE";
+				else if (bMilitary)
+					szForm = L"MILITARY";
+				else
+					szForm = L"DICTATORSHIP";
+			}
+			else if (bRepublic || bDemocracy)
+			{
+				if (bAtheism)
+					szForm = L"SECULAR_REPUBLIC";
+				else if (bIslam && isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_RELIGION")))
+					szForm = L"ISLAMIC_REPUBLIC";
+				else if (bPlutocracy)
+					szForm = L"MERCHANT_REPUBLIC";
+				else if (bNationalism)
+					szForm = L"NATIONAL_REPUBLIC";
+				else
+					szForm = bDemocracy ? L"DEMOCRACY" : L"REPUBLIC";
 			}
 
-			if (getCivics((CivicOptionTypes)0) == 2 || getCivics((CivicOptionTypes)0) == 4) { //rep/univ
-				setCivDescription(civDynamicNames[getID()][5]);
-				return;
-				}
-			else if (getCivics((CivicOptionTypes)0) == 0 || getCivics((CivicOptionTypes)0) == 1 || getCivics((CivicOptionTypes)0) == 3) { //desp/mon/pol
-				if (getCurrentEra() < civDynamicNamesEraThreshold[getID()]) {
-					if (getNumCities() <= 6) {
-						setCivDescription(civDynamicNames[getID()][1]);
-						return;
-					}
-					else {
-						setCivDescription(civDynamicNames[getID()][2]);
-						return;
-					}	
-				}
-				else { //industrial and modern
-					if (getNumCities() <= 6) {
-						setCivDescription(civDynamicNames[getID()][3]);
-						return;
-					}
-					else {
-						setCivDescription(civDynamicNames[getID()][4]);
-						return;
-					}	
-				}
+			// Historical church-state titles require the corresponding religion.
+			if (bTheocracy && getStateReligion() == (ReligionTypes)GC.getInfoTypeForString("RELIGION_CHRISTIANITY"))
+			{
+				if (getID() == GERMANY && bMonarchy)
+					szForm = L"HOLY_ROMAN";
+				else if (getID() == ROME && !bRepublic && !bDemocracy)
+					szForm = L"PAPAL_STATES";
 			}
+
+			CvWString szNameKey = civDynamicNames[getID()][0];
+			szNameKey = szNameKey.substr(0, szNameKey.length() - 2);
+			szNameKey += L"_";
+			szNameKey += szForm;
+			// Refresh cached names after translation edits or a language change.
+			if (m_szCivDescKey != szNameKey || m_szCivDesc != gDLL->getText(szNameKey))
+				setCivDescription(szNameKey);
 		}
 	}
 }

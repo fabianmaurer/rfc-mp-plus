@@ -641,6 +641,7 @@
 	<ElementType name="iExpInBorderModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="bBuildingOnlyHealthy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iLargestCityHappiness" content="textOnly" dt:type="int"/>
+	<ElementType name="iCivicHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iFreeSpecialist" content="textOnly" dt:type="int"/>
 	<ElementType name="bNoForeignTrade" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoCorporations" content="textOnly" dt:type="boolean"/>
@@ -781,6 +782,7 @@
 		<element type="iExpInBorderModifier"/>
 		<element type="bBuildingOnlyHealthy"/>
 		<element type="iLargestCityHappiness"/>
+		<element type="iCivicHappiness"/>
 		<element type="iWarWearinessModifier"/>
 		<element type="iFreeSpecialist"/>
 		<element type="iTradeRoutes"/>

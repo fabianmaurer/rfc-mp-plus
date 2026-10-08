@@ -29,9 +29,9 @@ class CvCivicsScreen:
 		self.BACKGROUND_ID = "CivicsBackground"
 		self.HELP_HEADER_NAME = "CivicsScreenHeaderName"
 
-		self.HEADINGS_WIDTH = 176 #199 #171
+		self.HEADINGS_WIDTH = 199
 		self.HEADINGS_TOP = 70
-		self.HEADINGS_SPACING = -4 #5 #0
+		self.HEADINGS_SPACING = 5
 		self.HEADINGS_BOTTOM = 280
 		self.HELP_TOP = 350
 		self.HELP_BOTTOM = 700 #610
@@ -90,6 +90,10 @@ class CvCivicsScreen:
 		screen = self.getScreen()
 		if screen.isActive():
 			return
+		# Civic definitions are available when the screen opens, not at import.
+		iColumns = gc.getNumCivicOptionInfos()
+		if iColumns > 0:
+			self.HEADINGS_WIDTH = (self.W_SCREEN - self.HEADINGS_SPACING * (iColumns + 1)) // iColumns
 		screen.setRenderInterfaceOnly(True);
 		screen.showScreen( PopupStates.POPUPSTATE_IMMEDIATE, False)
 	

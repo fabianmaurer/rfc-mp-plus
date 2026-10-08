@@ -5643,7 +5643,7 @@ void CvGame::setHolyCity(ReligionTypes eIndex, CvCity* pNewValue, bool bAnnounce
 		{
 			pHolyCity = getHolyCity(eIndex);
 
-			pHolyCity->setHasReligion(eIndex, true, bAnnounce, true);
+			pHolyCity->setHasReligion(eIndex, true, bAnnounce, true, true);
 			pHolyCity->changeReligionInfluence(eIndex, GC.getDefineINT("HOLY_CITY_INFLUENCE"));
 
 			pHolyCity->updateReligionCommerce();

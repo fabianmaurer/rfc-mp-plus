@@ -281,7 +281,7 @@ class Stability:
                         print ("Stability after normalization")
                         for iCiv in range(iNumPlayers):
                                 if (gc.getPlayer(iCiv).isAlive()):
-                                        print ("Base:", self.getBaseStabilityLastTurn(iCiv), "Modifier:", self.getStability(iCiv)-self.getBaseStabilityLastTurn(iCiv), "Total:", self.getStability(iCiv), "civic", gc.getPlayer(iCiv).getCivics(5), gc.getPlayer(iCiv).getCivilizationShortDescription(0))
+                                        print ("Base:", self.getBaseStabilityLastTurn(iCiv), "Modifier:", self.getStability(iCiv)-self.getBaseStabilityLastTurn(iCiv), "Total:", self.getStability(iCiv), "civic", gc.getPlayer(iCiv).getCivics(0), gc.getPlayer(iCiv).getCivilizationShortDescription(0))
                                 else:
                                         print ("dead", iCiv)
 
@@ -409,17 +409,34 @@ class Stability:
                 print ("Stability normalization:", self.getStability(iMonitorPlayer) - iTempNormalizationThreshold)
 
 
+        def getCivicCombinationStability(self, pPlayer):
+                # Resolve XML names at runtime, after the game has loaded its infos.
+                # This is a bounded base contribution, not a recurring permanent gain.
+                lCivics = [pPlayer.getCivics(iOption) for iOption in range(gc.getNumCivicOptionInfos())]
+
+                def hasCivic(szType):
+                        iCivic = gc.getInfoTypeForString(szType)
+                        return iCivic >= 0 and iCivic in lCivics
+
+                iScore = 0
+                if ((hasCivic("CIVIC_REPUBLIC") or hasCivic("CIVIC_DEMOCRACY")) and hasCivic("CIVIC_RULE_OF_LAW")):
+                        iScore += 2
+                if (hasCivic("CIVIC_MONARCHY") and hasCivic("CIVIC_KNIGHTHOOD")):
+                        iScore += 2
+                if (hasCivic("CIVIC_THEOCRATIC_LEGITIMACY") and (hasCivic("CIVIC_STATE_RELIGION") or hasCivic("CIVIC_GOD_STATE"))):
+                        iScore += 2
+                if (hasCivic("CIVIC_PLUTOCRACY") and hasCivic("CIVIC_CORPORATE_ECONOMY")):
+                        iScore += 1
+                if (hasCivic("CIVIC_THEOCRATIC_LEGITIMACY") and hasCivic("CIVIC_STATE_ATHEISM")):
+                        iScore -= 3
+                return max(-5, min(5, iScore))
+
+
         def updateBaseStability(self, iGameTurn, iPlayer):
 
                 pPlayer = gc.getPlayer(iPlayer)
                 teamPlayer = gc.getTeam(pPlayer.getTeam())
 
-                iCivic0 = pPlayer.getCivics(0)
-                iCivic1 = pPlayer.getCivics(1)
-                iCivic2 = pPlayer.getCivics(2)
-                iCivic3 = pPlayer.getCivics(3)
-                iCivic4 = pPlayer.getCivics(4)
-                iCivic5 = pPlayer.getCivics(5)
                 
                 if (iGameTurn % 3 != 0):
                         iNewBaseStability = self.getPartialBaseStability(iPlayer)
@@ -427,13 +444,8 @@ class Stability:
                         iIndustry = pPlayer.calculateTotalYield(YieldTypes.YIELD_PRODUCTION) #used later
                         iAgriculture = pPlayer.calculateTotalYield(YieldTypes.YIELD_FOOD) #used later
                         iPopulation = pPlayer.getRealPopulation() #used later                        
-                        iDifference = (iIndustry*1000000/iPopulation) - (iEconomy*1000000/iPopulation) #used later
                         iEraModifier = pPlayer.getCurrentEra() #used later
 
-                        if (iPlayer == con.iMali): #counterbalance its UP
-                                #iEconomy *= 4
-                                #iEconomy /= 7
-                                iEconomy /= 2
 
                         if (iPlayer == con.iEgypt or iPlayer == con.iMali or iPlayer == con.iEthiopia): #counterbalance the flood plains
                                 iAgriculture *= 7 #3
@@ -474,9 +486,6 @@ class Stability:
                                 if (gc.getTeam(gc.getPlayer(iLoopCiv2).getTeam()).isVassal(iPlayer)):
                                         iNewBaseStability += min(3,max(-3,self.getStability(iLoopCiv2)/4))                             
                                         #print("iNewBaseStability master",iNewBaseStability, iPlayer)
-                                        if (iCivic5 == 26):
-                                                iNewBaseStability += 4
-                                                #print("iNewBaseStability civic 6th column viceroyalty",iNewBaseStability, iPlayer)
 
                         iNumContacts = 0
                         for iLoopCiv3 in range( iNumPlayers ):     
@@ -507,128 +516,8 @@ class Stability:
 
                                         
                         iTempCivicThreshold = iNewBaseStability
-                        if (iCivic0 == 3 and iCivic1 == 9): #police and free speech
-                                iNewBaseStability -= 10
-                                #print("iNewBaseStability civic combination1",iNewBaseStability, iPlayer)
-                        
-                        if (iCivic4 == 22 and iCivic2 == 14): #theo and emanc
-                                iNewBaseStability -= 3
-                                #print("iNewBaseStability civic combination2",iNewBaseStability, iPlayer)
+                        iNewBaseStability += self.getCivicCombinationStability(pPlayer)
 
-                        if (iCivic0 == 4 and iCivic1 == 5): #univ and barbar
-                                iNewBaseStability -= 3
-                                #print("iNewBaseStability civic combination3",iNewBaseStability, iPlayer)
-                        
-                        if (iCivic2 == 13 and iCivic3 == 18): #caste and state prop
-                                iNewBaseStability -= 7
-                                #print("iNewBaseStability civic combination4",iNewBaseStability, iPlayer)
-
-                        if (iCivic0 == 0 and iCivic1 == 7): #despo and bureo
-                                iNewBaseStability -= 2
-                                #print("iNewBaseStability civic combination5",iNewBaseStability, iPlayer)
-                                   
-                        if (iCivic1 == 6 and iCivic3 == 18): #vassal and state prop
-                                iNewBaseStability -= 7
-                                #print("iNewBaseStability civic combination6",iNewBaseStability, iPlayer)
-
-                        if (iCivic1 == 8 and iCivic4 == 23): #nation and pacifism
-                                iNewBaseStability -= 10
-                                #print("iNewBaseStability civic combination7",iNewBaseStability, iPlayer)
-                                
-                        if (iCivic0 == 3 and iCivic1 == 8): #police and nation
-                                iNewBaseStability += 10
-                                #print("iNewBaseStability civic combination8",iNewBaseStability, iPlayer)
-
-                        if (iCivic0 == 3 and iCivic3 == 18): #police and state prop
-                                iNewBaseStability += 5
-                                #print("iNewBaseStability civic combination9",iNewBaseStability, iPlayer)
-
-                        if (iCivic1 == 8 and iCivic3 == 16): #nation and mercant
-                                iNewBaseStability += 6
-                                #print("iNewBaseStability civic combination10",iNewBaseStability, iPlayer)
-                                
-                        if (iCivic0 == 1 and iCivic1 == 6): #heredit and vassal
-                                iNewBaseStability += 3
-                                #print("iNewBaseStability civic combination11",iNewBaseStability, iPlayer)
-                                
-                        if (iCivic0 == 2 and iCivic1 == 7): #repres and bureo
-                                iNewBaseStability += 4
-                                #print("iNewBaseStability civic combination12",iNewBaseStability, iPlayer)
-
-                        if (iCivic2 == 14 and iCivic4 == 24): #emancip and free rel
-                                iNewBaseStability += 2
-                                #print("iNewBaseStability civic combination13",iNewBaseStability, iPlayer)
-
-                        if (iCivic1 == 6): #vassallage
-                                if (pPlayer.getCurrentEra() == 2):
-                                        iNewBaseStability += 3
-                                else:
-                                        iNewBaseStability -= 3
-                                #print("iNewBaseStability civic single 1",iNewBaseStability, iPlayer)
-
-                        if (iCivic1 == 7): #burocr
-                                if (pPlayer.getNumCities() <= 5):
-                                        iNewBaseStability += 5
-                                else:
-                                        iNewBaseStability += max(-7,(5 - pPlayer.getNumCities()))
-                                #print("iNewBaseStability civic single 2",iNewBaseStability, iPlayer)
-
-                        if (iCivic0 == 2): #represent
-                                iNewBaseStability += max(-7,2*(3 - pPlayer.getNumCities()))
-                                #print("iNewBaseStability civic single 3",iNewBaseStability, iPlayer)
-
-                        if (iCivic0 == 3): #police
-                                iNewBaseStability += min(10, pPlayer.getNumCities()/5) #slightly counterbalances the effect of number of cities (below)
-
-                                #print("iNewBaseStability civic single 4",iNewBaseStability, iPlayer)
-                                
-                        if (iCivic1 == 8): #nationhood
-                                iNewBaseStability += 3*teamPlayer.getAtWarCount(True)
-                                #print("iNewBaseStability civic single 5",iNewBaseStability, iPlayer)
-
-                        if (iCivic0 == 0): #despotism
-                                if (self.getStability(iPlayer) < -60):
-                                        self.setStability(iPlayer, self.getStability(iPlayer)+20)
-                                        #print("iNewBaseStability civic first column 1",iNewBaseStability, iPlayer)
-                        if (iCivic0 == 1): #hereditary rule
-                                if (self.getStability(iPlayer) < -50):
-                                        self.setStability(iPlayer, -50)
-                                        #print("iNewBaseStability civic first column 2",iNewBaseStability, iPlayer)
-                        if (iCivic0 == 2): #representation
-                                if (self.getStability(iPlayer) > 30):
-                                        iNewBaseStability += 5
-                                        #print("iNewBaseStability civic first column 3",iNewBaseStability, iPlayer)
-                        if (iCivic0 == 3): #police state
-                                if (self.getStability(iPlayer) < -60):
-                                        self.setStability(iPlayer, self.getStability(iPlayer)+30)
-                                        #print("iNewBaseStability civic first column 4",iNewBaseStability, iPlayer)
-                        if (iCivic0 == 4): #universal suffrage
-                                if (self.getStability(iPlayer) > 50):
-                                        iNewBaseStability += 10
-                                        #print("iNewBaseStability civic first column 5",iNewBaseStability, iPlayer)
-                                        
-                        if (teamPlayer.isHasTech(con.iDemocracy)):
-                                if (iCivic0 != 4): #universal suffrage
-                                        iNewBaseStability -= 3
-                                        #print("iNewBaseStability universal suffrage",iNewBaseStability, iPlayer)
-                                if (iCivic2 != 14): #emancipation
-                                        iNewBaseStability -= 3
-                                        #print("iNewBaseStability emancipation",iNewBaseStability, iPlayer)
-                        if (teamPlayer.isHasTech(con.iLiberalism)):
-                                if (iCivic1 != 9): #free speech
-                                        iNewBaseStability -= 3
-                                        #print("iNewBaseStability free speech",iNewBaseStability, iPlayer)
-
-                        if (teamPlayer.isHasTech(con.iBronzeWorking) and not teamPlayer.isHasTech(con.iConstitution)):
-                                if (iCivic2 == 11): #slavery
-                                        iNewBaseStability += 3
-                                        #print("iNewBaseStability slavery",iNewBaseStability, iPlayer)
-                                
-                        if (iCivic3 == 15): #decentralization
-                                if (teamPlayer.isHasTech(con.iEconomics)):
-                                        iNewBaseStability -= 5
-                                        #print("iNewBaseStability decentralization",iNewBaseStability, iPlayer)    
-                                        
                         self.setParameter(iPlayer, iParCivics3, False, iNewBaseStability - iTempCivicThreshold)
 
 
@@ -659,63 +548,49 @@ class Stability:
                                 pCurrent = gc.getMap().plot(city.getX(), city.getY())
                                 iTempCityStability = 0
 
-                                if (iCivic5 == 28 and city.isOccupation()):                  
-                                        #print("iTotalTempCityStability civic 6th column occupation", iTotalTempCityStability, city.getName(), iPlayer)
-                                        pass
-                                else:
-                                        if (city.angryPopulation(0) > 0):
-                                                iTempCityStability -= 2
-                                        #if (city.healthRate(False, 0) < 0):
-                                        #        iTempCityStability -= 2
-                                        if (city.getReligionBadHappiness() > 0):
-                                                iTempCityStability -= 2
-                                        if (city.getLargestCityHappiness() < 0):
-                                                iTempCityStability -= 2
-                                        if (city.getHurryAngerModifier() > 0):
-                                                iTempCityStability -= 2
-                                        if (city.getNoMilitaryPercentAnger() > 0):
-                                                iTempCityStability -= 1
-                                        if (city.getWarWearinessPercentAnger() > 0):
-                                                iTempCityStability -= 1
+                                if (city.angryPopulation(0) > 0):
+                                        iTempCityStability -= 2
+                                #if (city.healthRate(False, 0) < 0):
+                                #        iTempCityStability -= 2
+                                if (city.getReligionBadHappiness() > 0):
+                                        iTempCityStability -= 2
+                                if (city.getLargestCityHappiness() < 0):
+                                        iTempCityStability -= 2
+                                if (city.getHurryAngerModifier() > 0):
+                                        iTempCityStability -= 2
+                                if (city.getNoMilitaryPercentAnger() > 0):
+                                        iTempCityStability -= 1
+                                if (city.getWarWearinessPercentAnger() > 0):
+                                        iTempCityStability -= 1
 
-                                        if (iTempCityStability <= -5): #middle check, for optimization
-                                                iTotalTempCityStability += max(-5,iTempCityStability)
-                                                #print("iTotalTempCityStability", iTotalTempCityStability, city.getName(), iPlayer)
-                                                if (iTotalTempCityStability <= -10): #middle check, for optimization
-                                                        break
-                                                else:
-                                                        continue
-                                                    
-                                        if (iCivic4 == 21 or iCivic4 == 22): #org rel / theo
-                                                iCounter = 0
-                                                for iLoop in range(con.iNumReligions):                                    
-                                                        if (city.isHasReligion(iLoop) and pPlayer.getStateReligion() != iLoop):
-                                                                iTempCityStability -= 1
-                                                                
-                                        for iLoop in range(iNumTotalPlayers+1):
-                                                if (iLoop != iPlayer):
-                                                        if (pCurrent.getCulture(iLoop) > 0):
-                                                                if (pCurrent.getCulture(iPlayer) == 0): #division by zero may happen
-                                                                        iTempCityStability -= 2
-                                                                elif (iCivic1 == 8): #nationhood
-                                                                        if (pCurrent.getCulture(iLoop)*100/pCurrent.getCulture(iPlayer) >= 5):
-                                                                                iTempCityStability -= 2
-                                                                                break
-                                                                else:
-                                                                        if (pCurrent.getCulture(iLoop)*100/pCurrent.getCulture(iPlayer) >= 15):
-                                                                                if (iPlayer == con.iTurkey or iPlayer == con.iAmerica or iPlayer == con.iPortugal or iPlayer == con.iNetherlands): #they have too much foreign culture
-                                                                                        iTempCityStability -= 1
-                                                                                else:
-                                                                                        iTempCityStability -= 2
-                                                                                break
-
-                                        
-                                        if (iTempCityStability < 0):
-                                                iTotalTempCityStability += max(-5,iTempCityStability)
-                                                #print("iTotalTempCityStability", iTotalTempCityStability, city.getName(), iPlayer)
-                                        
-                                        if (iTotalTempCityStability <= -12): #middle check, for optimization
+                                if (iTempCityStability <= -5): #middle check, for optimization
+                                        iTotalTempCityStability += max(-5,iTempCityStability)
+                                        #print("iTotalTempCityStability", iTotalTempCityStability, city.getName(), iPlayer)
+                                        if (iTotalTempCityStability <= -10): #middle check, for optimization
                                                 break
+                                        else:
+                                                continue
+                                            
+                                for iLoop in range(iNumTotalPlayers+1):
+                                        if (iLoop != iPlayer):
+                                                if (pCurrent.getCulture(iLoop) > 0):
+                                                        if (pCurrent.getCulture(iPlayer) == 0): #division by zero may happen
+                                                                iTempCityStability -= 2
+                                                        else:
+                                                                if (pCurrent.getCulture(iLoop)*100/pCurrent.getCulture(iPlayer) >= 15):
+                                                                        if (iPlayer == con.iTurkey or iPlayer == con.iAmerica or iPlayer == con.iPortugal or iPlayer == con.iNetherlands): #they have too much foreign culture
+                                                                                iTempCityStability -= 1
+                                                                        else:
+                                                                                iTempCityStability -= 2
+                                                                        break
+
+                                
+                                if (iTempCityStability < 0):
+                                        iTotalTempCityStability += max(-5,iTempCityStability)
+                                        #print("iTotalTempCityStability", iTotalTempCityStability, city.getName(), iPlayer)
+                                
+                                if (iTotalTempCityStability <= -12): #middle check, for optimization
+                                        break
 
                         if (iTotalTempCityStability < 0):
                                 iNewBaseStability += max(-12, iTotalTempCityStability)
@@ -733,12 +608,7 @@ class Stability:
                                 
                         if (iEraModifier >= 3):
                                 iEraModifier += 1
-                        if (iCivic5 != 29):
-                                iNewBaseStability += min(10,(iImports+iExports)/(2*iEraModifier+1) -iImportExportOffset)
-                                #print("iNewBaseStability import/export check", iNewBaseStability, iPlayer)
-                        else:
-                                iNewBaseStability += max(0, min(10,(iImports+iExports)/(2*iEraModifier+1) -iImportExportOffset))
-                                #print("iNewBaseStability import/export check + civic 6th column commonwealth", iNewBaseStability, iPlayer)
+                        iNewBaseStability += min(10,(iImports+iExports)/(2*iEraModifier+1) -iImportExportOffset)
 
                         iEconomy = pPlayer.calculateTotalYield(YieldTypes.YIELD_COMMERCE) - pPlayer.calculateInflatedCosts()
                         iIndustry = pPlayer.calculateTotalYield(YieldTypes.YIELD_PRODUCTION)
@@ -752,10 +622,6 @@ class Stability:
                                 iPopulation *= 4
                                 iPopulation /= 3
 
-                        if (iPlayer == con.iMali): #counterbalance its UP
-                                #iEconomy *= 4
-                                #iEconomy /= 7
-                                iEconomy /= 2
 
                         if (iPlayer == con.iEgypt or iPlayer == con.iMali or (iPlayer == con.iEthiopia and not gc.getPlayer(con.iEgypt).isAlive())): #counterbalance the flood plains
                                 iAgriculture *= 75 #3
@@ -765,16 +631,10 @@ class Stability:
                         #print("iNewBaseStability Agriculture/Population check", iNewBaseStability, iPlayer)
                         iMaxEconomyGain = 3
                         iMaxEconomyLoss = -3
-                        if (iCivic5 != 29):
-                                iNewBaseStability += min(iMaxEconomyGain,max(iMaxEconomyLoss,(iEconomy*100000/iPopulation - 5 + (iEraModifier - 3)*2))) #less important cos it's already counted in other parameters
-                                #print("iNewBaseStability Economy/Population check", iNewBaseStability, iPlayer)
-                        else:
-                                iNewBaseStability += min(iMaxEconomyGain,max(0,(iEconomy*100000/iPopulation - 5 + (iEraModifier - 3)*2)))
-                                #print("iNewBaseStability Economy/Population check + civic 6th column commonwealth", iNewBaseStability, iPlayer)
+                        iNewBaseStability += min(iMaxEconomyGain,max(iMaxEconomyLoss,(iEconomy*100000/iPopulation - 5 + (iEraModifier - 3)*2))) #less important cos it's already counted in other parameters
 
                         self.setParameter(iPlayer, iParEconomy3, False, iNewBaseStability - iTempEconomyThreshold)
 
-                        iDifference = (iIndustry*1000000/iPopulation) - (iEconomy*1000000/iPopulation)
 
 
 
@@ -835,88 +695,17 @@ class Stability:
                                 self.setParameter(iPlayer, iParEconomyE, True, self.getStability(iPlayer) - iTempEconomyThreshold)
 
 
-                                if (self.getGreatDepressionCountdown(iPlayer) == 0):   #great depression checked when GNP can be compared
-                                        if (iCivic3 == 17 and teamPlayer.isHasTech(con.iCorporation)): #free market
-                                                if (not pPlayer.isGoldenAge()):
-                                                        if ((iDifference > 11 and self.getGNPnew(iPlayer) > self.getGNPold(iPlayer)) or \
-                                                            (iDifference > 6 and self.getGNPnew(iPlayer) > self.getGNPold(iPlayer) + 4)): #low wages and big growth
-                                                                self.setGreatDepressionCountdown(iPlayer, 8) #8 turns
-                                                                print ("Start Great Depression Player", iPlayer)
-                                                                
-                if (self.getGreatDepressionCountdown(iPlayer) < 0):
-                        self.setGreatDepressionCountdown(iPlayer, self.getGreatDepressionCountdown(iPlayer)+1)
-                                                                
-                iTempEconomyThreshold = iNewBaseStability
-                if (self.getGreatDepressionCountdown(iPlayer) > 0):
-                        iNewBaseStability -= (15 + min(15, iDifference))
-                        if (iPlayer == utils.getHumanID()):
-                                CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_GREAT_DEPRESSION", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
-                        #print("iNewBaseStability civic single 5: great depression",iNewBaseStability, iPlayer)
-                        self.setGreatDepressionCountdown(iPlayer, self.getGreatDepressionCountdown(iPlayer)-1)
-                        bQuit = False
-                        if (self.getGreatDepressionCountdown(iPlayer) == 0): #just quit
-                                bQuit = True
-                        if (self.getGreatDepressionCountdown(iPlayer) > 0 and self.getGreatDepressionCountdown(iPlayer) <= 7): #should last at least 3 turns 
-                                if ((iDifference < 5 and self.getGNPnew(iPlayer) <= self.getGNPold(iPlayer)) or iCivic3 != 17): #better wages and natural deflation, or no free market anymore
-                                        bQuit = True
-                                        
-                        if (bQuit == True):
-                                self.setGreatDepressionCountdown(iPlayer, -30) ##quit from the spiral immediately and set turns of immunity
-                                bOtherDepressionAround = False
-                                for iLoopCiv in range(iNumPlayers):
-                                        if (self.getGreatDepressionCountdown(iLoopCiv) > 0):
-                                                bOtherDepressionAround = True
-                                if (bOtherDepressionAround == False):
-                                        for iLoopCiv in range(iNumPlayers):
-                                                if (iLoopCiv != iPlayer):
-                                                        self.setGreatDepressionCountdown(iPlayer, -20) ##set turns of immunity for the other civs
-
                 if (iGameTurn % 3 == 2):
                         self.setGNPold(iPlayer, self.getGNPnew(iPlayer))
                         self.setGNPnew(iPlayer, 0)
 
-                if (self.getGreatDepressionCountdown(iPlayer) == 0 and iCivic3 != 18 and not pPlayer.isGoldenAge()):   #acquire only if there's no depression already and if it's not immune, no state property and no golden age
-                        for iLoopCiv in range(iNumPlayers):
-                                if (teamPlayer.isOpenBorders(iLoopCiv)):
-                                        if (self.getGreatDepressionCountdown(iLoopCiv) > 0):
-                                                if (iCivic3 == 16): #mercantilism
-                                                        iNewBaseStability -= 4
-                                                else:
-                                                        iNewBaseStability -= 10
-                                                #print("acquired great depression", iPlayer, "from", iLoopCiv)                        
-                                                #print("iNewBaseStability: acquired great depression",iNewBaseStability, iPlayer)                        
-                                                if (iPlayer == utils.getHumanID()):
-                                                        CyInterface().addMessage(iPlayer, False, con.iDuration, \
-                                                                                 CyTranslator().getText("TXT_KEY_STABILITY_GREAT_DEPRESSION_INFLUENCE", (gc.getPlayer(iLoopCiv).getCivilizationDescription(0),)), \
-                                                                                 "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
-                                                break #just once is enough
-         
-                
-                if (teamPlayer.isHasTech(con.iCommunism)): #post communism
-                        if (iCivic3 == 18): #state prop
-                                self.setStatePropertyCountdown(iPlayer, -1) #has state property
-                        if (self.getStatePropertyCountdown(iPlayer) == -1 and iCivic3 != 18): #switched
-                                self.setStatePropertyCountdown(iPlayer, 8) #8 turns
-                        if (self.getStatePropertyCountdown(iPlayer) > 0):
-                                iNewBaseStability -= 25
-                                self.setStatePropertyCountdown(iPlayer, self.getStatePropertyCountdown(iPlayer)-1)
-                                if (iPlayer == utils.getHumanID()):
-                                        CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_POST_COMMUNISM", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
-                                #print("iNewBaseStability civic single 6: post communism",iNewBaseStability, iPlayer)
-                self.setParameter(iPlayer, iParEconomy1, False, iNewBaseStability - iTempEconomyThreshold)
+                # Legacy depression and post-planned-economy timers are ignored.
+                # Keep their stored fields so older save dictionaries remain readable.
+                self.setParameter(iPlayer, iParEconomy1, False, 0)
 
                 iTempCivicThreshold = iNewBaseStability
-                if (teamPlayer.isHasTech(con.iDemocracy)): #transition to democracy
-                        if (iCivic0 == 0 or iCivic0 == 1 or iCivic0 == 3): #despotic governments
-                                self.setDemocracyCountdown(iPlayer, -1) #has a desp. gov.
-                        if (self.getDemocracyCountdown(iPlayer) == -1 and iCivic0 == 4): #switched to universal suffrage
-                                self.setDemocracyCountdown(iPlayer, 7) #7 turns
-                        if (self.getDemocracyCountdown(iPlayer) > 0):
-                                iNewBaseStability -= 20
-                                self.setDemocracyCountdown(iPlayer, self.getDemocracyCountdown(iPlayer)-1)
-                                if (iPlayer == utils.getHumanID()):
-                                        CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_DEMOCRACY", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
-                                #print("iNewBaseStability civic single 7: transition to democracy",iNewBaseStability, iPlayer)
+                # Democracy has no transition penalty. Legacy countdown data remains
+                # in saved games for compatibility but no longer affects stability.
                 self.setParameter(iPlayer, iParCivics1, False, iNewBaseStability - iTempCivicThreshold)
 
                 iTempExpansionThreshold = iNewBaseStability
@@ -990,12 +779,6 @@ class Stability:
                 if (gc.getPlayer(iPlayer).getNumCities() == 1):
                         self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
                         #print("Stability - capital built", iPlayer)
-                if (gc.getPlayer(iPlayer).getCivics(5) == 27):
-                        capital = gc.getPlayer(iPlayer).getCapitalCity()
-                        iDistance = utils.calculateDistance(x, y, capital.getX(), capital.getY())
-                        if (iDistance >= 15):
-                                self.setStability(iPlayer, self.getStability(iPlayer) + 2 )
-                                #print("Stability - civic 6th column resettlement", iPlayer)
                 self.setParameter(iPlayer, iParExpansionE, True, self.getStability(iPlayer) - iTempExpansionThreshold) 
                              
 
@@ -1039,15 +822,6 @@ class Stability:
                         else:
                                 self.setStability(playerType, self.getStability(playerType) + max(0,min(5,(12 - gc.getPlayer(playerType).getNumCities())/2)) )
                         #print("Stability - city acquired", playerType)
-                        #Persian UP
-                        if (playerType == con.iPersia and gc.getPlayer(playerType).getCivics(5) != 28):
-                                if (bConquest):                                
-                                        self.setStability(playerType, self.getStability(playerType) + 2)
-                        
-                        if (gc.getPlayer(playerType).getCivics(5) == 28):
-                                if (bConquest):
-                                        self.setStability(playerType, self.getStability(playerType) + 2 )
-                                        #print("iNewBaseStability civic 6th column occupation",playerType)
                         if (owner < con.iNumPlayers):
                                 if (city.getX() == tCapitals[owner][0] and city.getY() == tCapitals[owner][1]):
                                         self.setStability(playerType, self.getStability(playerType) + 3)
@@ -1067,10 +841,8 @@ class Stability:
                         self.setParameter(iOwner, iParExpansionE, True, - 3)
 
                 if (playerType < con.iNumPlayers):
-                        iTempExpansionThreshold = self.getStability(playerType)                 
-                        if (gc.getPlayer(playerType).getCivics(5) == 28):
-                                self.setStability(playerType, self.getStability(playerType) - 2 ) #balance the +2 and makes 0 for city razed
-                        self.setParameter(playerType, iParExpansionE, True, self.getStability(playerType) - iTempExpansionThreshold) 
+                        iTempExpansionThreshold = self.getStability(playerType)
+                        self.setParameter(playerType, iParExpansionE, True, self.getStability(playerType) - iTempExpansionThreshold)
 
 
                                                 
@@ -1181,15 +953,9 @@ class Stability:
                 elif (iBuilding >= con.iHeroicEpic and iBuilding <= con.iOlympicPark): #wonder
                         self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
                         #print("Stability - wonder built", iPlayer)
-                        if (self.getGreatDepressionCountdown(iPlayer) >= 2):
-                                self.setGreatDepressionCountdown(iPlayer, self.getGreatDepressionCountdown(iPlayer)-2)
-                                #print("Stability - Great Depression reduced", iPlayer)
                 elif (iBuilding == con.iJail or iBuilding == con.iIndianMausoleum): #jail
                         if (self.getStability(iPlayer) < 20):
-                                if (gc.getPlayer(iPlayer).getCivics(0) == 3): #police state
-                                        self.setStability(iPlayer, self.getStability(iPlayer) + 2 )
-                                else:
-                                        self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
+                                self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
                         #print("Stability - jail built", iPlayer)
                 elif (iBuilding == con.iCourthouse or iBuilding == con.iAztecSacrificialAltar or iBuilding == con.iSumerianZiggurat): #courthouse
                         if (not city.hasBuilding(con.iPalace) and not city.hasBuilding(con.iForbiddenPalace) and not city.hasBuilding(con.iSummerPalace)):

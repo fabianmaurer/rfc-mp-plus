@@ -5389,6 +5389,8 @@ bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestV
 		return false;
 	}
 
+	if (GET_PLAYER(pCity->getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_ATHEISM"))) return false;
+
 	if (pCity->isHasReligion(eReligion))
 	{
 		return false;
@@ -7820,11 +7822,22 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 	int iExtraModifier;
 
 	iExtraModifier = getExtraCombatPercent();
-	iModifier += iExtraModifier;
-	if (pCombatDetails != NULL)
+
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_THEOCRATIC_LEGITIMACY")))
 	{
-		pCombatDetails->iExtraCombatPercent = iExtraModifier;
+		iExtraModifier += 10;
 	}
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_WARRIOR_SOCIETY")) && getUnitCombatType() == GC.getInfoTypeForString("UNITCOMBAT_SIEGE"))
+	{
+		iExtraModifier -= 20;
+	}
+	const CvPlot* pCombatPlot = (pPlot != NULL ? pPlot : plot());
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_MILITIA")) && pCombatPlot->getOwnerINLINE() != getOwnerINLINE())
+	{
+		iExtraModifier -= 10;
+	}
+	iModifier += iExtraModifier;
+	if (pCombatDetails != NULL) pCombatDetails->iExtraCombatPercent = iExtraModifier;
 	
 	// do modifiers for animals and barbarians (leaving these out for bAttackingUnknownDefender case)
 	if (pAttacker != NULL)
@@ -8849,7 +8862,12 @@ int CvUnit::collateralDamageMaxUnits() const
 
 int CvUnit::cityAttackModifier() const
 {
-	return (m_pUnitInfo->getCityAttackModifier() + getExtraCityAttackPercent());
+	int iModifier = m_pUnitInfo->getCityAttackModifier() + getExtraCityAttackPercent();
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_KNIGHTHOOD")))
+	{
+		iModifier += 10;
+	}
+	return iModifier;
 }
 
 
