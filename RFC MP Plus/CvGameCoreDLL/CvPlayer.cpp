@@ -1670,7 +1670,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	{
 		if (pabHasReligion[iI])
 		{
-			pNewCity->setHasReligion(((ReligionTypes)iI), true, false, true);
+			pNewCity->setHasReligion(((ReligionTypes)iI), true, false, true, true);
 		}
 
 		if (pabHolyCity[iI])
@@ -12722,6 +12722,26 @@ void CvPlayer::setCivics(CivicOptionTypes eIndex, CivicTypes eNewValue)
 	{
 		m_paeCivics[eIndex] = eNewValue;
 
+		// Reprocess cached religious-building effects when entering/leaving atheism.
+		// The buildings and their ownership counts remain intact.
+		const CivicTypes eAtheism = (CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_ATHEISM");
+		if ((eOldCivic == eAtheism) != (eNewValue == eAtheism))
+		{
+			int iLoop;
+			for (CvCity* pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+			{
+				for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); ++iBuilding)
+				{
+					BuildingTypes eBuilding = (BuildingTypes)iBuilding;
+					if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION || GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION)
+					{
+						int iCount = pCity->getNumBuilding(eBuilding);
+						if (iCount != 0) pCity->processBuilding(eBuilding, (eNewValue == eAtheism ? -iCount : iCount), false, true);
+					}
+				}
+			}
+		}
+
 		if (eOldCivic != NO_CIVIC)
 		{
 			processCivics(eOldCivic, -1);
@@ -12731,6 +12751,27 @@ void CvPlayer::setCivics(CivicOptionTypes eIndex, CivicTypes eNewValue)
 			processCivics(getCivics(eIndex), 1);
 		}
 
+		// Clear assigned specialists on adopting self-sufficiency; free specialists
+		// are separate counts and remain available. Idle citizens remain a fallback.
+		if (eNewValue == (CivicTypes)GC.getInfoTypeForString("CIVIC_SELF_SUFFICIENCY"))
+		{
+			int iLoop;
+			for (CvCity* pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+			{
+				for (int iSpecialist = 0; iSpecialist < GC.getNumSpecialistInfos(); ++iSpecialist)
+				{
+					if (iSpecialist != GC.getDefineINT("DEFAULT_SPECIALIST"))
+					{
+						pCity->setForceSpecialistCount((SpecialistTypes)iSpecialist, 0);
+						pCity->setSpecialistCount((SpecialistTypes)iSpecialist, 0);
+					}
+				}
+			}
+		}
+
+		// Custom culture/happiness effects must refresh immediately after adoption.
+		updateCommerce();
+		invalidateYieldRankCache();
 		GC.getGameINLINE().updateSecretaryGeneral();
 
 		GC.getGameINLINE().AI_makeAssignWorkDirty();

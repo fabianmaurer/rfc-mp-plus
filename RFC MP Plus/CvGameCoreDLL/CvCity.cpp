@@ -3221,19 +3221,13 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 		iMultiplier += getMilitaryProductionModifier();
 	}
 
-	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_DICTATORSHIP")) || GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_NATIONALISM")))
-	{
-		iMultiplier += 20;
-	}
+	// Unit production bonuses also apply to workers, settlers and missionaries.
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_TRIBAL_SYSTEM"))) iMultiplier += 20;
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_CONSCRIPTION"))) iMultiplier += 25;
 
 	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_KNIGHTHOOD")) && GC.getUnitInfo(eUnit).getUnitCombatType() == GC.getInfoTypeForString("UNITCOMBAT_MOUNTED"))
 	{
 		iMultiplier += 25;
-	}
-
-	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE")) && GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
-	{
-		iMultiplier += 10;
 	}
 
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
@@ -3244,9 +3238,16 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 		}
 	}
 
-	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_RELIGION")) && GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()) && GC.getUnitInfo(eUnit).getReligionSpreads(GET_PLAYER(getOwnerINLINE()).getStateReligion()) > 0)
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_RELIGION")))
 	{
-		iMultiplier += 100;
+		for (int iReligion = 0; iReligion < GC.getNumReligionInfos(); ++iReligion)
+		{
+			if (GC.getUnitInfo(eUnit).getReligionSpreads(iReligion) > 0)
+			{
+				iMultiplier += 100;
+				break;
+			}
+		}
 	}
 
 	return std::max(0, iMultiplier);
@@ -3265,19 +3266,9 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 		}
 	}
 
-	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_DICTATORSHIP")) || GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_NATIONALISM")))
-	{
-		iMultiplier += 20;
-	}
-
 	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_MONARCHY")) && isLimitedWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
 	{
 		iMultiplier += 25;
-	}
-
-	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE")) && GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
-	{
-		iMultiplier += 10;
 	}
 
 	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION)
@@ -3295,16 +3286,6 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 int CvCity::getProductionModifier(ProjectTypes eProject) const
 {
 	int iMultiplier = GET_PLAYER(getOwnerINLINE()).getProductionModifier(eProject);
-
-	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_DICTATORSHIP")) || GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_NATIONALISM")))
-	{
-		iMultiplier += 20;
-	}
-
-	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE")) && GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
-	{
-		iMultiplier += 10;
-	}
 
 	if (GC.getProjectInfo(eProject).isSpaceship())
 	{
@@ -3839,14 +3820,17 @@ void CvCity::processBonus(BonusTypes eBonus, int iChange)
 }
 
 
-void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolete)
+void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolete, bool bCivicTransition)
 {
 	UnitTypes eGreatPeopleUnit;
 	int iI, iJ;
 
-	if (!(GET_TEAM(getTeam()).isObsoleteBuilding(eBuilding)) || bObsolete)
+	const bool bReligious = GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION || GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION;
+	const bool bEffects = bCivicTransition || !bReligious || !GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_ATHEISM"));
+
+	if ((!(GET_TEAM(getTeam()).isObsoleteBuilding(eBuilding)) || bObsolete) && bEffects)
 	{
-		if (iChange > 0)
+		if (iChange > 0 && !bCivicTransition)
 		{
 			CorporationTypes eCorporation = (CorporationTypes)GC.getBuildingInfo(eBuilding).getFoundsCorporation();
 			if (NO_CORPORATION != eCorporation && !GC.getGameINLINE().isCorporationFounded(eCorporation))
@@ -4014,7 +3998,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		GC.getGameINLINE().processBuilding(eBuilding, iChange);
 	}
 
-	if (!bObsolete)
+	if (!bObsolete && bEffects)
 	{
 		changeBuildingDefense(GC.getBuildingInfo(eBuilding).getDefenseModifier() * iChange);
 		changeBuildingBombardDefense(GC.getBuildingInfo(eBuilding).getBombardDefenseModifier() * iChange);
@@ -4031,6 +4015,11 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 		}
 
+	}
+
+	// Civic changes affect building effects, never ownership or wonder limits.
+	if (!bObsolete && !bCivicTransition)
+	{
 		GET_TEAM(getTeam()).changeBuildingClassCount((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange);
 		GET_PLAYER(getOwnerINLINE()).changeBuildingClassCount((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange);
 
@@ -4315,6 +4304,9 @@ int CvCity::getCulturePercentAnger() const
 
 int CvCity::getReligionPercentAnger() const
 {
+	// Tolerance removes religion anger without granting extra happiness.
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_TOLERANCE"))) return 0;
+
 	int iCount;
 	int iAnger;
 	int iI;
@@ -7922,6 +7914,13 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra) const
 
 	iModifier += GET_PLAYER(getOwnerINLINE()).getYieldRateModifier(eIndex);
 
+	// This bonus affects all production, including conversion to commerce.
+	if (eIndex == YIELD_PRODUCTION && GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE")) && GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
+	{
+		iModifier += 10;
+	}
+
+
 	if (isCapital())
 	{
 		iModifier += GET_PLAYER(getOwnerINLINE()).getCapitalYieldRateModifier(eIndex);
@@ -8322,7 +8321,8 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 		}
 		if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_ANCESTOR_CULT")))
 		{
-			BuildingTypes eObelisk = (BuildingTypes)GC.getInfoTypeForString("BUILDING_OBELISK");
+			BuildingClassTypes eMonumentClass = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_OBELISK");
+			BuildingTypes eObelisk = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eMonumentClass);
 			if (eObelisk != NO_BUILDING)
 			{
 				iBaseCommerceRate += 100 * getNumActiveBuilding(eObelisk);
@@ -8429,6 +8429,9 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 	FAssertMsg(eBuilding < GC.getNumBuildingInfos(), "GC.getNumBuildingInfos expected to be >= 0");
 
 	iCommerce = 0;
+
+	// Even obsolete-safe culture and shrine income are disabled by atheism.
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_ATHEISM")) && (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION || GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION)) return 0;
 
 	if (getNumBuilding(eBuilding) > 0)
 	{
@@ -8587,6 +8590,11 @@ void CvCity::updateReligionCommerce(CommerceTypes eIndex)
 
 void CvCity::updateReligionCommerce()
 {
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE")))
+	{
+		GET_PLAYER(getOwnerINLINE()).invalidateYieldRankCache(YIELD_PRODUCTION);
+	}
+
 	int iI;
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -9909,7 +9917,7 @@ bool CvCity::isSpecialistValid(SpecialistTypes eIndex, int iExtra) const
 {
 	static const CivicOptionTypes eLaborOption = (CivicOptionTypes)GC.getInfoTypeForString("CIVICOPTION_LABOR");
 	static const CivicTypes eSelfSufficiency = (CivicTypes)GC.getInfoTypeForString("CIVIC_SELF_SUFFICIENCY");
-	if (iExtra > 0 && eIndex != GC.getDefineINT("DEFAULT_SPECIALIST") &&
+	if (iExtra >= 0 && eIndex != GC.getDefineINT("DEFAULT_SPECIALIST") &&
 		GET_PLAYER(getOwnerINLINE()).getCivics(eLaborOption) == eSelfSufficiency)
 	{
 		return false;
@@ -10580,8 +10588,12 @@ bool CvCity::isHasReligion(ReligionTypes eIndex) const
 }
 
 
-void CvCity::setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows)
+void CvCity::setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows, bool bPreserve)
 {
+	// Block spread from missionaries, events and Python alike. Ownership transfers
+	// preserve existing religions; holy-city founding is a separate game action.
+	if (bNewValue && !bPreserve && GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_ATHEISM"))) return;
+
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumReligionInfos(), "eIndex expected to be < GC.getNumReligionInfos()");
 
@@ -12108,6 +12120,8 @@ void CvCity::doDecay()
 
 void CvCity::doReligion()
 {
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_ATHEISM"))) return;
+
 	CvCity* pLoopCity;
 	int iRandThreshold;
 	int iSpread;

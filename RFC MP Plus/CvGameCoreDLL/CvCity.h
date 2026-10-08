@@ -141,7 +141,7 @@ public:
 	int getBonusYieldRateModifier(YieldTypes eIndex, BonusTypes eBonus) const;	// Exposed to Python 
 
 	void processBonus(BonusTypes eBonus, int iChange);
-	void processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolete = false);
+	void processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolete = false, bool bCivicTransition = false);
 	void processProcess(ProcessTypes eProcess, int iChange);
 	void processSpecialist(SpecialistTypes eSpecialist, int iChange);
 
@@ -799,7 +799,7 @@ public:
 	void setNumFreeBuilding(BuildingTypes eIndex, int iNewValue);
 
 	bool isHasReligion(ReligionTypes eIndex) const;
-	void setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true);
+	void setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true, bool bPreserve = false);
 
 	bool isHasCorporation(CorporationTypes eIndex) const;
 	void setHasCorporation(CorporationTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true);

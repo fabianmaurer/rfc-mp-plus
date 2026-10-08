@@ -365,13 +365,17 @@ class CvRFCEventHandler:
                 pPlayer = gc.getPlayer(iPlayer)
                 iDemocracy = CvUtil.findInfoTypeNum(gc.getCivicInfo, gc.getNumCivicInfos(), 'CIVIC_DEMOCRACY')
                 if (pPlayer.isAlive() and iGameTurn > 0 and iGameTurn % 10 == 0 and pPlayer.getCivics(0) == iDemocracy):
-                        iCivicOption = 1 + gc.getGame().getSorenRandNum(4, "Democracy election civic column")
-                        iCurrentCivic = pPlayer.getCivics(iCivicOption)
-                        lAvailableCivics = []
-                        for iCivic in range(gc.getNumCivicInfos()):
-                                if (gc.getCivicInfo(iCivic).getCivicOptionType() == iCivicOption and iCivic != iCurrentCivic and pPlayer.canDoCivics(iCivic)):
-                                        lAvailableCivics.append(iCivic)
-                        if (len(lAvailableCivics) > 0):
+                        lEligibleColumns = []
+                        for iOption in range(1, gc.getNumCivicOptionInfos()):
+                                lAvailableCivics = []
+                                for iCivic in range(gc.getNumCivicInfos()):
+                                        if (gc.getCivicInfo(iCivic).getCivicOptionType() == iOption and iCivic != pPlayer.getCivics(iOption) and pPlayer.canDoCivics(iCivic)):
+                                                lAvailableCivics.append(iCivic)
+                                if (len(lAvailableCivics) > 0):
+                                        lEligibleColumns.append((iOption, lAvailableCivics))
+                        if (len(lEligibleColumns) > 0):
+                                iColumn = gc.getGame().getSorenRandNum(len(lEligibleColumns), "Democracy election civic column")
+                                iCivicOption, lAvailableCivics = lEligibleColumns[iColumn]
                                 iNewCivic = lAvailableCivics[gc.getGame().getSorenRandNum(len(lAvailableCivics), "Democracy election civic result")]
                                 pPlayer.setCivics(iCivicOption, iNewCivic)
                                 if (pPlayer.isHuman()):
