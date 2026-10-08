@@ -343,11 +343,11 @@
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_RFCMP_CIVIC_CORPORATE_ECONOMY</Tag>
-        <English>Corporate Economy</English>
-        <French>Corporate Economy</French>
-        <German>Unternehmenswirtschaft</German>
-        <Italian>Corporate Economy</Italian>
-        <Spanish>Corporate Economy</Spanish>
+        <English>Market Economy</English>
+        <French>Market Economy</French>
+        <German>Marktwirtschaft</German>
+        <Italian>Market Economy</Italian>
+        <Spanish>Market Economy</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_RFCMP_CIVIC_WARRIOR_SOCIETY</Tag>
