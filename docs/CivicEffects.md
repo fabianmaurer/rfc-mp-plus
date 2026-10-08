@@ -35,6 +35,9 @@ an in-game or multiplayer check.
 
 ## Details and boundaries
 
+- Only the religion column enables a state religion. Theocracy in the legitimacy
+  column applies its building and combat bonuses without enabling a state
+  religion independently or implying that other legitimacy civics prohibit one.
 - Normal citizens remain the fallback for idle population under self-sufficiency.
   Assigned specialists are removed upon adoption; free specialists use separate
   counters and are retained.
@@ -43,6 +46,8 @@ an in-game or multiplayer check.
 - Democracy uses the synchronized game RNG and only selects columns with an
   available alternative. If no other column has an available alternative, nothing
   changes. Elections occur on global turn multiples of ten.
+- Democracy's old temporary transition instability has been removed. Its election
+  effect is displayed once through the civic's XML Help entry.
 - Production bonuses from dictatorship and nationalism now add together through
   the standard yield modifier rather than a shared conditional bonus.
 - Religious buildings are identified by `ReligionType` or `PrereqReligion`.

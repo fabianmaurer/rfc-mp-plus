@@ -5115,15 +5115,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_MILITARY_SUPPORT_COSTS", (GC.getCivicInfo(eCivic).getGoldPerMilitaryUnit() > 0), GC.getCommerceInfo(COMMERCE_GOLD).getChar()));
 	}
 
-	// RFC MP Plus: Democracy changes one other civic column every ten turns.
-	if (eCivic == (CivicTypes)GC.getInfoTypeForString("CIVIC_DEMOCRACY"))
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_DEMOCRACY"));
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_RFCMP_DEMOCRACY_ELECTION_HELP"));
-	}
-
 	if (!CvWString(GC.getCivicInfo(eCivic).getHelp()).empty())
 	{
 		szHelpText.append(CvWString::format(L"%s%s", NEWLINE, GC.getCivicInfo(eCivic).getHelp()).c_str());

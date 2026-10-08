@@ -527,11 +527,6 @@ class Stability:
                         if (iCivic0 == 4 and self.getStability(iPlayer) > 50):
                                 iNewBaseStability += 10
 
-                        # Keep the Democracy transition timer, but do not penalize players
-                        # for retaining older civic choices after researching a technology.
-                        if (teamPlayer.isHasTech(con.iDemocracy) and iCivic0 != 4):
-                                self.setDemocracyCountdown(iPlayer, -1)
-
                         self.setParameter(iPlayer, iParCivics3, False, iNewBaseStability - iTempCivicThreshold)
 
 
@@ -792,17 +787,8 @@ class Stability:
                 self.setParameter(iPlayer, iParEconomy1, False, iNewBaseStability - iTempEconomyThreshold)
 
                 iTempCivicThreshold = iNewBaseStability
-                if (teamPlayer.isHasTech(con.iDemocracy)): #transition to democracy
-                        if (iCivic0 == 0 or iCivic0 == 1 or iCivic0 == 3): #despotic governments
-                                self.setDemocracyCountdown(iPlayer, -1) #has a desp. gov.
-                        if (self.getDemocracyCountdown(iPlayer) == -1 and iCivic0 == 4): #switched to universal suffrage
-                                self.setDemocracyCountdown(iPlayer, 7) #7 turns
-                        if (self.getDemocracyCountdown(iPlayer) > 0):
-                                iNewBaseStability -= 20
-                                self.setDemocracyCountdown(iPlayer, self.getDemocracyCountdown(iPlayer)-1)
-                                if (iPlayer == utils.getHumanID()):
-                                        CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_DEMOCRACY", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
-                                #print("iNewBaseStability civic single 7: transition to democracy",iNewBaseStability, iPlayer)
+                # Democracy has no transition penalty. Legacy countdown data remains
+                # in saved games for compatibility but no longer affects stability.
                 self.setParameter(iPlayer, iParCivics1, False, iNewBaseStability - iTempCivicThreshold)
 
                 iTempExpansionThreshold = iNewBaseStability
