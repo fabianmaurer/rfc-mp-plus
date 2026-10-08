@@ -2693,6 +2693,8 @@ void CvPlayer::doTurn()
 	CvEventReporter::getInstance().beginPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
 
 	doUpdateCacheOnTurn();
+	// Refresh civic-based names for existing saves and changes made by events.
+	processCivNames();
 
 	GC.getGameINLINE().verifyDeals();
 
@@ -23154,64 +23156,95 @@ void CvPlayer::processCivNames()
 			}
 			return;
 		}
-		else { //not a vassal
-			if (civDynamicNamesFlag[getID()] == 1 && getStateReligion() == 2) { //Islam
-				if (getCivics((CivicOptionTypes)0) == 0 || getCivics((CivicOptionTypes)0) == 1 || getCivics((CivicOptionTypes)0) == 3) { //desp/mon/pol
-					setCivDescription(civDynamicNames[getID()][8]);
-					return;	
-					}
-				else if (getCivics((CivicOptionTypes)0) == 2 || getCivics((CivicOptionTypes)0) == 4) { //rep/univ
-					setCivDescription(civDynamicNames[getID()][9]);
-					return;	
-					}
-				}
+		else { // Independent countries: classify the five new civic columns.
+			const bool bTribal = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_TRIBAL_SYSTEM"));
+			const bool bMonarchy = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_MONARCHY"));
+			const bool bRepublic = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_REPUBLIC"));
+			const bool bDemocracy = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_DEMOCRACY"));
+			const bool bDictatorship = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_DICTATORSHIP"));
+			const bool bNationalism = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_NATIONALISM"));
+			const bool bPlutocracy = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_PLUTOCRACY"));
+			const bool bRuleOfLaw = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_RULE_OF_LAW"));
+			const bool bPlanned = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_PLANNED_ECONOMY"));
+			const bool bAtheism = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_ATHEISM"));
+			const bool bGodState = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE"));
+			const bool bTheocracy = getStateReligion() != NO_RELIGION &&
+				(bGodState || isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_THEOCRATIC_LEGITIMACY")));
+			const bool bIslam = getStateReligion() != NO_RELIGION &&
+				getStateReligion() == (ReligionTypes)GC.getInfoTypeForString("RELIGION_ISLAM");
+			const bool bMilitary = isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_PROFESSIONAL_ARMY")) ||
+				isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_CONSCRIPTION"));
 
-			if (getCivics((CivicOptionTypes)3) == 18 ) { //state property
-				setCivDescription(civDynamicNames[getID()][6]);
-				return;
-				}
-			else if (getCivics((CivicOptionTypes)0) == 3 || getCivics((CivicOptionTypes)1) == 8) { //police state or nationhood
-				setCivDescription(civDynamicNames[getID()][7]);
-				return;		
-				}
-
-			if (civDynamicNamesFlag[getID()] == 0 && getStateReligion() == 2) { //Islam
-				if (getCivics((CivicOptionTypes)0) == 0 || getCivics((CivicOptionTypes)0) == 1 || getCivics((CivicOptionTypes)0) == 3) { //desp/mon/pol
-					setCivDescription(civDynamicNames[getID()][8]);
-					return;	
-					}
-				else if (getCivics((CivicOptionTypes)0) == 2 || getCivics((CivicOptionTypes)0) == 4) { //rep/univ
-					setCivDescription(civDynamicNames[getID()][9]);
-					return;	
-					}
+			// Use stable text keys on every peer; selection never uses language or RNG.
+			const wchar* szForm = L"REPUBLIC";
+			if (bTribal && !bTheocracy)
+				szForm = L"TRIBAL";
+			else if (bTheocracy)
+			{
+				if (bMonarchy)
+					szForm = bIslam ? L"CALIPHATE" : L"HOLY_KINGDOM";
+				else if (bRepublic || bDemocracy)
+					szForm = bIslam ? L"ISLAMIC_REPUBLIC" : L"THEOCRATIC_REPUBLIC";
+				else
+					szForm = L"THEOCRACY";
+			}
+			else if (bMonarchy)
+			{
+				if (bIslam && isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_RELIGION")))
+					szForm = L"SULTANATE";
+				else if (bRuleOfLaw)
+					szForm = L"CONSTITUTIONAL";
+				else
+					szForm = getNumCities() > 6 ? L"EMPIRE" : L"KINGDOM";
+			}
+			else if (bPlanned)
+			{
+				if (bDemocracy)
+					szForm = L"SOCIALIST_DEMOCRACY";
+				else if (bRepublic)
+					szForm = L"SOCIALIST_REPUBLIC";
+				else
+					szForm = L"PEOPLES_STATE";
+			}
+			else if (bDictatorship)
+			{
+				if (bNationalism)
+					szForm = L"NATIONAL_STATE";
+				else if (bMilitary)
+					szForm = L"MILITARY";
+				else
+					szForm = L"DICTATORSHIP";
+			}
+			else if (bRepublic || bDemocracy)
+			{
+				if (bAtheism)
+					szForm = L"SECULAR_REPUBLIC";
+				else if (bIslam && isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_RELIGION")))
+					szForm = L"ISLAMIC_REPUBLIC";
+				else if (bPlutocracy)
+					szForm = L"MERCHANT_REPUBLIC";
+				else if (bNationalism)
+					szForm = L"NATIONAL_REPUBLIC";
+				else
+					szForm = bDemocracy ? L"DEMOCRACY" : L"REPUBLIC";
 			}
 
-			if (getCivics((CivicOptionTypes)0) == 2 || getCivics((CivicOptionTypes)0) == 4) { //rep/univ
-				setCivDescription(civDynamicNames[getID()][5]);
-				return;
-				}
-			else if (getCivics((CivicOptionTypes)0) == 0 || getCivics((CivicOptionTypes)0) == 1 || getCivics((CivicOptionTypes)0) == 3) { //desp/mon/pol
-				if (getCurrentEra() < civDynamicNamesEraThreshold[getID()]) {
-					if (getNumCities() <= 6) {
-						setCivDescription(civDynamicNames[getID()][1]);
-						return;
-					}
-					else {
-						setCivDescription(civDynamicNames[getID()][2]);
-						return;
-					}	
-				}
-				else { //industrial and modern
-					if (getNumCities() <= 6) {
-						setCivDescription(civDynamicNames[getID()][3]);
-						return;
-					}
-					else {
-						setCivDescription(civDynamicNames[getID()][4]);
-						return;
-					}	
-				}
+			// Historical church-state titles require the corresponding religion.
+			if (bTheocracy && getStateReligion() == (ReligionTypes)GC.getInfoTypeForString("RELIGION_CHRISTIANITY"))
+			{
+				if (getID() == GERMANY && bMonarchy)
+					szForm = L"HOLY_ROMAN";
+				else if (getID() == ROME && !bRepublic && !bDemocracy)
+					szForm = L"PAPAL_STATES";
 			}
+
+			CvWString szNameKey = civDynamicNames[getID()][0];
+			szNameKey = szNameKey.substr(0, szNameKey.length() - 2);
+			szNameKey += L"_";
+			szNameKey += szForm;
+			// Refresh cached names after translation edits or a language change.
+			if (m_szCivDescKey != szNameKey || m_szCivDesc != gDLL->getText(szNameKey))
+				setCivDescription(szNameKey);
 		}
 	}
 }
