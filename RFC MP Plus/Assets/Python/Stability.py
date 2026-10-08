@@ -419,6 +419,12 @@ class Stability:
                         return iCivic >= 0 and iCivic in lCivics
 
                 iScore = 0
+                if (hasCivic("CIVIC_TRIBAL_SYSTEM") and hasCivic("CIVIC_DESPOTISM")):
+                        iScore += 1
+                if (hasCivic("CIVIC_MONARCHY") and hasCivic("CIVIC_THEOCRATIC_LEGITIMACY")):
+                        iScore += 1
+                if (hasCivic("CIVIC_PLUTOCRACY") and hasCivic("CIVIC_PLANNED_ECONOMY")):
+                        iScore -= 1
                 if ((hasCivic("CIVIC_REPUBLIC") or hasCivic("CIVIC_DEMOCRACY")) and hasCivic("CIVIC_RULE_OF_LAW")):
                         iScore += 2
                 if (hasCivic("CIVIC_MONARCHY") and hasCivic("CIVIC_KNIGHTHOOD")):

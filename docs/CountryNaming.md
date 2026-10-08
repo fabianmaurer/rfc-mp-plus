@@ -15,7 +15,7 @@ Rules are evaluated in this order:
 | Condition | Name family |
 | --- | --- |
 | Tribal System without a religious government | Tribal Confederation |
-| State religion and God State or Theocratic Legitimacy | Holy Kingdom, Theocracy, or Theocratic Republic according to government; Islamic rulers use Caliphate or Islamic Republic |
+| State religion and Holy State or Theocratic Legitimacy | Holy Kingdom, Theocracy, or Theocratic Republic according to government; Islamic rulers use Caliphate or Islamic Republic |
 | Monarchy, Islam, and State Religion | Sultanate |
 | Monarchy and Rule of Law | Constitutional Kingdom |
 | Other monarchies | Kingdom up to six cities; Empire above six cities |

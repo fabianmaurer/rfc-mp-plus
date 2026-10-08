@@ -407,11 +407,11 @@
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_RFCMP_CIVIC_GOD_STATE</Tag>
-        <English>Theocracy</English>
-        <French>Theocracy</French>
+        <English>Holy State</English>
+        <French>Holy State</French>
         <German>Gottesstaat</German>
-        <Italian>Theocracy</Italian>
-        <Spanish>Theocracy</Spanish>
+        <Italian>Holy State</Italian>
+        <Spanish>Holy State</Spanish>
     </TEXT>
     <TEXT>
         <Tag>TXT_KEY_RFCMP_CIVIC_TOLERANCE</Tag>
