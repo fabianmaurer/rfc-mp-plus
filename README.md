@@ -1,5 +1,7 @@
 # RFC MP Plus
 
+**English** | [Deutsch](README.de.md)
+
 A multiplayer-focused overhaul of **Rhye's and Fall Multiplayer** for
 **Civilization IV: Beyond the Sword**. It adds a five-column civic system,
 civic-combination stability, advance warnings of civilization spawns, and
@@ -43,7 +45,6 @@ to distinguish civilizations. Minor-faction tuning remains separate.
 
 ## New civics
 
-Names below include the German labels so they can be matched to the German UI.
 Each column allows one active civic. Bonuses from different columns combine;
 for example, Dictatorship and Nationalism together provide +40% production.
 
@@ -53,64 +54,64 @@ trade-route income. Percentage bonuses are modifiers, not percentage-point
 changes to slider settings. Flat building and improvement bonuses apply to
 each qualifying building or worked improvement.
 
-### Government — Regierung
+### Government
 
 | Civic | Required technology | Upkeep | Effects |
 | --- | --- | --- | --- |
-| **Tribal System — Stammessystem** | None | None | +20% production for all units; -20% research; +100% distance and number-of-cities maintenance. |
-| **Monarchy — Monarchie** | Monarchy | Medium | +25% production for world, team, and national wonders. |
-| **Republic — Republik** | Code of Laws | Low | +50% great person birth rate. |
-| **Dictatorship — Diktatur** | Fascism | High | +20% production; no war weariness; -2 happiness in every city. |
-| **Democracy — Demokratie** | Democracy | High | +2 happiness in every city; elections every ten turns randomly change one other civic column. |
+| **Tribal System** | None | None | +20% production for all units; -20% research; +100% distance and number-of-cities maintenance. |
+| **Monarchy** | Monarchy | Medium | +25% production for world, team, and national wonders. |
+| **Republic** | Code of Laws | Low | +50% great person birth rate. |
+| **Dictatorship** | Fascism | High | +20% production; no war weariness; -2 happiness in every city. |
+| **Democracy** | Democracy | High | +2 happiness in every city; elections every ten turns randomly change one other civic column. |
 
-### Legitimacy — Legitimation
-
-| Civic | Required technology | Upkeep | Effects |
-| --- | --- | --- | --- |
-| **Despotism — Despotismus** | None | None | +1 happiness from palaces and monuments, including their civilization-specific replacements. |
-| **Theocracy — Theokratie** | Divine Right | High | +1 happiness per building of the state religion; -2 happiness per building of another religion; +10% combat strength for all units. |
-| **Plutocracy — Plutokratie** | Banking | Low | +25% gold income; +50% commerce from trade routes. |
-| **Nationalism — Nationalismus** | Nationalism | Medium | +5 culture in every city; +20% production; -5 happiness in cities where another player's culture exceeds the owner's culture on the city tile. |
-| **Rule of Law — Rechtsstaat** | Constitution | High | +2 happiness in every city; +10% commerce yield. |
-
-### Labor — Arbeit
+### Legitimacy
 
 | Civic | Required technology | Upkeep | Effects |
 | --- | --- | --- | --- |
-| **Self-sufficiency — Selbstversorgung** | None | None | +2 health in every city; cottage improvements do not grow; assigned specialists are blocked and existing assignments removed; free specialists remain. |
-| **Slavery — Sklaverei** | Bronze Working | Low | May sacrifice population to rush production; +2 commerce from plantations. |
-| **Serfdom — Leibeigenschaft** | Feudalism | Low | +1 food from farms; -1 commerce from villages; workers build improvements 50% faster. |
-| **Planned Economy — Planwirtschaft** | Communism | High | +1 production from workshops, watermills, and windmills; +1 food from farms; -20% commerce yield. |
-| **Market Economy — Marktwirtschaft** | Corporation | Medium | +1 free specialist in every city; cottage improvements grow twice as fast. |
+| **Despotism** | None | None | +1 happiness from palaces and monuments, including their civilization-specific replacements. |
+| **Theocracy** | Divine Right | High | +1 happiness per building of the state religion; -2 happiness per building of another religion; +10% combat strength for all units. |
+| **Plutocracy** | Banking | Low | +25% gold income; +50% commerce from trade routes. |
+| **Nationalism** | Nationalism | Medium | +5 culture in every city; +20% production; -5 happiness in cities where another player's culture exceeds the owner's culture on the city tile. |
+| **Rule of Law** | Constitution | High | +2 happiness in every city; +10% commerce yield. |
+
+### Labor
+
+| Civic | Required technology | Upkeep | Effects |
+| --- | --- | --- | --- |
+| **Self-sufficiency** | None | None | +2 health in every city; cottage improvements do not grow; assigned specialists are blocked and existing assignments removed; free specialists remain. |
+| **Slavery** | Bronze Working | Low | May sacrifice population to rush production; +2 commerce from plantations. |
+| **Serfdom** | Feudalism | Low | +1 food from farms; -1 commerce from villages; workers build improvements 50% faster. |
+| **Planned Economy** | Communism | High | +1 production from workshops, watermills, and windmills; +1 food from farms; -20% commerce yield. |
+| **Market Economy** | Corporation | Medium | +1 free specialist in every city; cottage improvements grow twice as fast. |
 
 Improvement growth includes every upgrade stage: **Cottage → Hamlet → Village →
 Town**. Self-sufficiency stops upgrades; Market Economy doubles their rate.
 Serfdom's commerce penalty specifically affects the **Village** stage. Normal
 idle citizens remain available under Self-sufficiency as a population fallback.
 
-### Military — Militär
+### Military
 
 | Civic | Required technology | Upkeep | Effects |
 | --- | --- | --- | --- |
-| **Warrior Society — Kriegergesellschaft** | None | None | Units start with +2 experience; siege units have -20% combat strength. |
-| **Militia — Miliz** | Archery | Low | +30% city defense; -10% combat strength outside the unit owner's territory. |
-| **Knighthood — Rittertum** | Engineering | Medium | +25% production for mounted units; +10% city attack. |
-| **Professional Army — Berufsarmee** | Military Tradition | High | Units start with +5 experience. |
-| **Conscription — Wehrpflicht** | Military Science | Medium | +25% production for all units. |
+| **Warrior Society** | None | None | Units start with +2 experience; siege units have -20% combat strength. |
+| **Militia** | Archery | Low | +30% city defense; -10% combat strength outside the unit owner's territory. |
+| **Knighthood** | Engineering | Medium | +25% production for mounted units; +10% city attack. |
+| **Professional Army** | Military Tradition | High | Units start with +5 experience. |
+| **Conscription** | Military Science | Medium | +25% production for all units. |
 
 Tribal System and Conscription's production bonuses include workers, settlers,
 and missionaries. Conscription's name does not grant an additional drafting
 ability; its implemented effect is the production bonus listed above.
 
-### Religion — Religion
+### Religion
 
 | Civic | Required technology | Upkeep | Effects |
 | --- | --- | --- | --- |
-| **Ancestor Cult — Ahnenkult** | None | None | +1 culture from monuments, including civilization-specific replacements. |
-| **State Religion — Staatsreligion** | Priesthood | Low | +1 happiness in cities with the state religion; +100% production for missionaries of any religion. |
-| **Theocracy — Gottesstaat** | Theology | High | +2 happiness and +10% production in cities with the state religion; -2 happiness in cities without it. |
-| **Tolerance — Toleranz** | Liberalism | Medium | Removes unhappiness caused by foreign religions. |
-| **State Atheism — Staatsatheismus** | Scientific Method | High | +10% research; religious buildings have no effects; religions cannot spread in your cities. |
+| **Ancestor Cult** | None | None | +1 culture from monuments, including civilization-specific replacements. |
+| **State Religion** | Priesthood | Low | +1 happiness in cities with the state religion; +100% production for missionaries of any religion. |
+| **Holy State** | Theology | High | +2 happiness and +10% production in cities with the state religion; -2 happiness in cities without it. |
+| **Tolerance** | Liberalism | Medium | Removes unhappiness caused by foreign religions. |
+| **State Atheism** | Scientific Method | High | +10% research; religious buildings have no effects; religions cannot spread in your cities. |
 
 
 State Atheism disables a state religion; the other four Religion civics allow one.
@@ -193,8 +194,7 @@ using the city's occupation timer. An existing longer occupation is preserved.
 The schedule accounts for the spawn/flip delays used by the birth logic.
 
 Affected human owners receive a message using the civilization's early dynamic
-name, for example **“The [people] are rising up!”** The German message is
-**“Die [Völker] erheben sich!”** This warning accompanies the inherited flip
+name, for example **“The [people] are rising up!”** This warning accompanies the inherited flip
 system; it does not introduce a separate unit-flipping rule.
 
 ## Dynamic country names
