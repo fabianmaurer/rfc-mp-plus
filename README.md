@@ -112,8 +112,6 @@ ability; its implemented effect is the production bonus listed above.
 | **Tolerance — Toleranz** | Liberalism | Medium | Removes unhappiness caused by foreign religions. |
 | **State Atheism — Staatsatheismus** | Scientific Method | High | +10% research; religious buildings have no effects; religions cannot spread in your cities. |
 
-The English UI calls both **Theokratie** and **Gottesstaat** “Theocracy”; they
-belong to different columns and have the different effects listed above.
 
 State Atheism disables a state religion; the other four Religion civics allow one.
 
@@ -147,7 +145,7 @@ The following combinations contribute to base stability:
 | --- | ---: |
 | Republic or Democracy + Rule of Law | +2 |
 | Monarchy + Knighthood | +2 |
-| Theocracy in Legitimacy + State Religion or Gottesstaat in Religion | +2 |
+| Theocracy in Legitimacy + State Religion or Holy State in Religion | +2 |
 | Plutocracy + Market Economy | +1 |
 | Theocracy in Legitimacy + State Atheism | -3 |
 
@@ -164,7 +162,7 @@ The overhaul removes:
 - The “outdated civics” penalty and Democracy's old transition instability.
 - Market Economy's special depression mechanic and contagion through open borders.
 - The eight-turn crisis after leaving Planned Economy.
-- Extra religious-city penalties specific to State Religion and Gottesstaat.
+- Extra religious-city penalties specific to State Religion and Holy State.
 - Nationalism's separate foreign-culture stability threshold.
 - The extra jail-construction stability bonus specific to Dictatorship.
 - Civic bonuses from the removed Expansion column for vassals, distant cities,
