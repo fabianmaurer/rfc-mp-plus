@@ -6957,6 +6957,11 @@ int CvPlayer::getImprovementUpgradeRate() const
 {
 	int iRate;
 
+	if (isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_SELF_SUFFICIENCY")))
+	{
+		return 0;
+	}
+
 	iRate = 1; // XXX
 
 	iRate *= std::max(0, (getImprovementUpgradeRateModifier() + 100));

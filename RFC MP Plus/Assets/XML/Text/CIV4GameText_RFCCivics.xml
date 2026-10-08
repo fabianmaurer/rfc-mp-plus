@@ -483,8 +483,96 @@
         <Tag>TXT_KEY_CIVIC_ALL_CITIES_HAPPINESS</Tag>
         <English>%d1 %c2 in all cities</English>
         <French>%d1 %c2 in all cities</French>
-        <German>%d1 %c2 in allen Städten</German>
+        <German>%d1 %c2 in allen St&#228;dten</German>
         <Italian>%d1 %c2 in all cities</Italian>
         <Spanish>%d1 %c2 in all cities</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_MONARCHY</Tag>
+        <English>+25% production for wonders</English>
+        <French>+25% production for wonders</French>
+        <German>+25% Produktion f&#252;r Wunder</German>
+        <Italian>+25% production for wonders</Italian>
+        <Spanish>+25% production for wonders</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_DICTATORSHIP</Tag>
+        <English>+20% production in all cities</English>
+        <French>+20% production in all cities</French>
+        <German>+20% Produktion in allen St&#228;dten</German>
+        <Italian>+20% production in all cities</Italian>
+        <Spanish>+20% production in all cities</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_THEOCRATIC_LEGITIMACY</Tag>
+        <English>+1 happiness from state-religion buildings; -2 from other religious buildings; +10% combat strength</English>
+        <French>+1 happiness from state-religion buildings; -2 from other religious buildings; +10% combat strength</French>
+        <German>+1 Zufriedenheit durch Geb&#228;ude der Staatsreligion; -2 durch andere religi&#246;se Geb&#228;ude; +10% Kampfst&#228;rke</German>
+        <Italian>+1 happiness from state-religion buildings; -2 from other religious buildings; +10% combat strength</Italian>
+        <Spanish>+1 happiness from state-religion buildings; -2 from other religious buildings; +10% combat strength</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_NATIONALISM</Tag>
+        <English>+5 culture and +20% production in all cities; -5 happiness where foreign culture is dominant</English>
+        <French>+5 culture and +20% production in all cities; -5 happiness where foreign culture is dominant</French>
+        <German>+5 Kultur und +20% Produktion in allen St&#228;dten; -5 Zufriedenheit bei vorherrschender fremder Kultur</German>
+        <Italian>+5 culture and +20% production in all cities; -5 happiness where foreign culture is dominant</Italian>
+        <Spanish>+5 culture and +20% production in all cities; -5 happiness where foreign culture is dominant</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_SELF_SUFFICIENCY</Tag>
+        <English>Cottages, hamlets and villages do not grow</English>
+        <French>Cottages, hamlets and villages do not grow</French>
+        <German>Weiler, D&#246;rfer und St&#228;dte wachsen nicht</German>
+        <Italian>Cottages, hamlets and villages do not grow</Italian>
+        <Spanish>Cottages, hamlets and villages do not grow</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_MILITIA</Tag>
+        <English>+30% city defense; -10% combat strength outside friendly territory</English>
+        <French>+30% city defense; -10% combat strength outside friendly territory</French>
+        <German>+30% Stadtverteidigung; -10% Kampfst&#228;rke au&#223;erhalb eigenen Gebiets</German>
+        <Italian>+30% city defense; -10% combat strength outside friendly territory</Italian>
+        <Spanish>+30% city defense; -10% combat strength outside friendly territory</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_KNIGHTHOOD</Tag>
+        <English>+25% production for mounted units; +10% city attack</English>
+        <French>+25% production for mounted units; +10% city attack</French>
+        <German>+25% Produktion f&#252;r berittene Einheiten; +10% Stadtangriff</German>
+        <Italian>+25% production for mounted units; +10% city attack</Italian>
+        <Spanish>+25% production for mounted units; +10% city attack</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_ANCESTOR_CULT</Tag>
+        <English>+1 culture from monuments</English>
+        <French>+1 culture from monuments</French>
+        <German>+1 Kultur durch Monumente</German>
+        <Italian>+1 culture from monuments</Italian>
+        <Spanish>+1 culture from monuments</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_STATE_RELIGION</Tag>
+        <English>+1 happiness in cities with the state religion; +100% production for missionaries</English>
+        <French>+1 happiness in cities with the state religion; +100% production for missionaries</French>
+        <German>+1 Zufriedenheit in St&#228;dten mit Staatsreligion; +100% Produktion f&#252;r Missionare</German>
+        <Italian>+1 happiness in cities with the state religion; +100% production for missionaries</Italian>
+        <Spanish>+1 happiness in cities with the state religion; +100% production for missionaries</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_GOD_STATE</Tag>
+        <English>+10% production in cities with the state religion; -2 happiness in other cities</English>
+        <French>+10% production in cities with the state religion; -2 happiness in other cities</French>
+        <German>+10% Produktion in St&#228;dten mit Staatsreligion; -2 Zufriedenheit in anderen St&#228;dten</German>
+        <Italian>+10% production in cities with the state religion; -2 happiness in other cities</Italian>
+        <Spanish>+10% production in cities with the state religion; -2 happiness in other cities</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_EFFECT_STATE_ATHEISM</Tag>
+        <English>Religious buildings have no effects; religions cannot spread</English>
+        <French>Religious buildings have no effects; religions cannot spread</French>
+        <German>Religi&#246;se Geb&#228;ude haben keine Effekte; Religionen k&#246;nnen sich nicht verbreiten</German>
+        <Italian>Religious buildings have no effects; religions cannot spread</Italian>
+        <Spanish>Religious buildings have no effects; religions cannot spread</Spanish>
     </TEXT>
 </Civ4GameText>

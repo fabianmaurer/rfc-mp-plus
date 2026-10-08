@@ -1,0 +1,137 @@
+{
+  "resolution": [
+    64,
+    64
+  ],
+  "ddsCompression": "DXT3",
+  "generator": "Built-in image_gen",
+  "stylePrompt": "Use case: historical-scene. Asset type: Civilization IV civic button icon. Generate one square icon matching the supplied reference atlas's CIVIC artwork (top four rows only): colorful hand-painted historical illustration, chunky readable silhouette, expressive realistic figure or hands, ochre highlights, jewel-toned clothing, dark softly painted background, like an early 2000s strategy game oil painting. Single tight closeup composition, large subject, minimal small details, legible reduced to 64x64 pixels. Square with gently rounded corners, narrow dark edge, no text, no lettering, no watermark, no modern flat vector graphics. Reference image is for style only. Subject: ",
+  "reference": "Assets/Art/Interface/Buttons/civics_civilizations_religions_atlas.dds",
+  "icons": [
+    {
+      "type": "CIVIC_TRIBAL_SYSTEM",
+      "filename": "Tribal_System.dds",
+      "subject": "a tribal elder in animal hide holding a wooden spear beside a small campfire"
+    },
+    {
+      "type": "CIVIC_MONARCHY",
+      "filename": "Monarchy.dds",
+      "subject": "a crowned medieval monarch in rich robes holding a gold scepter"
+    },
+    {
+      "type": "CIVIC_REPUBLIC",
+      "filename": "Republic.dds",
+      "subject": "a Roman senator in a white toga debating with a raised hand"
+    },
+    {
+      "type": "CIVIC_DICTATORSHIP",
+      "filename": "Dictatorship.dds",
+      "subject": "a stern twentieth century dictator in military uniform at a podium, no real person or political emblem"
+    },
+    {
+      "type": "CIVIC_DEMOCRACY",
+      "filename": "Democracy.dds",
+      "subject": "a hand placing a paper ballot into a wooden ballot box"
+    },
+    {
+      "type": "CIVIC_DESPOTISM",
+      "filename": "Despotism.dds",
+      "subject": "an ancient king with a bronze crown firmly gripping a scepter"
+    },
+    {
+      "type": "CIVIC_THEOCRATIC_LEGITIMACY",
+      "filename": "Theocratic_Legitimacy.dds",
+      "subject": "a robed medieval priest blessing a ruler with a raised hand"
+    },
+    {
+      "type": "CIVIC_PLUTOCRACY",
+      "filename": "Plutocracy.dds",
+      "subject": "a wealthy Renaissance merchant holding gold coins and wearing fine clothes"
+    },
+    {
+      "type": "CIVIC_NATIONALISM",
+      "filename": "Nationalism.dds",
+      "subject": "a citizen proudly holding a red and gold flag, no real national emblem"
+    },
+    {
+      "type": "CIVIC_RULE_OF_LAW",
+      "filename": "Rule_Of_Law.dds",
+      "subject": "a judge holding a balance scale beside an open law book"
+    },
+    {
+      "type": "CIVIC_SELF_SUFFICIENCY",
+      "filename": "Self_Sufficiency.dds",
+      "subject": "a peasant holding a basket of harvested grain beside a simple homestead"
+    },
+    {
+      "type": "CIVIC_SLAVERY",
+      "filename": "Slavery.dds",
+      "subject": "two chained wrists beside a bronze hammer, historical illustration, no gore"
+    },
+    {
+      "type": "CIVIC_SERFDOM",
+      "filename": "Serfdom.dds",
+      "subject": "a medieval peasant working a field with a sickle below a distant manor"
+    },
+    {
+      "type": "CIVIC_PLANNED_ECONOMY",
+      "filename": "Planned_Economy.dds",
+      "subject": "a factory worker holding a production plan with a gear and factory behind"
+    },
+    {
+      "type": "CIVIC_CORPORATE_ECONOMY",
+      "filename": "Corporate_Economy.dds",
+      "subject": "a businessman in a suit with a ledger and bustling industrial city behind"
+    },
+    {
+      "type": "CIVIC_WARRIOR_SOCIETY",
+      "filename": "Warrior_Society.dds",
+      "subject": "an ancient tribal warrior holding a spear and round wooden shield"
+    },
+    {
+      "type": "CIVIC_MILITIA",
+      "filename": "Militia.dds",
+      "subject": "an ordinary townsperson with a bow guarding a stone city gate"
+    },
+    {
+      "type": "CIVIC_KNIGHTHOOD",
+      "filename": "Knighthood.dds",
+      "subject": "a medieval armored knight on horseback with a lance"
+    },
+    {
+      "type": "CIVIC_PROFESSIONAL_ARMY",
+      "filename": "Professional_Army.dds",
+      "subject": "a disciplined early modern soldier in uniform carrying a musket"
+    },
+    {
+      "type": "CIVIC_CONSCRIPTION",
+      "filename": "Conscription.dds",
+      "subject": "a civilian receiving a military helmet from a uniformed recruiting officer"
+    },
+    {
+      "type": "CIVIC_ANCESTOR_CULT",
+      "filename": "Ancestor_Cult.dds",
+      "subject": "a kneeling ancient worshipper offering incense before an ancestral stone shrine"
+    },
+    {
+      "type": "CIVIC_STATE_RELIGION",
+      "filename": "State_Religion.dds",
+      "subject": "a robed missionary holding a sacred book and walking staff"
+    },
+    {
+      "type": "CIVIC_GOD_STATE",
+      "filename": "God_State.dds",
+      "subject": "a crowned high priest before a monumental temple, rich gold religious regalia"
+    },
+    {
+      "type": "CIVIC_TOLERANCE",
+      "filename": "Tolerance.dds",
+      "subject": "two people of different religious traditions greeting with open hands, a warm peaceful atmosphere"
+    },
+    {
+      "type": "CIVIC_STATE_ATHEISM",
+      "filename": "State_Atheism.dds",
+      "subject": "a scholar holding a scientific book beside a closed dark temple, secular enlightenment symbolism"
+    }
+  ]
+}

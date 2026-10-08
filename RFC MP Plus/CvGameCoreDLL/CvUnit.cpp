@@ -7825,6 +7825,19 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 	{
 		pCombatDetails->iExtraCombatPercent = iExtraModifier;
 	}
+
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_THEOCRATIC_LEGITIMACY")))
+	{
+		iModifier += 10;
+	}
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_WARRIOR_SOCIETY")) && getUnitCombatType() == GC.getInfoTypeForString("UNITCOMBAT_SIEGE"))
+	{
+		iModifier -= 20;
+	}
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_MILITIA")) && !GET_TEAM(getTeam()).isFriendlyTerritory(plot()->getTeam()))
+	{
+		iModifier -= 10;
+	}
 	
 	// do modifiers for animals and barbarians (leaving these out for bAttackingUnknownDefender case)
 	if (pAttacker != NULL)
@@ -8849,7 +8862,12 @@ int CvUnit::collateralDamageMaxUnits() const
 
 int CvUnit::cityAttackModifier() const
 {
-	return (m_pUnitInfo->getCityAttackModifier() + getExtraCityAttackPercent());
+	int iModifier = m_pUnitInfo->getCityAttackModifier() + getExtraCityAttackPercent();
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_KNIGHTHOOD")))
+	{
+		iModifier += 10;
+	}
+	return iModifier;
 }
 
 

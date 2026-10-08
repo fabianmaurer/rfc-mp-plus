@@ -3221,6 +3221,21 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 		iMultiplier += getMilitaryProductionModifier();
 	}
 
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_DICTATORSHIP")) || GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_NATIONALISM")))
+	{
+		iMultiplier += 20;
+	}
+
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_KNIGHTHOOD")) && GC.getUnitInfo(eUnit).getUnitCombatType() == GC.getInfoTypeForString("UNITCOMBAT_MOUNTED"))
+	{
+		iMultiplier += 25;
+	}
+
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE")) && GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
+	{
+		iMultiplier += 10;
+	}
+
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
 		if (hasBonus((BonusTypes)iI))
@@ -3229,12 +3244,9 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 		}
 	}
 
-	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION)
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_RELIGION")) && GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()) && GC.getUnitInfo(eUnit).getReligionSpreads(GET_PLAYER(getOwnerINLINE()).getStateReligion()) > 0)
 	{
-		if (isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
-		{
-			iMultiplier += GET_PLAYER(getOwnerINLINE()).getStateReligionUnitProductionModifier();
-		}
+		iMultiplier += 100;
 	}
 
 	return std::max(0, iMultiplier);
@@ -3253,6 +3265,21 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 		}
 	}
 
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_DICTATORSHIP")) || GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_NATIONALISM")))
+	{
+		iMultiplier += 20;
+	}
+
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_MONARCHY")) && isLimitedWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
+	{
+		iMultiplier += 25;
+	}
+
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE")) && GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
+	{
+		iMultiplier += 10;
+	}
+
 	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION)
 	{
 		if (isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
@@ -3268,6 +3295,16 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 int CvCity::getProductionModifier(ProjectTypes eProject) const
 {
 	int iMultiplier = GET_PLAYER(getOwnerINLINE()).getProductionModifier(eProject);
+
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_DICTATORSHIP")) || GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_NATIONALISM")))
+	{
+		iMultiplier += 20;
+	}
+
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE")) && GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
+	{
+		iMultiplier += 10;
+	}
 
 	if (GC.getProjectInfo(eProject).isSpaceship())
 	{
@@ -5047,6 +5084,11 @@ int CvCity::getNumActiveBuilding(BuildingTypes eIndex) const
 		return 0;
 	}
 
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_STATE_ATHEISM")) && (GC.getBuildingInfo(eIndex).getReligionType() != NO_RELIGION || GC.getBuildingInfo(eIndex).getPrereqReligion() != NO_RELIGION))
+	{
+		return 0;
+	}
+
 	return (getNumBuilding(eIndex));
 }
 
@@ -6618,7 +6660,44 @@ void CvCity::updateReligionHappiness()
 
 int CvCity::getExtraHappiness() const
 {
-	return m_iExtraHappiness;
+	int iHappiness = m_iExtraHappiness;
+	CvPlayer& kPlayer = GET_PLAYER(getOwnerINLINE());
+
+	if (kPlayer.isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_GOD_STATE")) && (kPlayer.getStateReligion() == NO_RELIGION || !isHasReligion(kPlayer.getStateReligion())))
+	{
+		iHappiness -= 2;
+	}
+
+	if (kPlayer.isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_THEOCRATIC_LEGITIMACY")))
+	{
+		for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+		{
+			const CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+			ReligionTypes eReligion = (ReligionTypes)kBuilding.getReligionType();
+			if (eReligion == NO_RELIGION)
+			{
+				eReligion = (ReligionTypes)kBuilding.getPrereqReligion();
+			}
+			if (eReligion != NO_RELIGION && getNumActiveBuilding((BuildingTypes)iI) > 0)
+			{
+				iHappiness += (eReligion == kPlayer.getStateReligion() ? 1 : -2) * getNumActiveBuilding((BuildingTypes)iI);
+			}
+		}
+	}
+
+	if (kPlayer.isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_NATIONALISM")))
+	{
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if (iI != getOwnerINLINE() && plot()->getCulture((PlayerTypes)iI) > plot()->getCulture(getOwnerINLINE()))
+			{
+				iHappiness -= 5;
+				break;
+			}
+		}
+	}
+
+	return iHappiness;
 }
 
 
@@ -7262,7 +7341,12 @@ int CvCity::getNaturalDefense() const
 
 int CvCity::getTotalDefense(bool bIgnoreBuilding) const
 {
-	return (std::max(((bIgnoreBuilding) ? 0 : getBuildingDefense()), getNaturalDefense()) + GET_PLAYER(getOwnerINLINE()).getCityDefenseModifier());
+	int iDefense = std::max(((bIgnoreBuilding) ? 0 : getBuildingDefense()), getNaturalDefense()) + GET_PLAYER(getOwnerINLINE()).getCityDefenseModifier();
+	if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_MILITIA")))
+	{
+		iDefense += 30;
+	}
+	return iDefense;
 }
 
 
@@ -8229,6 +8313,22 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 
 	iBaseCommerceRate += 100 * ((getSpecialistPopulation() + getNumGreatPeople()) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
 	iBaseCommerceRate += 100 * (getBuildingCommerce(eIndex) + getSpecialistCommerce(eIndex) + getReligionCommerce(eIndex) + getCorporationCommerce(eIndex) + GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce(eIndex));
+
+	if (eIndex == COMMERCE_CULTURE)
+	{
+		if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_NATIONALISM")))
+		{
+			iBaseCommerceRate += 500;
+		}
+		if (GET_PLAYER(getOwnerINLINE()).isCivic((CivicTypes)GC.getInfoTypeForString("CIVIC_ANCESTOR_CULT")))
+		{
+			BuildingTypes eObelisk = (BuildingTypes)GC.getInfoTypeForString("BUILDING_OBELISK");
+			if (eObelisk != NO_BUILDING)
+			{
+				iBaseCommerceRate += 100 * getNumActiveBuilding(eObelisk);
+			}
+		}
+	}
 
 	return iBaseCommerceRate;
 }

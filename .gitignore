@@ -1,4 +1,8 @@
 # Local screenshots and temporary captures
+/.venv-art/
+/civic-style-reference.png
+/art/civics/sources.local.json
+/art/civics/*-preview.local.png
 /civ4-menu-capture*.png
 /civ4-menu-language-cache-refresh.png
 
