@@ -35,6 +35,9 @@ an in-game or multiplayer check.
 
 ## Details and boundaries
 
+- Civic stability is determined by bounded combination bonuses/penalties;
+  see [CivicStability.md](CivicStability.md) for the complete rules. Individual
+  civic weights and the legacy market/planned-economy crises have been removed.
 - Only the religion column enables a state religion. Theocracy in the legitimacy
   column applies its building and combat bonuses without enabling a state
   religion independently or implying that other legitimacy civics prohibit one.
