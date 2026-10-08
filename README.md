@@ -18,6 +18,8 @@ victory goals, and other inherited systems form the underlying game.
   the available width and includes new civic artwork.
 - **Democratic elections:** every ten turns, one other civic column changes to
   a randomly selected available alternative.
+- **Starting civics:** every civilization receives a starting profile suited to
+  its period, using civics available with its scenario or spawn technologies.
 - **Civic-combination stability:** compatible institutions receive small bonuses;
   Theocracy with State Atheism incurs a small penalty. The total is bounded.
 - **Spawn warnings:** tile tooltips identify pending civilizations whose core
@@ -125,6 +127,18 @@ buildings are identified by their religion or religion prerequisite.
 Atheism blocks natural, missionary, event, and scripted religion spread. Existing
 religions remain, including after city ownership changes. Founding or relocating
 a holy city is preserved as a separate action.
+
+## Starting civics
+
+Every playable civilization, including Byzantium in the 600 AD scenario, has a
+profile for all five civic columns. Profiles apply to human and AI players at
+scenario initialization or their initial spawn, after starting technologies and
+before scripted starting units. Unavailable civics use explicit fallbacks;
+no extra technologies or anarchy are introduced.
+
+Profiles cover all three scenarios and do not override subsequent player choices.
+Existing civilizations in saved games keep their current civics. See
+[StartingCivics.md](docs/StartingCivics.md) for all profiles and fallback rules.
 
 ## Democratic elections
 

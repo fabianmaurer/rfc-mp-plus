@@ -75,8 +75,6 @@ BeginPlayer
 	CivType=CIVILIZATION_EGYPT                 
 	Team=0                 
 	PlayableCiv=0                 
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY                 
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY                 
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -293,11 +291,6 @@ BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM    
 	StateReligion=RELIGION_CHRISTIANITY                         
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY                   
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_DESPOTISM                         
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY                         
-	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_WARRIOR_SOCIETY                         
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_GOD_STATE   	
 	Team=30                 
 	PlayableCiv=0                 
 	MinorNationStatus=1               

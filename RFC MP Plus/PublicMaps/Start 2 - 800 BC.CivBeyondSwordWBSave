@@ -77,8 +77,6 @@ BeginPlayer
 	CivType=CIVILIZATION_EGYPT                 
 	Team=0                 
 	PlayableCiv=0                
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY                 
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY                 
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer

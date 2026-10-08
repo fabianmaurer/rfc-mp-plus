@@ -18,6 +18,8 @@ Systeme aus dem ursprünglichen RFC MP bilden weiterhin die Grundlage.
   nutzt die verfügbare Breite und enthält neue Illustrationen.
 - **Demokratische Wahlen:** Alle zehn Runden wird eine andere Kategorie auf eine
   zufällig ausgewählte verfügbare Staatsform umgestellt.
+- **Start-Staatsformen:** Jede Zivilisation erhält ein Profil passend zu ihrer
+  Zeit, soweit die Starttechnologien des Szenarios oder der Gründung es erlauben.
 - **Stabilität durch Kombinationen:** Passende Institutionen erhalten kleine
   Boni; Theokratie mit Staatsatheismus erhält einen Malus. Die Summe ist begrenzt.
 - **Vorwarnungen vor Gebietswechseln:** Feld-Tooltips zeigen zukünftige
@@ -132,6 +134,20 @@ Staatsatheismus verhindert natürliche Ausbreitung sowie Ausbreitung durch
 Missionare, Ereignisse und Skripte. Bestehende Religionen bleiben erhalten,
 auch bei einem Besitzerwechsel der Stadt. Die Gründung oder Verlegung einer
 heiligen Stadt bleibt als eigenständige Aktion möglich.
+
+## Start-Staatsformen
+
+Jede spielbare Zivilisation einschließlich Byzanz im Szenario 600 n. Chr. hat ein
+Profil für alle fünf Kategorien. Es gilt für menschliche und KI-Spieler beim
+Szenariostart oder der ersten Gründung, nach Zuweisung der Starttechnologien und
+vor der Erzeugung der Start-Einheiten durch Skripte. Nicht verfügbare Staatsformen
+werden durch festgelegte Alternativen ersetzt; zusätzliche Technologien oder
+Anarchie entstehen dadurch nicht.
+
+Die Profile gelten für alle drei Szenarien und überschreiben keine späteren
+Spielerentscheidungen. Bereits vorhandene Zivilisationen in Spielständen behalten
+ihre Staatsformen. Alle Profile und Ersatzregeln stehen in
+[StartingCivics.md](docs/StartingCivics.md).
 
 ## Demokratische Wahlen
 

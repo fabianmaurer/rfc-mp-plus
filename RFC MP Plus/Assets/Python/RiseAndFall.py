@@ -8,6 +8,7 @@ import cPickle as pickle
 import CvTranslator
 import RFCUtils
 import Consts as con
+import StartingCivics
 import CityNameManager 
 
 
@@ -564,12 +565,6 @@ class RiseAndFall:
                 if (not gc.getPlayer(0).isPlayable()): #late start condition
                         self.clear600ADChina()
 
-                if (gc.getPlayer(0).isPlayable()): #late start condition 
-                        self.create4000BCstartingUnits()
-                elif (gc.getPlayer(con.iCeltia).getCivilizationType() == 4): #late start condition (RFCMP)
-                        self.create600ADstartingUnits()
-                else:
-                        self.create800BCstartingUnits()
                 #self.assign4000BCtechs()
                 self.setEarlyLeaders()
 
@@ -638,6 +633,17 @@ class RiseAndFall:
                         pIndependent2.changeGold(50)
                         pNative.changeGold(100)
                                
+                # Set institutions after scenario techs, before starting units.
+                for iCiv in range(gc.getMAX_PLAYERS()):
+                        StartingCivics.apply(iCiv)
+
+                if (gc.getPlayer(0).isPlayable()): #late start condition 
+                        self.create4000BCstartingUnits()
+                elif (gc.getPlayer(con.iCeltia).getCivilizationType() == 4): #late start condition (RFCMP)
+                        self.create600ADstartingUnits()
+                else:
+                        self.create800BCstartingUnits()
+
                 # set starting gold
                 pGreece.changeGold(100)
                 pCarthage.changeGold(200)
@@ -1952,7 +1958,6 @@ class RiseAndFall:
                                 utils.flipUnitsInArea((tCapital[0]-3, tCapital[1]-3), (tCapital[0]+3, tCapital[1]+3), iCiv, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned                        
                                 utils.flipUnitsInArea((tCapital[0]-3, tCapital[1]-3), (tCapital[0]+3, tCapital[1]+3), iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned                        
                                 utils.flipUnitsInArea((tCapital[0]-3, tCapital[1]-3), (tCapital[0]+3, tCapital[1]+3), iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned                        
-                                self.assignTechs(iCiv)
                                 utils.setPlagueCountdown(iCiv, -con.iImmunity)
                                 utils.clearPlague(iCiv)
                                 #gc.getPlayer(iCiv).changeAnarchyTurns(1)
@@ -2013,7 +2018,6 @@ class RiseAndFall:
                                 if (result):
                                         self.createStartingUnits(iCiv, result)
                                         #utils.debugTextPopup( 'birthInForeignBorders after a flip' )
-                                        self.assignTechs(iCiv)
                                         utils.setPlagueCountdown(iCiv, -con.iImmunity)
                                         utils.clearPlague(iCiv)
                                         #gc.getPlayer(iCiv).changeAnarchyTurns(1)
@@ -2029,7 +2033,6 @@ class RiseAndFall:
                                 if (result):
                                         self.createStartingUnits(iCiv, result)
                                         #utils.debugTextPopup( 'birthInForeignBorders in another location' )
-                                        self.assignTechs(iCiv)
                                         utils.setPlagueCountdown(iCiv, -con.iImmunity)
                                         utils.clearPlague(iCiv)
                         else:
@@ -2041,7 +2044,6 @@ class RiseAndFall:
                                                 self.createStartingUnits(iCiv, result)
                                                 self.createStartingWorkers(iCiv, result)
                                                 #utils.debugTextPopup( 'birthInForeignBorders in a broader area' )
-                                                self.assignTechs(iCiv)
                                                 utils.setPlagueCountdown(iCiv, -con.iImmunity)
                                                 utils.clearPlague(iCiv)
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
@@ -2783,6 +2785,9 @@ class RiseAndFall:
 
 
         def createStartingUnits( self, iCiv, tPlot ):
+                self.assignTechs(iCiv)
+                StartingCivics.apply(iCiv)
+
                 if (iCiv == iGreece):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 2)
