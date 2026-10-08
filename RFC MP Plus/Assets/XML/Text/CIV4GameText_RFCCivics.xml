@@ -23,15 +23,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SUBJUGATION_PEDIA</Tag>
 		<English>[TAB]The term "subjugation" is used to describe the policy of a nation's dominance over other lands. This doctrine has been frequently employed for economic exploitation in which an imperialist power makes use of other countries as sources of raw materials and cheap labor, shaping their economies to suit its own interests and keeping their people in poverty. [PARAGRAPH:2]Sometimes subjugation even refers to the acceptance, by the colonised, of the culture or doctrines of the coloniser as intrinsically more worthy or superior.</English>
-		<French>[TAB]Le terme d'Assujettissement fait référence à la politique de dominance d'une nation. Cette doctrine a souvent été employée pour l'exploitation économique d'un pays par un autre : un pouvoir impérialiste utilise d'autres pays en tant que sources de matières premières et de main-d'oeuvre bon marché, ajuste leur économie selon ses propres intérêts et maintient les gens dans la pauvreté. [PARAGRAPH:2]Parfois, l'Assujettissement fait référence à l'acceptation par les peuples colonisés de la culture ou des doctrines des colonisateurs, considérées comme meilleures ou supérieures.</French>
-		<German>[TAB]Der Begriff "Unterwerfung" beschreibt die politischen Bestrebungen einer Nation, andere Länder beherrschen zu wollen. Diese Doktrin wurde häufig zur Realisierung wirtschaftlicher Ausbeutung eingesetzt, wobei die Kolonialmacht andere Länder als Quellen für seltene Rohstoffe und billige Arbeitskräfte missbrauchte, deren Wirtschaft sie dann so gestaltete, dass sie zu den eigenen Interessen passte und schlussendlich die Einheimischen in ihrer Armut beließ. [PARAGRAPH:2]Manchmal wird mit "Unterwerfung" allerdings auch der Umstand bezeichnet, dass die Kolonisierten die Kultur oder Lehren der Kolonialmacht als "wertvoller" oder "besser" akzeptieren und würdigen.</German>
+		<French>[TAB]Le terme d'Assujettissement fait rï¿½fï¿½rence ï¿½ la politique de dominance d'une nation. Cette doctrine a souvent ï¿½tï¿½ employï¿½e pour l'exploitation ï¿½conomique d'un pays par un autre : un pouvoir impï¿½rialiste utilise d'autres pays en tant que sources de matiï¿½res premiï¿½res et de main-d'oeuvre bon marchï¿½, ajuste leur ï¿½conomie selon ses propres intï¿½rï¿½ts et maintient les gens dans la pauvretï¿½. [PARAGRAPH:2]Parfois, l'Assujettissement fait rï¿½fï¿½rence ï¿½ l'acceptation par les peuples colonisï¿½s de la culture ou des doctrines des colonisateurs, considï¿½rï¿½es comme meilleures ou supï¿½rieures.</French>
+		<German>[TAB]Der Begriff "Unterwerfung" beschreibt die politischen Bestrebungen einer Nation, andere Lï¿½nder beherrschen zu wollen. Diese Doktrin wurde hï¿½ufig zur Realisierung wirtschaftlicher Ausbeutung eingesetzt, wobei die Kolonialmacht andere Lï¿½nder als Quellen fï¿½r seltene Rohstoffe und billige Arbeitskrï¿½fte missbrauchte, deren Wirtschaft sie dann so gestaltete, dass sie zu den eigenen Interessen passte und schlussendlich die Einheimischen in ihrer Armut belieï¿½. [PARAGRAPH:2]Manchmal wird mit "Unterwerfung" allerdings auch der Umstand bezeichnet, dass die Kolonisierten die Kultur oder Lehren der Kolonialmacht als "wertvoller" oder "besser" akzeptieren und wï¿½rdigen.</German>
 		<Italian>[TAB]Il termine &quot;sottomissione&quot; viene usato per descrivere il dominio di una nazione su altre terre. Questa dottrina &#232; stata spesso usata per lo sfruttamento economico: una potenza imperialista sfrutta altri paesi come fonti di materie prime e lavoro a basso costo, modellando le loro economie a favore dei propri interessei e mantenendone le popolazioni in povert&#224;. [PARAGRAPH:2]Alle volte la sottomissione fa addirittura riferimento all'accettazione, da parte dei colonizzati, di una presunta e intrinseca superiorit&#224; della cultura dei colonizzatori.</Italian>
-		<Spanish>[TAB]El t&#233;rmino &quot;subyugaci&#243;n&quot; se utiliza para describir la pol&#237;tica de dominio de una naci&#243;n sobre otros territorios. Esta doctrina se ha empleado frecuentemente para describir la explotaci&#243;n econ&#243;mica que realiza una potencia imperialista cuando utiliza a otros pa&#237;ses como fuentes de materias primas y mano de obra barata, modelando sus econom&#237;as según sus propios intereses y manteniendo a sus gentes en la pobreza. [PARAGRAPH:2]A veces la subyugaci&#243;n tambi&#233;n alude a la aceptaci&#243;n por parte de la colonia de la cultura o las doctrinas de la potencia colonial como intr&#237;nsecamente superiores.</Spanish>
+		<Spanish>[TAB]El t&#233;rmino &quot;subyugaci&#243;n&quot; se utiliza para describir la pol&#237;tica de dominio de una naci&#243;n sobre otros territorios. Esta doctrina se ha empleado frecuentemente para describir la explotaci&#243;n econ&#243;mica que realiza una potencia imperialista cuando utiliza a otros pa&#237;ses como fuentes de materias primas y mano de obra barata, modelando sus econom&#237;as segï¿½n sus propios intereses y manteniendo a sus gentes en la pobreza. [PARAGRAPH:2]A veces la subyugaci&#243;n tambi&#233;n alude a la aceptaci&#243;n por parte de la colonia de la cultura o las doctrinas de la potencia colonial como intr&#237;nsecamente superiores.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VICEROYALTY</Tag>
 		<English>Viceroyalty</English>
-		<French>Vice-royauté</French>
+		<French>Vice-royautï¿½</French>
 		<German>Vizek&#246;nigtum</German>
 		<Italian>Vicereame</Italian>
 		<Spanish>Virreinato</Spanish>
@@ -39,9 +39,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VICEROYALTY_PEDIA</Tag>
 		<English>[TAB]A viceroy is a royal official who governs a country or province in the name of and as representative of a monarch. The term derives from the Latin prefix vice-, meaning "in the place of" and French roi, meaning king. His province or territory is called a viceroyalty. [PARAGRAPH:2]The title was originally used by the Aragonese Crown during the 14th Century to refer to Sardinia and Corsica. The absolutist Kings of Spain employed numerous Viceroys to rule over various parts of their vast empire "where the sun never sets", both European and overseas.</English>
-		<French>[TAB]Un vice-roi est un représentant royal qui gouverne un pays ou une province en tant que représentant d'un monarque. Il s'agit de la personne qui agit "à la place de" ("vice-") son roi. Sa province ou son territoire est appelée vice-royauté. [PARAGRAPH:2]Ce titre était utilisé à l'origine par la Couronne d'Aragon, durant le 14e siècle, pour désigner la Sardaigne et la Corse. Les monarques espagnols nommaient de nombreux vice-rois, afin de régner sur les différentes régions de leur vaste empire, "où le soleil ne se couche jamais", en Europe et par-delà les océans.</French>
-		<German>[TAB]Ein Vizekönig ist ein königlicher Würdenträger, der ein Land oder eine Provinz im Namen bzw. als Repräsentant des Königs regiert. Der Begriff ist von der lateinischen Vorsilbe "Vize" (an Stelle von) abgeleitet. Seine Provinz bzw. seine Ländereien werden Vizekönigreich genannt. [PARAGRAPH:2]Ursprünglich wurde dieser Titel seit dem 14. Jahrhundert vom Aragonischen Königshaus für Sardinien und Korsika verwendet. Die absolutistischen Könige Spaniens setzten unzählige Vizekönige ein, um die Kontrolle über weite Teile ihres riesigen Reiches, "in dem die Sonne niemals untergeht", sowohl in Europa als auch in Übersee zu sichern.</German>
-		<Italian>[TAB]Un vicer&#233; &#232; un funzionario reale che governa un Paese o una provincia nel nome e come rappresentante di un monarca. Il termine deriva dal prefisso latino vice-, che significa &quot;al posto di&quot; e dal francese roi, che significa re. La provincia o il territorio controllato si chiama vicereame. [PARAGRAPH:2]Il titolo venne originariamente usato dalla corona di Aragona, durante il 14° secolo, in riferimento a Sardegna e Corsica. I monarchi assoluti di Spagna usarono numerosi vicer&#233; per governare diverse parti del loro vasto impero, &quot;su cui non tramonta mai il sole&quot;, sia in Europa che oltremare.</Italian>
+		<French>[TAB]Un vice-roi est un reprï¿½sentant royal qui gouverne un pays ou une province en tant que reprï¿½sentant d'un monarque. Il s'agit de la personne qui agit "ï¿½ la place de" ("vice-") son roi. Sa province ou son territoire est appelï¿½e vice-royautï¿½. [PARAGRAPH:2]Ce titre ï¿½tait utilisï¿½ ï¿½ l'origine par la Couronne d'Aragon, durant le 14e siï¿½cle, pour dï¿½signer la Sardaigne et la Corse. Les monarques espagnols nommaient de nombreux vice-rois, afin de rï¿½gner sur les diffï¿½rentes rï¿½gions de leur vaste empire, "oï¿½ le soleil ne se couche jamais", en Europe et par-delï¿½ les ocï¿½ans.</French>
+		<German>[TAB]Ein Vizekï¿½nig ist ein kï¿½niglicher Wï¿½rdentrï¿½ger, der ein Land oder eine Provinz im Namen bzw. als Reprï¿½sentant des Kï¿½nigs regiert. Der Begriff ist von der lateinischen Vorsilbe "Vize" (an Stelle von) abgeleitet. Seine Provinz bzw. seine Lï¿½ndereien werden Vizekï¿½nigreich genannt. [PARAGRAPH:2]Ursprï¿½nglich wurde dieser Titel seit dem 14. Jahrhundert vom Aragonischen Kï¿½nigshaus fï¿½r Sardinien und Korsika verwendet. Die absolutistischen Kï¿½nige Spaniens setzten unzï¿½hlige Vizekï¿½nige ein, um die Kontrolle ï¿½ber weite Teile ihres riesigen Reiches, "in dem die Sonne niemals untergeht", sowohl in Europa als auch in ï¿½bersee zu sichern.</German>
+		<Italian>[TAB]Un vicer&#233; &#232; un funzionario reale che governa un Paese o una provincia nel nome e come rappresentante di un monarca. Il termine deriva dal prefisso latino vice-, che significa &quot;al posto di&quot; e dal francese roi, che significa re. La provincia o il territorio controllato si chiama vicereame. [PARAGRAPH:2]Il titolo venne originariamente usato dalla corona di Aragona, durante il 14ï¿½ secolo, in riferimento a Sardegna e Corsica. I monarchi assoluti di Spagna usarono numerosi vicer&#233; per governare diverse parti del loro vasto impero, &quot;su cui non tramonta mai il sole&quot;, sia in Europa che oltremare.</Italian>
 		<Spanish>[TAB]Un virrey es un delegado real que gobierna un pa&#237;s o una provincia en nombre de un monarca. El t&#233;rmino deriva del lat&#237;n &quot;vice regis&quot;, que quiere decir &quot;en nombre del rey&quot;. Su provincia o territorio se denomina &quot;virreinato&quot;. [PARAGRAPH:2]El t&#237;tulo lo utiliz&#243; originalmente la corona de Arag&#243;n durante el siglo XIV para aludir a C&#243;rcega y Cerde&#241;a. Los reyes absolutistas espa&#241;oles emplearon numerosos virreyes para gestionar su vasto imperio, tanto europeo como de ultramar, &quot;en el que nunca se pon&#237;a el sol&quot;.</Spanish>
 	</TEXT>
 	<TEXT>
@@ -55,9 +55,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_RESETTLEMENT_PEDIA</Tag>
 		<English>[TAB]"Resettlement" literally means the transportation of a group of people to a new settlement and the populating of a new area. Although migration has featured throughout human history and prehistory, the word settler (synonymous with terms like pioneers and colonists) is often used in relation to modern or early modern history. [PARAGRAPH:2]The reason for emigration of settlers varies, but often includes one or more factors such as: personal economic hardship; social, cultural, ethnic, or religious persecution; political oppression; or policies aimed at encouraging foreign settlement.</English>
-		<French>[TAB]"Repeuplement" signifie littéralement amener un groupe de personnes dans une nouvelle implantation pour peupler une zone. Bien que la migration soit une constante de la préhistoire et de l'histoire de l'humanité, le mot colon (synonyme de pionnier) est souvent utilisé en relation avec l'histoire moderne ou contemporaine. [PARAGRAPH:2]Les raisons qui poussent à émigrer sont nombreuses, mais on retrouve souvent les difficultés économiques personnelles, les persécutions sociales, ethniques ou religieuses, l'oppression politique, ou des politiques encourageant la colonisation.</French>
-		<German>[TAB]Der Begriff "Umsiedlung" beschreibt den Umzug einer Gruppe von Menschen in ein neues Siedlungsgebiet bzw. die Bevölkerung neuer Gebiete. Während es derartige "Völkerwanderungen" in der gesamten Menschheitsgeschichte gegeben hat, wird der davon abgeleitete Begriff "Siedler" (Synonym f&#252;r Pionier und Kolonist) häufig in Bezug auf die moderne bzw. frühmoderne Geschichte verwendet. [PARAGRAPH:2]Es gibt unterschiedliche Gründe für die Ab- bzw. Auswanderung von Siedlern, meist spielen dabei jedoch folgende Faktoren eine Rolle: persönliches bzw. wirtschaftliches Elend, soziale, kulturelle, ethnische oder religiöse Verfolgung, politische Unterdrückung oder die politische Förderung fremder Siedlungen.</German>
-		<Italian>[TAB]&quot;Risistemazione&quot; sta a indicare il trasporto di un gruppo di persone in un nuovo insediamento e il popolamento di una nuova zona. Anche se le migrazioni hanno avuto luogo in tutta la storia e preistoria umana, la parola colonizzatore (o anche pioniere o colono) &#232; spesso utilizzata in relazione alla storia moderna. [PARAGRAPH:2]Le ragioni per l'emigrazione dei coloni sono diverse, ma spesso includono uno o più fattori come: forti problemi economici; persecuzione sociale, culturale, etnica o religiosa; oppressione politica, oppure politiche che incoraggiano l'insediamento all'estero.</Italian>
+		<French>[TAB]"Repeuplement" signifie littï¿½ralement amener un groupe de personnes dans une nouvelle implantation pour peupler une zone. Bien que la migration soit une constante de la prï¿½histoire et de l'histoire de l'humanitï¿½, le mot colon (synonyme de pionnier) est souvent utilisï¿½ en relation avec l'histoire moderne ou contemporaine. [PARAGRAPH:2]Les raisons qui poussent ï¿½ ï¿½migrer sont nombreuses, mais on retrouve souvent les difficultï¿½s ï¿½conomiques personnelles, les persï¿½cutions sociales, ethniques ou religieuses, l'oppression politique, ou des politiques encourageant la colonisation.</French>
+		<German>[TAB]Der Begriff "Umsiedlung" beschreibt den Umzug einer Gruppe von Menschen in ein neues Siedlungsgebiet bzw. die Bevï¿½lkerung neuer Gebiete. Wï¿½hrend es derartige "Vï¿½lkerwanderungen" in der gesamten Menschheitsgeschichte gegeben hat, wird der davon abgeleitete Begriff "Siedler" (Synonym f&#252;r Pionier und Kolonist) hï¿½ufig in Bezug auf die moderne bzw. frï¿½hmoderne Geschichte verwendet. [PARAGRAPH:2]Es gibt unterschiedliche Grï¿½nde fï¿½r die Ab- bzw. Auswanderung von Siedlern, meist spielen dabei jedoch folgende Faktoren eine Rolle: persï¿½nliches bzw. wirtschaftliches Elend, soziale, kulturelle, ethnische oder religiï¿½se Verfolgung, politische Unterdrï¿½ckung oder die politische Fï¿½rderung fremder Siedlungen.</German>
+		<Italian>[TAB]&quot;Risistemazione&quot; sta a indicare il trasporto di un gruppo di persone in un nuovo insediamento e il popolamento di una nuova zona. Anche se le migrazioni hanno avuto luogo in tutta la storia e preistoria umana, la parola colonizzatore (o anche pioniere o colono) &#232; spesso utilizzata in relazione alla storia moderna. [PARAGRAPH:2]Le ragioni per l'emigrazione dei coloni sono diverse, ma spesso includono uno o piï¿½ fattori come: forti problemi economici; persecuzione sociale, culturale, etnica o religiosa; oppressione politica, oppure politiche che incoraggiano l'insediamento all'estero.</Italian>
 		<Spanish>[TAB]El &quot;reasentamiento&quot; consiste en el traslado de un grupo de personas a un nuevo enclave para poblar una nueva zona. Aunque la migraci&#243;n ha existido en toda la historia, e incluso en la prehistoria, el t&#233;rmino colono, en ocasiones sin&#243;nimo de pionero, se suele utilizar en contextos de la historia moderna o contempor&#225;nea. [PARAGRAPH:2]Los motivos de la migraci&#243;n colonial son variados, pero a menudo incluyen dos o m&#225;s factores, como penurias econ&#243;micas, persecuci&#243;n social, cultural, &#233;tnica o religiosa, opresi&#243;n pol&#237;tica o pol&#237;ticas potenciadoras de la emigraci&#243;n o la inmigraci&#243;n.</Spanish>
 	</TEXT>
 	<TEXT>
@@ -71,10 +71,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_OCCUPATION_PEDIA</Tag>
 		<English>[TAB]Belligerent military occupation occurs when one nation's military occupies all or part of the territory of another nation or recognized belligerent. [PARAGRAPH:2]In most wars some territory of the losing side is placed under the authority of the hostile army. Most military occupations end with the cessation of hostilities. In some cases the occupied territory is returned and in others the land remains under the control of the occupying power but usually not as militarily occupied territory. The latter was the case of Germany after WWII, which ended up being split into two different nations.</English>
-		<French>[TAB]L'occupation militaire désigne la présence d'une armée étrangère sur tout ou partie du territoire d'une autre nation ou d'un belligérant reconnu. [PARAGRAPH:2]Dans la plupart des guerres, certains territoires du pays vaincu sont placés sous l'autorité d'une armée ennemie. La plupart des occupations militaires se terminent avec la cessation des hostilités. Dans certains cas, le territoire occupé est rendu et dans d'autres, il reste sous le contrôle de la puissance occupante, mais plus en tant que territoire occupé militairement. La dernière occupation fut celle de l'Allemagne après la Seconde Guerre mondiale, qui se termina par sa division en deux pays distincts.</French>
-		<German>[TAB]Eine kriegerische milit&#228;rische Besatzung tritt dann ein, wenn die militärischen Streitkräfte einer Nation das Territorium einer anderen Nation oder eines Kriegsgegners vollständig oder teilweise besetzen. [PARAGRAPH:2]In den meisten Kriegen wurde ein Teil des Territoriums der Verliererseite der Befehlsgewalt der feindlichen Militärs unterstellt. Dabei beendeten die milit&#228;rischen Besatzungen in der Regel gleichzeitig auch die Feindseligkeiten zwischen den Kriegsparteien. In manchen F&#228;llen wurde das Besatzungsgebiet später wieder zurückgegeben, in anderen verblieb es in der Hand der Besatzungsmacht, normalerweise aber nicht mehr als milit&#228;risch besetztes Territorium. Letzteres ereignete sich nach dem 2. Weltkrieg in Deutschland und endete damit, dass Deutschland bis zur Wiedervereinigung im Jahr 1990 in zwei verschiedene Staaten aufgeteilt war.</German>
+		<French>[TAB]L'occupation militaire dï¿½signe la prï¿½sence d'une armï¿½e ï¿½trangï¿½re sur tout ou partie du territoire d'une autre nation ou d'un belligï¿½rant reconnu. [PARAGRAPH:2]Dans la plupart des guerres, certains territoires du pays vaincu sont placï¿½s sous l'autoritï¿½ d'une armï¿½e ennemie. La plupart des occupations militaires se terminent avec la cessation des hostilitï¿½s. Dans certains cas, le territoire occupï¿½ est rendu et dans d'autres, il reste sous le contrï¿½le de la puissance occupante, mais plus en tant que territoire occupï¿½ militairement. La derniï¿½re occupation fut celle de l'Allemagne aprï¿½s la Seconde Guerre mondiale, qui se termina par sa division en deux pays distincts.</French>
+		<German>[TAB]Eine kriegerische milit&#228;rische Besatzung tritt dann ein, wenn die militï¿½rischen Streitkrï¿½fte einer Nation das Territorium einer anderen Nation oder eines Kriegsgegners vollstï¿½ndig oder teilweise besetzen. [PARAGRAPH:2]In den meisten Kriegen wurde ein Teil des Territoriums der Verliererseite der Befehlsgewalt der feindlichen Militï¿½rs unterstellt. Dabei beendeten die milit&#228;rischen Besatzungen in der Regel gleichzeitig auch die Feindseligkeiten zwischen den Kriegsparteien. In manchen F&#228;llen wurde das Besatzungsgebiet spï¿½ter wieder zurï¿½ckgegeben, in anderen verblieb es in der Hand der Besatzungsmacht, normalerweise aber nicht mehr als milit&#228;risch besetztes Territorium. Letzteres ereignete sich nach dem 2. Weltkrieg in Deutschland und endete damit, dass Deutschland bis zur Wiedervereinigung im Jahr 1990 in zwei verschiedene Staaten aufgeteilt war.</German>
 		<Italian>[TAB]L'occupazione militare si ha quando l'esercito di una nazione occupa tutto o parte del territorio di un'altra nazione o fazione ostile. [PARAGRAPH:2]In molte guerre parte del territorio della fazione perdente viene posto sotto l'autorit&#224; dell'esercito ostile. La maggior parte delle occupazioni militari terminano con la cessazione delle ostilit&#224;. In alcuni casi il territorio occupato viene restituito, mentre in altri rimane sotto il controllo della potenza occupante, anche se solitamente non come territorio occupato militarmente. Questo fu il caso della Germania dopo la Seconda Guerra Mondiale, che fin&#236; con l'essere divisa in due diverse nazioni.</Italian>
-		<Spanish>[TAB]La ocupaci&#243;n militar se produce cuando un ej&#233;rcito beligerante de una naci&#243;n ocupa todo o parte del territorio de otra naci&#243;n. [PARAGRAPH:2]En muchas guerras, parte del territorio del bando derrotado es sometido a la autoridad del ej&#233;rcito hostil. La mayor parte de las ocupaciones militares finalizan con el cese de las hostilidades. En algunos casos, el territorio ocupado es devuelto, pero en otros la zona permanece bajo control de la potencia enemiga, aunque ya no como territorio ocupado militarmente. El último fue el caso de Alemania tras la II Guerra Mundial, que acab&#243; siendo divida entre dos naciones diferentes.</Spanish>
+		<Spanish>[TAB]La ocupaci&#243;n militar se produce cuando un ej&#233;rcito beligerante de una naci&#243;n ocupa todo o parte del territorio de otra naci&#243;n. [PARAGRAPH:2]En muchas guerras, parte del territorio del bando derrotado es sometido a la autoridad del ej&#233;rcito hostil. La mayor parte de las ocupaciones militares finalizan con el cese de las hostilidades. En algunos casos, el territorio ocupado es devuelto, pero en otros la zona permanece bajo control de la potencia enemiga, aunque ya no como territorio ocupado militarmente. El ï¿½ltimo fue el caso de Alemania tras la II Guerra Mundial, que acab&#243; siendo divida entre dos naciones diferentes.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_COMMONWEALTH</Tag>
@@ -87,71 +87,71 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_COMMONWEALTH_PEDIA</Tag>
 		<English>[TAB]The English noun "Commonwealth" originally dates from the fifteenth century. The term literally meant "common well-being". Thus commonwealth originally meant a state governed for the common good as opposed to an authoritarian state governed for the benefit of a given class of owners. [PARAGRAPH:2]Today the term is more general and means a political community. When capitalised, "Commonwealth" normally refers to the 53 member Commonwealth of Nations - formerly the "British Commonwealth" - a loose confederation of nations formerly members of the British Empire.</English>
-		<French>[TAB]Le terme anglais "Commonwealth" remonte au quinzième siècle. Il signifie littéralement "bien-être de tous". Commonwealth voulait donc désigner un état gouverné pour le bien de tous, par opposition à un état autoritaire gouverné pour le bénéfice d'une certaine classe possédante. [PARAGRAPH:2]Aujourd'hui, le terme est plus général et désigne une communauté politique. Le Commonwealth fait normalement référence aux 53 nations qui faisaient à l'origine partie du Commonwealth britannique, une confédération disparate de pays issus de l'ancien empire britannique.</French>
-		<German>[TAB]Der englische Begriff "Commonwealth" datiert ursprünglich aus dem 15. Jahrhundert und bedeutet wörtlich übersetzt etwa "Gemeinwohl". Er bezeichnete ursprünglich einen Staat, dessen Regierung vornehmlich auf das Wohl der Gemeinschaft abzielt, im Gegensatz zum autoritären Staat, dessen Regierung vor allem auf das Wohlergehen einer bestimmten Klasse von Grundbesitzern und sonstigen Eigentümern hinarbeitet. [PARAGRAPH:2]Heute wird der Begriff allgemeiner verwendet und beschreibt eine politische Staatengemeinschaft. Wenn man vom "Commonwealth" spricht, ist damit nun normalerweise das aus 53 Mitgliedsstaaten gebildete "Commonwealth of Nations" - ehemals "British Commonwealth" genannt - gemeint, ein freiwilliger Bund unabhängiger Staaten, die früher zum British Empire gehörten.</German>
-		<Italian>[TAB]La parola inglese &quot;Commonwealth&quot; risale al quindicesimo secolo. Il termine significava letteralmente &quot;benessere comune&quot;. Quindi originariamente commonwealth stava a indicare uno stato governato per il bene comune, in opposizione a uno stato autoritario governato per il benessere di una data classe. [PARAGRAPH:2]Oggi il termine &#232; più generico e indica una comunit&#224; politica. Quando &#232; maiuscolo, &quot;Commonwealth&quot; di solito si riferisce al Commonwealth delle Nazioni, composto da 53 membri e una volta conosciuto come Commonwealth britannico: una confederazione di nazioni che facevano precedentemente parte dell'impero britannico.</Italian>
-		<Spanish>[TAB]El t&#233;rmino ingl&#233;s &quot;Commonwealth&quot;, que tiene su origen en el siglo XV, significa literalmente &quot;bienestar común&quot;, y en sus or&#237;genes hac&#237;a referencia a un tipo de estado cuyo gobierno persigue el bien común, frente a un estado autoritario que persigue el beneficio de una determinada clase social. [PARAGRAPH:2]Hoy el t&#233;rmino es m&#225;s general y alude a una comunidad pol&#237;tica. Cuando se escribe con mayúsculas, &quot;Commonwealth&quot; hace referencia a la &quot;Commonwealth of Nations&quot; de 53 miembros, antes denominada &quot;British Commonwealth of Nations&quot;, una confederaci&#243;n laxa que engloba a las naciones que pertenecieron al Imperio Brit&#225;nico.</Spanish>
+		<French>[TAB]Le terme anglais "Commonwealth" remonte au quinziï¿½me siï¿½cle. Il signifie littï¿½ralement "bien-ï¿½tre de tous". Commonwealth voulait donc dï¿½signer un ï¿½tat gouvernï¿½ pour le bien de tous, par opposition ï¿½ un ï¿½tat autoritaire gouvernï¿½ pour le bï¿½nï¿½fice d'une certaine classe possï¿½dante. [PARAGRAPH:2]Aujourd'hui, le terme est plus gï¿½nï¿½ral et dï¿½signe une communautï¿½ politique. Le Commonwealth fait normalement rï¿½fï¿½rence aux 53 nations qui faisaient ï¿½ l'origine partie du Commonwealth britannique, une confï¿½dï¿½ration disparate de pays issus de l'ancien empire britannique.</French>
+		<German>[TAB]Der englische Begriff "Commonwealth" datiert ursprï¿½nglich aus dem 15. Jahrhundert und bedeutet wï¿½rtlich ï¿½bersetzt etwa "Gemeinwohl". Er bezeichnete ursprï¿½nglich einen Staat, dessen Regierung vornehmlich auf das Wohl der Gemeinschaft abzielt, im Gegensatz zum autoritï¿½ren Staat, dessen Regierung vor allem auf das Wohlergehen einer bestimmten Klasse von Grundbesitzern und sonstigen Eigentï¿½mern hinarbeitet. [PARAGRAPH:2]Heute wird der Begriff allgemeiner verwendet und beschreibt eine politische Staatengemeinschaft. Wenn man vom "Commonwealth" spricht, ist damit nun normalerweise das aus 53 Mitgliedsstaaten gebildete "Commonwealth of Nations" - ehemals "British Commonwealth" genannt - gemeint, ein freiwilliger Bund unabhï¿½ngiger Staaten, die frï¿½her zum British Empire gehï¿½rten.</German>
+		<Italian>[TAB]La parola inglese &quot;Commonwealth&quot; risale al quindicesimo secolo. Il termine significava letteralmente &quot;benessere comune&quot;. Quindi originariamente commonwealth stava a indicare uno stato governato per il bene comune, in opposizione a uno stato autoritario governato per il benessere di una data classe. [PARAGRAPH:2]Oggi il termine &#232; piï¿½ generico e indica una comunit&#224; politica. Quando &#232; maiuscolo, &quot;Commonwealth&quot; di solito si riferisce al Commonwealth delle Nazioni, composto da 53 membri e una volta conosciuto come Commonwealth britannico: una confederazione di nazioni che facevano precedentemente parte dell'impero britannico.</Italian>
+		<Spanish>[TAB]El t&#233;rmino ingl&#233;s &quot;Commonwealth&quot;, que tiene su origen en el siglo XV, significa literalmente &quot;bienestar comï¿½n&quot;, y en sus or&#237;genes hac&#237;a referencia a un tipo de estado cuyo gobierno persigue el bien comï¿½n, frente a un estado autoritario que persigue el beneficio de una determinada clase social. [PARAGRAPH:2]Hoy el t&#233;rmino es m&#225;s general y alude a una comunidad pol&#237;tica. Cuando se escribe con mayï¿½sculas, &quot;Commonwealth&quot; hace referencia a la &quot;Commonwealth of Nations&quot; de 53 miembros, antes denominada &quot;British Commonwealth of Nations&quot;, una confederaci&#243;n laxa que engloba a las naciones que pertenecieron al Imperio Brit&#225;nico.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSAL_BONUS</Tag>
 		<English>[ICON_BULLET]+4 Stability Points for each vassal</English>
-		<French>[ICON_BULLET]+4 points de stabilité par vassal</French>
-		<German>[ICON_BULLET]+4 Stabilitätspunkte für jeden Vasallen</German>
+		<French>[ICON_BULLET]+4 points de stabilitï¿½ par vassal</French>
+		<German>[ICON_BULLET]+4 Stabilitï¿½tspunkte fï¿½r jeden Vasallen</German>
 		<Italian>[ICON_BULLET]+4 punti stabilit&#224; per ogni vassallo.</Italian>
 		<Spanish>[ICON_BULLET]+4 puntos de estabilidad por cada vasallo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSAL_BONUS_VANILLA</Tag>
 		<English>[ICON_BULLET]+4 Stability Points for each civilization starting point controlled</English>
-		<French>[ICON_BULLET]+4 points de stabilité par point de départ de civilisation contrôlé</French>
-		<German>[ICON_BULLET]+4 Stabilitätspunkte für jeden kontrollierten Zivilisationsstartpunkt</German>
+		<French>[ICON_BULLET]+4 points de stabilitï¿½ par point de dï¿½part de civilisation contrï¿½lï¿½</French>
+		<German>[ICON_BULLET]+4 Stabilitï¿½tspunkte fï¿½r jeden kontrollierten Zivilisationsstartpunkt</German>
 		<Italian>[ICON_BULLET]+4 punti stabilit&#224; per ogni punto di avvio di civilt&#224; controllato.</Italian>
 		<Spanish>[ICON_BULLET]+4 puntos de estabilidad por cada punto de inicio de civilizaci&#243;n controlado</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FOUND_BONUS</Tag>
 		<English>[ICON_BULLET]+2 additional Stability Points for each city founded at least 15 tiles from the capital</English>
-		<French>[ICON_BULLET]+2 points de stabilité par ville fondée à 15 cases ou plus de la capitale</French>
-		<German>[ICON_BULLET]+2 zusätzliche Stabilitätspunkte für jede Stadt, die mindestens 15 Geländefelder von der Hauptstadt entfernt gegründet wurde</German>
+		<French>[ICON_BULLET]+2 points de stabilitï¿½ par ville fondï¿½e ï¿½ 15 cases ou plus de la capitale</French>
+		<German>[ICON_BULLET]+2 zusï¿½tzliche Stabilitï¿½tspunkte fï¿½r jede Stadt, die mindestens 15 Gelï¿½ndefelder von der Hauptstadt entfernt gegrï¿½ndet wurde</German>
 		<Italian>[ICON_BULLET]+2 punti stabilit&#224; addizionali per ogni citt&#224; fondata ad almeno 15 caselle dalla capitale.</Italian>
 		<Spanish>[ICON_BULLET]+2 puntos de estabilidad adicionales por cada ciudad fundada al menos a 15 casillas de la capital</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CONQUEST_BONUS</Tag>
 		<English>[ICON_BULLET]+2 additional Stability Points on city conquest</English>
-		<French>[ICON_BULLET]+2 points de stabilité à la conquête d'une ville</French>
-		<German>[ICON_BULLET]+2 zusätzliche Stabilitätspunkte bei Stadteroberung</German>
+		<French>[ICON_BULLET]+2 points de stabilitï¿½ ï¿½ la conquï¿½te d'une ville</French>
+		<German>[ICON_BULLET]+2 zusï¿½tzliche Stabilitï¿½tspunkte bei Stadteroberung</German>
 		<Italian>[ICON_BULLET]+2 punti stabilit&#224; addizionali conquistando una citt&#224;.</Italian>
 		<Spanish>[ICON_BULLET]+2 puntos de estabilidad adicionales por conquista de ciudad</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_OCCUPATION_BONUS</Tag>
 		<English>[ICON_BULLET]No negative Stability Points from cities under occupation</English>
-		<French>[ICON_BULLET]Pas de points de stabilité négatifs pour les villes occupées</French>
-		<German>[ICON_BULLET]Keine Stabilitätspunktabzüge durch besetzte Städte</German>
+		<French>[ICON_BULLET]Pas de points de stabilitï¿½ nï¿½gatifs pour les villes occupï¿½es</French>
+		<German>[ICON_BULLET]Keine Stabilitï¿½tspunktabzï¿½ge durch besetzte Stï¿½dte</German>
 		<Italian>[ICON_BULLET]Nessun punto stabilit&#224; negativo in caso di citt&#224; occupate.</Italian>
 		<Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por las ciudades sometidas a ocupaci&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_COMMERCE_BONUS</Tag>
 		<English>[ICON_BULLET]No negative Stability Points for low amount of traded resources</English>
-		<French>[ICON_BULLET]Pas de points de stabilité négatifs pour un faible niveau de ressources échangées</French>
-		<German>[ICON_BULLET]Keine Stabilitätspunktabzüge durch eine geringe Anzahl gehandelter Ressourcen</German>
+		<French>[ICON_BULLET]Pas de points de stabilitï¿½ nï¿½gatifs pour un faible niveau de ressources ï¿½changï¿½es</French>
+		<German>[ICON_BULLET]Keine Stabilitï¿½tspunktabzï¿½ge durch eine geringe Anzahl gehandelter Ressourcen</German>
 		<Italian>[ICON_BULLET]Nessun punto stabilit&#224; negativo in caso di scarso commercio di risorse.</Italian>
 		<Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por baja cantidad de recursos intercambiados</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ECONOMY_BONUS</Tag>
 		<English>[ICON_BULLET]No negative Stability Points for poor economy</English>
-		<French>[ICON_BULLET]Pas de points de stabilité négatifs pour une économie pauvre</French>
-		<German>[ICON_BULLET]Keine Stabilitätspunktabzüge durch schlechte Wirtschaftslage</German>
+		<French>[ICON_BULLET]Pas de points de stabilitï¿½ nï¿½gatifs pour une ï¿½conomie pauvre</French>
+		<German>[ICON_BULLET]Keine Stabilitï¿½tspunktabzï¿½ge durch schlechte Wirtschaftslage</German>
 		<Italian>[ICON_BULLET]Nessun punto stabilit&#224; negativo in caso di scarsa economia.</Italian>
 		<Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por econom&#237;a d&#233;bil</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEPRESSION</Tag>
 		<English>[ICON_BULLET]Risk of Great Depression</English>
-		<French>[ICON_BULLET]Risque de Grande Dépression</French>
+		<French>[ICON_BULLET]Risque de Grande Dï¿½pression</French>
 		<German>[ICON_BULLET]Risiko einer Gro&#223;en Depression</German>
 		<Italian>[ICON_BULLET]Rischio di Grande Depressione.</Italian>
 		<Spanish>[ICON_BULLET]Riesgo de Gran Depresi&#243;n</Spanish>
@@ -159,7 +159,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_POST_COMMUNISM</Tag>
 		<English>[ICON_BULLET]Post-communist crisis in case of economic system switch</English>
-		<French>[ICON_BULLET]Crise post-communiste en cas de changement de système économique</French>
+		<French>[ICON_BULLET]Crise post-communiste en cas de changement de systï¿½me ï¿½conomique</French>
 		<German>[ICON_BULLET]Post-kommunistische Krise im Falle eines Wirtschaftssystemwechsels</German>
 		<Italian>[ICON_BULLET]Crisi post-comunista in caso di cambio di sistema economico.</Italian>
 		<Spanish>[ICON_BULLET]Crisis post-comunista en caso de cambio de sistema econ&#243;mico</Spanish>
@@ -167,8 +167,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEMOCRACY</Tag>
 		<English>[ICON_BULLET]Temporary instability caused by transition to Democracy</English>
-		<French>[ICON_BULLET]Instabilité temporaire causée par la transition vers la Démocratie</French>
-		<German>[ICON_BULLET]Vorübergehende Instabilität durch Wechsel zur Demokratie</German>
+		<French>[ICON_BULLET]Instabilitï¿½ temporaire causï¿½e par la transition vers la Dï¿½mocratie</French>
+		<German>[ICON_BULLET]Vorï¿½bergehende Instabilitï¿½t durch Wechsel zur Demokratie</German>
 		<Italian>[ICON_BULLET]Instabilit&#224; temporanea causata dal passaggio alla democrazia.</Italian>
 		<Spanish>[ICON_BULLET]Inestabilidad temporal causada por la transici&#243;n a la democracia</Spanish>
 	</TEXT>
@@ -183,41 +183,308 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VICEROYALTY_STRATEGY</Tag>
 		<English>Adds a Stability Points bonus for each vassal</English>
-		<French>Ajoute un bonus de points de stabilité par vassal</French>
-		<German>Stabilitätspunktbonus für jeden Vasallen</German>
+		<French>Ajoute un bonus de points de stabilitï¿½ par vassal</French>
+		<German>Stabilitï¿½tspunktbonus fï¿½r jeden Vasallen</German>
 		<Italian>Aggiunge un punto stabilit&#224; per ogni vassallo.</Italian>
 		<Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada vasallo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VICEROYALTY_VANILLA_STRATEGY</Tag>
 		<English>Adds a Stability Points bonus for each civilization starting point controlled</English>
-		<French>Ajoute un bonus de points de stabilité par point de départ de civilisation contrôlé</French>
-		<German>Stabilitätspunktbonus für jeden kontrollierten Zivilisationsstartpunkt</German>
+		<French>Ajoute un bonus de points de stabilitï¿½ par point de dï¿½part de civilisation contrï¿½lï¿½</French>
+		<German>Stabilitï¿½tspunktbonus fï¿½r jeden kontrollierten Zivilisationsstartpunkt</German>
 		<Italian>Aggiunge un punto stabilit&#224; per ogni punto di avvio di civilt&#224; controllato.</Italian>
 		<Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada punto de inicio de civilizaci&#243;n controlado</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_RESETTLEMENT_STRATEGY</Tag>
 		<English>Adds a Stability Points bonus for each city founded at least 15 tiles from the capital</English>
-		<French>Ajoute un bonus de points de stabilité par ville fondée à 15 cases ou plus de la capitale</French>
-		<German>Stabilitätspunktbonus für jede Stadt, die mindestens 15 Geländefelder von der Hauptstadt entfernt gegründet wurde</German>
+		<French>Ajoute un bonus de points de stabilitï¿½ par ville fondï¿½e ï¿½ 15 cases ou plus de la capitale</French>
+		<German>Stabilitï¿½tspunktbonus fï¿½r jede Stadt, die mindestens 15 Gelï¿½ndefelder von der Hauptstadt entfernt gegrï¿½ndet wurde</German>
 		<Italian>Aggiunge un bonus di punti stabilit&#224; per ogni citt&#224; fondata ad almeno 15 caselle dalla capitale.</Italian>
 		<Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada ciudad fundada al menos a 15 casillas de la capital</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_OCCUPATION_STRATEGY</Tag>
 		<English>Adds a Stability Points bonus on city conquest; no negative Stability Points from cities under occupation</English>
-		<French>Ajoute un bonus de points de stabilité par ville conquise ; pas de points de stabilité négatifs pour les villes occupées</French>
-		<German>Stabilitätspunktbonus bei Stadteroberung; keine Stabilitätspunktabzüge durch besetzte Städte</German>
+		<French>Ajoute un bonus de points de stabilitï¿½ par ville conquise ; pas de points de stabilitï¿½ nï¿½gatifs pour les villes occupï¿½es</French>
+		<German>Stabilitï¿½tspunktbonus bei Stadteroberung; keine Stabilitï¿½tspunktabzï¿½ge durch besetzte Stï¿½dte</German>
 		<Italian>Aggiunge un bonus di punti stabilit&#224; per la conquista di citt&#224;; nessun punto stabilit&#224; negativo in caso di citt&#224; occupate.</Italian>
 		<Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por conquista de ciudades; no hay puntos de estabilidad negativos por las ciudades sometidas a ocupaci&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_COMMONWEALTH_STRATEGY</Tag>
 		<English>No negative Stability Points for low amount of traded resources; no negative Stability Points for poor economy</English>
-		<French>Pas de points de stabilité négatifs pour un faible niveau de ressources échangées ; pas de points de stabilité négatifs pour une économie pauvre</French>
-		<German>Keine Stabilitätspunktabzüge durch geringfügig gehandelte Ressourcen; keine Stabilitätspunktabzüge durch schlechte Wirtschaftslage</German>
+		<French>Pas de points de stabilitï¿½ nï¿½gatifs pour un faible niveau de ressources ï¿½changï¿½es ; pas de points de stabilitï¿½ nï¿½gatifs pour une ï¿½conomie pauvre</French>
+		<German>Keine Stabilitï¿½tspunktabzï¿½ge durch geringfï¿½gig gehandelte Ressourcen; keine Stabilitï¿½tspunktabzï¿½ge durch schlechte Wirtschaftslage</German>
 		<Italian>Nessun punto stabilit&#224; negativo in caso di scarso commercio di risorse; nessun punto stabilit&#224; negativo in caso di scarsa economia.</Italian>
 		<Spanish>No hay puntos de estabilidad negativos por baja cantidad de recursos intercambiados; no hay puntos de estabilidad negativos por econom&#237;a d&#233;bil</Spanish>
 	</TEXT>
+
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_OPTION_MILITARY</Tag>
+        <English>Military</English>
+        <French>Military</French>
+        <German>Milit?r</German>
+        <Italian>Military</Italian>
+        <Spanish>Military</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_TRIBAL_SYSTEM</Tag>
+        <English>Tribal System</English>
+        <French>Tribal System</French>
+        <German>Stammessystem</German>
+        <Italian>Tribal System</Italian>
+        <Spanish>Tribal System</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_MONARCHY</Tag>
+        <English>Monarchy</English>
+        <French>Monarchy</French>
+        <German>Monarchie</German>
+        <Italian>Monarchy</Italian>
+        <Spanish>Monarchy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_REPUBLIC</Tag>
+        <English>Republic</English>
+        <French>Republic</French>
+        <German>Republik</German>
+        <Italian>Republic</Italian>
+        <Spanish>Republic</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_DICTATORSHIP</Tag>
+        <English>Dictatorship</English>
+        <French>Dictatorship</French>
+        <German>Diktatur</German>
+        <Italian>Dictatorship</Italian>
+        <Spanish>Dictatorship</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_DEMOCRACY</Tag>
+        <English>Democracy</English>
+        <French>Democracy</French>
+        <German>Demokratie</German>
+        <Italian>Democracy</Italian>
+        <Spanish>Democracy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_DESPOTISM</Tag>
+        <English>Despotism</English>
+        <French>Despotism</French>
+        <German>Despotismus</German>
+        <Italian>Despotism</Italian>
+        <Spanish>Despotism</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_THEOCRATIC_LEGITIMACY</Tag>
+        <English>Theocracy</English>
+        <French>Theocracy</French>
+        <German>Theokratie</German>
+        <Italian>Theocracy</Italian>
+        <Spanish>Theocracy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_PLUTOCRACY</Tag>
+        <English>Plutocracy</English>
+        <French>Plutocracy</French>
+        <German>Plutokratie</German>
+        <Italian>Plutocracy</Italian>
+        <Spanish>Plutocracy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_NATIONALISM</Tag>
+        <English>Nationalism</English>
+        <French>Nationalism</French>
+        <German>Nationalismus</German>
+        <Italian>Nationalism</Italian>
+        <Spanish>Nationalism</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_RULE_OF_LAW</Tag>
+        <English>Rule of Law</English>
+        <French>Rule of Law</French>
+        <German>Rechtsstaat</German>
+        <Italian>Rule of Law</Italian>
+        <Spanish>Rule of Law</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_SELF_SUFFICIENCY</Tag>
+        <English>Self-sufficiency</English>
+        <French>Self-sufficiency</French>
+        <German>Selbstversorgung</German>
+        <Italian>Self-sufficiency</Italian>
+        <Spanish>Self-sufficiency</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_SLAVERY</Tag>
+        <English>Slavery</English>
+        <French>Slavery</French>
+        <German>Sklaverei</German>
+        <Italian>Slavery</Italian>
+        <Spanish>Slavery</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_SERFDOM</Tag>
+        <English>Serfdom</English>
+        <French>Serfdom</French>
+        <German>Leibeigenschaft</German>
+        <Italian>Serfdom</Italian>
+        <Spanish>Serfdom</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_PLANNED_ECONOMY</Tag>
+        <English>Planned Economy</English>
+        <French>Planned Economy</French>
+        <German>Planwirtschaft</German>
+        <Italian>Planned Economy</Italian>
+        <Spanish>Planned Economy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_CORPORATE_ECONOMY</Tag>
+        <English>Corporate Economy</English>
+        <French>Corporate Economy</French>
+        <German>Unternehmenswirtschaft</German>
+        <Italian>Corporate Economy</Italian>
+        <Spanish>Corporate Economy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_WARRIOR_SOCIETY</Tag>
+        <English>Warrior Society</English>
+        <French>Warrior Society</French>
+        <German>Kriegergesellschaft</German>
+        <Italian>Warrior Society</Italian>
+        <Spanish>Warrior Society</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_MILITIA</Tag>
+        <English>Militia</English>
+        <French>Militia</French>
+        <German>Miliz</German>
+        <Italian>Militia</Italian>
+        <Spanish>Militia</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_KNIGHTHOOD</Tag>
+        <English>Knighthood</English>
+        <French>Knighthood</French>
+        <German>Rittertum</German>
+        <Italian>Knighthood</Italian>
+        <Spanish>Knighthood</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_PROFESSIONAL_ARMY</Tag>
+        <English>Professional Army</English>
+        <French>Professional Army</French>
+        <German>Berufsarmee</German>
+        <Italian>Professional Army</Italian>
+        <Spanish>Professional Army</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_CONSCRIPTION</Tag>
+        <English>Conscription</English>
+        <French>Conscription</French>
+        <German>Wehrpflicht</German>
+        <Italian>Conscription</Italian>
+        <Spanish>Conscription</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_ANCESTOR_CULT</Tag>
+        <English>Ancestor Cult</English>
+        <French>Ancestor Cult</French>
+        <German>Ahnenkult</German>
+        <Italian>Ancestor Cult</Italian>
+        <Spanish>Ancestor Cult</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_STATE_RELIGION</Tag>
+        <English>State Religion</English>
+        <French>State Religion</French>
+        <German>Staatsreligion</German>
+        <Italian>State Religion</Italian>
+        <Spanish>State Religion</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_GOD_STATE</Tag>
+        <English>Theocracy</English>
+        <French>Theocracy</French>
+        <German>Gottesstaat</German>
+        <Italian>Theocracy</Italian>
+        <Spanish>Theocracy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_TOLERANCE</Tag>
+        <English>Tolerance</English>
+        <French>Tolerance</French>
+        <German>Toleranz</German>
+        <Italian>Tolerance</Italian>
+        <Spanish>Tolerance</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_CIVIC_STATE_ATHEISM</Tag>
+        <English>State Atheism</English>
+        <French>State Atheism</French>
+        <German>Staatsatheismus</German>
+        <Italian>State Atheism</Italian>
+        <Spanish>State Atheism</Spanish>
+    </TEXT>
+
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_DEMOCRACY_ELECTION_HELP</Tag>
+        <English>Every 10 turns, an election randomly changes one other civic column.</English>
+        <French>Every 10 turns, an election randomly changes one other civic column.</French>
+        <German>Alle 10 Runden ?ndert eine Wahl zuf?llig eine andere Staatsform.</German>
+        <Italian>Every 10 turns, an election randomly changes one other civic column.</Italian>
+        <Spanish>Every 10 turns, an election randomly changes one other civic column.</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_DEMOCRACY_ELECTION</Tag>
+        <English>Election changed your %s1 civic to %s2.</English>
+        <French>Election changed your %s1 civic to %s2.</French>
+        <German>Eine Wahl hat die Staatsform %s1 zu %s2 ge?ndert.</German>
+        <Italian>Election changed your %s1 civic to %s2.</Italian>
+        <Spanish>Election changed your %s1 civic to %s2.</Spanish>
+    </TEXT>
+
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_OPTION_GOVERNMENT</Tag>
+        <English>Government</English>
+        <French>Government</French>
+        <German>Regierung</German>
+        <Italian>Government</Italian>
+        <Spanish>Government</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_OPTION_LEGITIMACY</Tag>
+        <English>Legitimacy</English>
+        <French>Legitimacy</French>
+        <German>Legitimation</German>
+        <Italian>Legitimacy</Italian>
+        <Spanish>Legitimacy</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_OPTION_LABOR</Tag>
+        <English>Labor</English>
+        <French>Labor</French>
+        <German>Arbeit</German>
+        <Italian>Labor</Italian>
+        <Spanish>Labor</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_RFCMP_OPTION_RELIGION</Tag>
+        <English>Religion</English>
+        <French>Religion</French>
+        <German>Religion</German>
+        <Italian>Religion</Italian>
+        <Spanish>Religion</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_CIVIC_ALL_CITIES_HAPPINESS</Tag>
+        <English>%d1 %c2 in all cities</English>
+        <French>%d1 %c2 in all cities</French>
+        <German>%d1 %c2 in allen StÃ¤dten</German>
+        <Italian>%d1 %c2 in all cities</Italian>
+        <Spanish>%d1 %c2 in all cities</Spanish>
+    </TEXT>
 </Civ4GameText>

@@ -1461,7 +1461,7 @@ def canTriggerInterstate(argsList):
 	trigger = gc.getEventTriggerInfo(kTriggeredData.eTrigger)
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	if not player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_EMANCIPATION')):
+	if not player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_CORPORATE_ECONOMY')):
 		return false
 	
 	return true
@@ -1495,24 +1495,6 @@ def getHelpEarthDay2(argsList):
 	return szHelp
 
 def canApplyEarthDay2(argsList):
-	iEvent = argsList[0]
-	kTriggeredData = argsList[1]
-	
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_ENVIRONMENTALISM')
-	
-	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
-		loopPlayer = gc.getPlayer(iPlayer)
-		if loopPlayer.isAlive() and iPlayer != kTriggeredData.ePlayer and not loopPlayer.isHuman():
-			loopTeam = gc.getTeam(loopPlayer.getTeam())
-			if loopTeam.isHasMet(gc.getPlayer(kTriggeredData.ePlayer).getTeam()):
-				tradeData = TradeData()
-				tradeData.ItemType = TradeableItems.TRADE_CIVIC
-				tradeData.iData = iCivic
-				if loopPlayer.canTradeItem(kTriggeredData.ePlayer, tradeData, False):
-					if (loopPlayer.getTradeDenial(kTriggeredData.ePlayer, tradeData) == DenialTypes.NO_DENIAL):
-						return true
 	return false
 	
 		
@@ -1521,8 +1503,8 @@ def applyEarthDay2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_ENVIRONMENTALISM')
-	iCivicOption = CvUtil.findInfoTypeNum(gc.getCivicOptionInfo,gc.getNumCivicOptionInfos(),'CIVICOPTION_ECONOMY')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_CONSCRIPTION')
+	iCivicOption = CvUtil.findInfoTypeNum(gc.getCivicOptionInfo,gc.getNumCivicOptionInfos(),'CIVICOPTION_MILITARY')
 	
 	listPlayers = []
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
@@ -2411,8 +2393,6 @@ def canTriggerTea(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_MERCANTILISM')):
-		return false
 
 	bCanTrade = false		
 	for iLoopPlayer in range(gc.getMAX_CIV_PLAYERS()):
@@ -3195,7 +3175,7 @@ def canTriggerHighWarlord(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
 	# If source civ is operating this Civic, disallow the event to trigger.
-	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_EMANCIPATION')):
+	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_CORPORATE_ECONOMY')):
 		return false
 
 	return true
@@ -3551,7 +3531,7 @@ def canApplyEliteSwordsDone2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 		
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_HEREDITARY_RULE')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_MONARCHY')
 	
 	if not player.isCivic(iCivic):
 		return false
@@ -3655,7 +3635,7 @@ def canApplyGunsButterDone2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 		
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_VASSALAGE')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_THEOCRATIC_LEGITIMACY')
 	
 	if not player.isCivic(iCivic):
 		return false
@@ -3735,7 +3715,7 @@ def canApplyNobleKnightsDone2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 		
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_ORGANIZED_RELIGION')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_STATE_RELIGION')
 	
 	if not player.isCivic(iCivic):
 		return false

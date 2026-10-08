@@ -9807,6 +9807,14 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 
 bool CvCity::isSpecialistValid(SpecialistTypes eIndex, int iExtra) const
 {
+	static const CivicOptionTypes eLaborOption = (CivicOptionTypes)GC.getInfoTypeForString("CIVICOPTION_LABOR");
+	static const CivicTypes eSelfSufficiency = (CivicTypes)GC.getInfoTypeForString("CIVIC_SELF_SUFFICIENCY");
+	if (iExtra > 0 && eIndex != GC.getDefineINT("DEFAULT_SPECIALIST") &&
+		GET_PLAYER(getOwnerINLINE()).getCivics(eLaborOption) == eSelfSufficiency)
+	{
+		return false;
+	}
+
 	return (((getSpecialistCount(eIndex) + iExtra) <= getMaxSpecialistCount(eIndex)) || GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex) || (eIndex == GC.getDefineINT("DEFAULT_SPECIALIST")));
 }
 

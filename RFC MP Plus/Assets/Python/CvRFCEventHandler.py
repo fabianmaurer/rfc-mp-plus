@@ -360,6 +360,24 @@ class CvRFCEventHandler:
         def onBeginPlayerTurn(self, argsList):        
                 iGameTurn, iPlayer = argsList
 
+                # Democracy holds an election every ten turns. The synchronized game RNG
+                # selects one non-government civic column and one available replacement.
+                pPlayer = gc.getPlayer(iPlayer)
+                iDemocracy = CvUtil.findInfoTypeNum(gc.getCivicInfo, gc.getNumCivicInfos(), 'CIVIC_DEMOCRACY')
+                if (pPlayer.isAlive() and iGameTurn > 0 and iGameTurn % 10 == 0 and pPlayer.getCivics(0) == iDemocracy):
+                        iCivicOption = 1 + gc.getGame().getSorenRandNum(4, "Democracy election civic column")
+                        iCurrentCivic = pPlayer.getCivics(iCivicOption)
+                        lAvailableCivics = []
+                        for iCivic in range(gc.getNumCivicInfos()):
+                                if (gc.getCivicInfo(iCivic).getCivicOptionType() == iCivicOption and iCivic != iCurrentCivic and pPlayer.canDoCivics(iCivic)):
+                                        lAvailableCivics.append(iCivic)
+                        if (len(lAvailableCivics) > 0):
+                                iNewCivic = lAvailableCivics[gc.getGame().getSorenRandNum(len(lAvailableCivics), "Democracy election civic result")]
+                                pPlayer.setCivics(iCivicOption, iNewCivic)
+                                if (pPlayer.isHuman()):
+                                        szMessage = CyTranslator().getText("TXT_KEY_RFCMP_DEMOCRACY_ELECTION", (gc.getCivicOptionInfo(iCivicOption).getDescription(), gc.getCivicInfo(iNewCivic).getDescription()))
+                                        CyInterface().addMessage(iPlayer, True, con.iDuration, szMessage, "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+                
                 #print ("PLAYER", iPlayer)
                 #if (iPlayer == con.iMongolia):
                 #        if (iGameTurn == self.up.getLatestRazeData(0) +1):
@@ -758,7 +776,7 @@ class CvRFCEventHandler:
                 print ("Stability")
                 for iCiv in range(con.iNumPlayers):
                         if (gc.getPlayer(iCiv).isAlive()):
-                                print ("Base:", utils.getBaseStabilityLastTurn(iCiv), "Modifier:", utils.getStability(iCiv)-utils.getBaseStabilityLastTurn(iCiv), "Total:", utils.getStability(iCiv), "civic", gc.getPlayer(iCiv).getCivics(5), gc.getPlayer(iCiv).getCivilizationShortDescription(0))
+                                print ("Base:", utils.getBaseStabilityLastTurn(iCiv), "Modifier:", utils.getStability(iCiv)-utils.getBaseStabilityLastTurn(iCiv), "Total:", utils.getStability(iCiv), "civic", gc.getPlayer(iCiv).getCivics(0), gc.getPlayer(iCiv).getCivilizationShortDescription(0))
                         else:
                                 print ("dead", iCiv)
                 for i in range(con.iNumStabilityParameters):

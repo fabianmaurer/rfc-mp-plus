@@ -75,13 +75,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -159,13 +158,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -257,13 +255,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -358,13 +355,12 @@
 			</FreeTechs>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -476,11 +472,11 @@
 			</FreeTechs>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -566,13 +562,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -675,13 +670,12 @@
 			<!-- Rhye - end -->
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -780,13 +774,12 @@
 			</FreeTechs>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -900,13 +893,12 @@
 			</FreeTechs>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -993,13 +985,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1098,13 +1089,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1182,13 +1172,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1297,13 +1286,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1413,13 +1401,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1523,13 +1510,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1618,13 +1604,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1726,13 +1711,12 @@
 			</FreeTechs>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1820,13 +1804,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1916,13 +1899,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2014,11 +1996,11 @@
 			</FreeTechs>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2114,13 +2096,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2218,13 +2199,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2300,13 +2280,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2414,13 +2393,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2516,13 +2494,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2604,13 +2581,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2714,13 +2690,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2814,13 +2789,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2920,13 +2894,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3016,13 +2989,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3109,13 +3081,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3218,13 +3189,12 @@
 			</FreeTechs>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3304,13 +3274,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3401,13 +3370,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3489,12 +3457,11 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3579,12 +3546,11 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3678,12 +3644,11 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3817,13 +3782,12 @@
 			</FreeTechs>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4544,13 +4508,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
+				<CivicType>CIVIC_TRIBAL_SYSTEM</CivicType>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
-				<CivicType>CIVIC_BARBARISM</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
-				<CivicType>CIVIC_PAGANISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_WARRIOR_SOCIETY</CivicType>
+				<CivicType>CIVIC_ANCESTOR_CULT</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>

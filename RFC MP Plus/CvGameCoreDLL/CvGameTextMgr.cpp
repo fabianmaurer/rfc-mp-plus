@@ -5013,6 +5013,12 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_LARGEST_CITIES_HAPPINESS", GC.getCivicInfo(eCivic).getLargestCityHappiness(), ((GC.getCivicInfo(eCivic).getLargestCityHappiness() > 0) ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)), GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getTargetNumCities()));
 	}
 
+	if (GC.getCivicInfo(eCivic).getCivicHappiness() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_ALL_CITIES_HAPPINESS", abs(GC.getCivicInfo(eCivic).getCivicHappiness()), ((GC.getCivicInfo(eCivic).getCivicHappiness() > 0) ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR))));
+	}
+
 	//	Improvement Yields
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{
@@ -5109,23 +5115,14 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_MILITARY_SUPPORT_COSTS", (GC.getCivicInfo(eCivic).getGoldPerMilitaryUnit() > 0), GC.getCommerceInfo(COMMERCE_GOLD).getChar()));
 	}
 
-	//Rhye - start stability
-	if (eCivic == 4) //univ. suff
+	// RFC MP Plus: Democracy changes one other civic column every ten turns.
+	if (eCivic == (CivicTypes)GC.getInfoTypeForString("CIVIC_DEMOCRACY"))
 	{
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_DEMOCRACY"));
-	}
-	if (eCivic == 17) //free market
-	{
 		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_DEPRESSION"));
+		szHelpText.append(gDLL->getText("TXT_KEY_RFCMP_DEMOCRACY_ELECTION_HELP"));
 	}
-	if (eCivic == 18) //state property
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_POST_COMMUNISM"));
-	}
-	//Rhye - end stability
 
 	if (!CvWString(GC.getCivicInfo(eCivic).getHelp()).empty())
 	{

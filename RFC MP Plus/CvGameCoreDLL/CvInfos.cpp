@@ -5283,6 +5283,7 @@ m_iGoldPerUnit(0),
 m_iGoldPerMilitaryUnit(0),									
 m_iHappyPerMilitaryUnit(0),
 m_iLargestCityHappiness(0),
+m_iCivicHappiness(0),
 m_iWarWearinessModifier(0),
 m_iFreeSpecialist(0),
 m_iTradeRoutes(0),
@@ -5474,6 +5475,11 @@ int CvCivicInfo::getHappyPerMilitaryUnit() const
 int CvCivicInfo::getLargestCityHappiness() const
 {
 	return m_iLargestCityHappiness;
+}
+
+int CvCivicInfo::getCivicHappiness() const
+{
+	return m_iCivicHappiness;
 }
 
 int CvCivicInfo::getWarWearinessModifier() const
@@ -5761,6 +5767,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iGoldPerMilitaryUnit);									
 	stream->Read(&m_iHappyPerMilitaryUnit);
 	stream->Read(&m_iLargestCityHappiness);
+	stream->Read(&m_iCivicHappiness);
 	stream->Read(&m_iWarWearinessModifier);
 	stream->Read(&m_iFreeSpecialist);
 	stream->Read(&m_iTradeRoutes);												
@@ -5887,6 +5894,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iGoldPerMilitaryUnit);									
 	stream->Write(m_iHappyPerMilitaryUnit);
 	stream->Write(m_iLargestCityHappiness);
+	stream->Write(m_iCivicHappiness);
 	stream->Write(m_iWarWearinessModifier);
 	stream->Write(m_iFreeSpecialist);
 	stream->Write(m_iTradeRoutes);												
@@ -5985,6 +5993,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNoUnhealthyPopulation, "bNoUnhealthyPopulation");
 	pXML->GetChildXmlValByName(&m_bBuildingOnlyHealthy, "bBuildingOnlyHealthy");
 	pXML->GetChildXmlValByName(&m_iLargestCityHappiness, "iLargestCityHappiness");
+	pXML->GetChildXmlValByName(&m_iCivicHappiness, "iCivicHappiness");
 	pXML->GetChildXmlValByName(&m_iWarWearinessModifier, "iWarWearinessModifier");
 	pXML->GetChildXmlValByName(&m_iFreeSpecialist, "iFreeSpecialist");
 	pXML->GetChildXmlValByName(&m_iTradeRoutes, "iTradeRoutes");

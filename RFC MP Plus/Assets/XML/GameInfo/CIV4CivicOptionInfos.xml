@@ -8,35 +8,28 @@
 	<CivicOptionInfos>
 		<CivicOptionInfo>
 			<Type>CIVICOPTION_GOVERNMENT</Type>
-			<Description>TXT_KEY_CIVICOPTION_GOVERNMENT</Description>
+			<Description>TXT_KEY_RFCMP_OPTION_GOVERNMENT</Description>
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
 			<Type>CIVICOPTION_LEGAL</Type>
-			<Description>TXT_KEY_CIVICOPTION_LEGAL</Description>
+			<Description>TXT_KEY_RFCMP_OPTION_LEGITIMACY</Description>
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
 			<Type>CIVICOPTION_LABOR</Type>
-			<Description>TXT_KEY_CIVICOPTION_LABOR</Description>
+			<Description>TXT_KEY_RFCMP_OPTION_LABOR</Description>
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
-			<Type>CIVICOPTION_ECONOMY</Type>
-			<Description>TXT_KEY_CIVICOPTION_ECONOMY</Description>
+			<Type>CIVICOPTION_MILITARY</Type>
+			<Description>TXT_KEY_RFCMP_CIVIC_OPTION_MILITARY</Description>
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
 			<Type>CIVICOPTION_RELIGION</Type>
-			<Description>TXT_KEY_CIVICOPTION_RELIGION</Description>
+			<Description>TXT_KEY_RFCMP_OPTION_RELIGION</Description>
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
-		<!-- Rhye - start -->
-		<CivicOptionInfo>
-			<Type>CIVICOPTION_EXPANSION</Type>
-			<Description>TXT_KEY_CIVICOPTION_EXPANSION</Description>
-			<TraitNoUpkeeps/>
-		</CivicOptionInfo>
-		<!-- Rhye - end -->
 	</CivicOptionInfos>
 </Civ4CivicOptionInfos>
