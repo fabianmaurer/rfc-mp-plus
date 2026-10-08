@@ -6,6 +6,9 @@ werden addiert und insgesamt auf **−5 bis +5** begrenzt.
 
 | Kombination | Stabilität | Begründung |
 | --- | ---: | --- |
+| Stammessystem + Despotismus | +1 | Persönliche Autorität und traditionelle Institutionen passen zur Stammesregierung. |
+| Monarchie + Theokratie | +1 | Religiöse Legitimation stützt die erbliche Herrschaft. |
+| Plutokratie + Planwirtschaft | −1 | Politische Macht durch privaten Reichtum steht in Spannung zur zentralen Wirtschaftslenkung. |
 | Republik oder Demokratie + Rechtsstaat | +2 | Rechtliche Institutionen stützen die geregelte Ausübung und Übertragung politischer Macht. |
 | Monarchie + Rittertum | +2 | Dynastische Herrschaft und die militärische Ordnung des Rittertums passen zusammen. |
 | Theokratie + Staatsreligion oder Gottesstaat | +2 | Religiöse Legitimation und die staatliche Religionsordnung stimmen überein. |
@@ -23,8 +26,8 @@ Regierungsform grundsätzlich überlegen wäre.
 - Der Beitrag geht in die bestehende Neuberechnung der Basisstabilität alle
   drei Runden ein. Er wird nicht als dauerhafter Zugewinn pro Runde aufaddiert.
 - Demokratische Wahlen ändern weiterhin alle zehn Runden eine andere Civic-Spalte.
-  Für Wahlen gibt es keine zusätzliche Stabilitätsstrafe. Der einzige explizite
-  Kombinationsmalus beträgt −3, auch wenn die Kombination durch eine Wahl entsteht.
+  Für Wahlen gibt es keine zusätzliche Stabilitätsstrafe. Die Kombinationswerte
+  gelten auch, wenn die Kombination durch eine Wahl entsteht.
 - Die allgemeine Zufriedenheits- und Wirtschaftsauswertung berücksichtigt die
   tatsächlichen Folgen der Civics weiterhin.
 

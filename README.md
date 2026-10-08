@@ -144,6 +144,9 @@ The following combinations contribute to base stability:
 
 | Combination | Stability |
 | --- | ---: |
+| Tribal System + Despotism | +1 |
+| Monarchy + Theocracy | +1 |
+| Plutocracy + Planned Economy | -1 |
 | Republic or Democracy + Rule of Law | +2 |
 | Monarchy + Knighthood | +2 |
 | Theocracy in Legitimacy + State Religion or Holy State in Religion | +2 |

@@ -151,6 +151,9 @@ Die folgenden Kombinationen tragen zur Basisstabilität bei:
 
 | Kombination | Stabilität |
 | --- | ---: |
+| Stammessystem + Despotismus | +1 |
+| Monarchie + Theokratie | +1 |
+| Plutokratie + Planwirtschaft | -1 |
 | Republik oder Demokratie + Rechtsstaat | +2 |
 | Monarchie + Rittertum | +2 |
 | Theokratie + Staatsreligion oder Gottesstaat | +2 |
