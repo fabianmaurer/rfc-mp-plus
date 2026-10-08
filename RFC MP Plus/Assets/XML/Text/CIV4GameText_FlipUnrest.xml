@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_RNF_FLIP_UNREST</Tag>
+		<English>The %s1 are rising up!</English>
+		<French>The %s1 are rising up!</French>
+		<German>Die %s1:2 erheben sich!</German>
+		<Italian>The %s1 are rising up!</Italian>
+		<Spanish>The %s1 are rising up!</Spanish>
+	</TEXT>
+</Civ4GameText>
